@@ -1,17 +1,19 @@
 import * as React from 'react';
 import {FunctionComponent} from 'react';
+import {SectionStyle} from "./Section.style";
 import selfie from '../../asset/image/selfie.jpg';
+import {Title} from "../Title/Title";
 
 export const About: FunctionComponent = function () {
+    const title = 'ABOUT';
+
     return (
-        <>
-            <div className="title" id="title-about">
-                ABOUT
-            </div>
+        <SectionStyle>
+            <Title title={title}/>
             <div className="picture">
-                <img src={selfie} alt="Einere's picture"/>
-                    <div className="name">Einere</div>
-                    <div className="description">STUDENT</div>
+                <img src={selfie} alt="Einere's selfie"/>
+                <div className="name">Einere</div>
+                <div className="description">STUDENT</div>
             </div>
             <div className="text">
                 <div className="intro">
@@ -58,6 +60,6 @@ export const About: FunctionComponent = function () {
                 <p>2017.09 ~ 12 - 융합 KWIX 수행</p>
                 <p>2018.07 ~ 08 - 럭스로보 웹 개발 인턴 근무</p>
             </div>
-        </>
-);
+        </SectionStyle>
+    );
 };
