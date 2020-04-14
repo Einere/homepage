@@ -5,7 +5,7 @@ export const TitleStyle = styled.section`
   font-weight: bold;
   text-align: center;
   letter-spacing: 3px;
-  padding-bottom: 5rem;  
+  padding-bottom: 3rem;  
 
   &::after {
     content: "";
