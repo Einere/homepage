@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {FunctionComponent} from 'react';
 import {ProfileCardStyle} from "./ProfileCard.style";
-import selfie from "../../asset/image/selfie.jpg";
+import selfie2 from "../../asset/image/selfie2.jpg";
 import {Text} from "../Text/Text";
 
 export const ProfileCard: FunctionComponent = function () {
@@ -13,7 +13,7 @@ export const ProfileCard: FunctionComponent = function () {
 
     return (
         <ProfileCardStyle>
-            <img src={selfie} alt={alt} className="selfie"/>
+            <img src={selfie2} alt={alt} className="selfie"/>
             <Name/>
             <Occupation/>
         </ProfileCardStyle>
