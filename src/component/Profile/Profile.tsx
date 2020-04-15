@@ -18,14 +18,7 @@ export const Profile: FunctionComponent = function () {
             <div className="description">
                 <Intro/>
                 <Information/>
-                <div className="sns">
-                    <a target="_blank" rel="noopener noreferrer" href="https://facebook.com/hyungjun.choi.146">
-                        <i className="fab fa-facebook-f"/>
-                    </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/alban_arthuan/">
-                        <i className="fab fa-instagram"/>
-                    </a>
-                </div>
+                <SnsContainer/>
             </div>
             <div className="history">
                 <div className="history-title">

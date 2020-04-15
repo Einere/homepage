@@ -11,22 +11,6 @@ export const ProfileStyle = styled.article`
     padding: 2rem;
     vertical-align: bottom;
     text-align: left;
-    
-    & > .sns > a {
-      width: 50px;
-      line-height: 50px;
-      background-color: #EBDCD5;
-      border-radius: 5px;
-      font-size: 16px;
-      display: inline-block;
-      text-align: center;
-      cursor: pointer;
-      
-      &:hover {
-        background-color: #DDC4C2;
-        transition: background-color 0.5s ease;
-      }
-    }
   }
   
   & > .history {
