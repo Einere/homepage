@@ -4,11 +4,12 @@ import {NavBarMenuStyle} from "./NavBarMenu.style";
 import {NavBarMenuItem} from "./NavBarMenuItem";
 
 export const NavBarMenu: FunctionComponent = function () {
+    const menu = ["about", "skill", "project"];
+    const MenuItems = menu.map((text, index) => <NavBarMenuItem text={text} key={index}/>);
+
     return (
         <NavBarMenuStyle className="nav-bar-menu">
-            <NavBarMenuItem text="about"/>
-            <NavBarMenuItem text="skill"/>
-            <NavBarMenuItem text="project"/>
+            {MenuItems}
         </NavBarMenuStyle>
     );
 };
