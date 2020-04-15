@@ -14,6 +14,7 @@ interface Prop {
 
 export const Text: FunctionComponent<Prop & HTMLAttributes<HTMLDivElement>> = function ({
         text,
+        className,
         fontSize= 1,
         textAlign = 'inherit',
         fontFamily,
@@ -23,6 +24,7 @@ export const Text: FunctionComponent<Prop & HTMLAttributes<HTMLDivElement>> = fu
     }) {
     return (
         <TextStyle
+            className={className}
             fontSize={fontSize}
             textAlign={textAlign}
             fontFamily={fontFamily}

@@ -1,22 +1,22 @@
 import * as React from 'react';
 import {FunctionComponent} from 'react';
 import {ProfileStyle} from "./Profile.style";
-import selfie from "../../asset/image/selfie.jpg";
 import {Text} from "../Text/Text";
+import {ProfileCard} from "./ProfileCard";
 
 export const Profile: FunctionComponent = function () {
-    const Name = () => <Text className="name" text={"Einere"} fontSize={2} textAlign="center" padding={"1rem 0"}/>;
-    const Occupation = () => <Text className="occupation" text={"Student"} fontFamily={"'Noto Sans KR', sans-serif"}/>;
-    const Intro = () => <Text className="intro" text={"Sustainable Web Developer"} fontFamily={"'Noto Sans KR', sans-serif"}
+    const Intro = () => <Text className="intro" text={"Sustainable Web Developer"}
+                              fontFamily={"'Noto Sans KR', sans-serif"}
                               letterSpacing={1.5}/>;
 
     return (
         <ProfileStyle>
-            <div className="profile-left">
+            {/*<div className="profile-left">
                 <img src={selfie} alt="Einere's selfie" className="selfie"/>
                 <Name/>
                 <Occupation/>
-            </div>
+            </div>*/}
+            <ProfileCard/>
             <div className="information">
                 <Intro/>
                 <ul>
