@@ -5,12 +5,15 @@ import selfie from "../../asset/image/selfie.jpg";
 import {Text} from "../Text/Text";
 
 export const ProfileCard: FunctionComponent = function () {
-    const Name = () => <Text className="name" text={"Einere"} fontSize={2} textAlign="center" padding={"1rem 0"}/>;
-    const Occupation = () => <Text className="occupation" text={"Student"} fontFamily={"'Noto Sans KR', sans-serif"}/>;
+    const name = "Einere";
+    const occupation = "Student";
+    const alt = "Einere's selfie";
+    const Name = () => <Text className="name" text={name} fontSize={2} textAlign="center" padding={"1rem 0"}/>;
+    const Occupation = () => <Text className="occupation" text={occupation} fontFamily={"'Noto Sans KR', sans-serif"}/>;
 
     return (
         <ProfileCardStyle>
-            <img src={selfie} alt="Einere's selfie" className="selfie"/>
+            <img src={selfie} alt={alt} className="selfie"/>
             <Name/>
             <Occupation/>
         </ProfileCardStyle>

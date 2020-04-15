@@ -3,45 +3,21 @@ import {FunctionComponent} from 'react';
 import {ProfileStyle} from "./Profile.style";
 import {Text} from "../Text/Text";
 import {ProfileCard} from "./ProfileCard";
+import {Information} from "./Information";
 
 export const Profile: FunctionComponent = function () {
-    const Intro = () => <Text className="intro" text={"Sustainable Web Developer"}
+    const Intro = () => <Text className="intro"
+                              text={"Sustainable Web Developer"}
                               fontFamily={"'Noto Sans KR', sans-serif"}
-                              letterSpacing={1.5}/>;
+                              letterSpacing={1.5} padding={"1rem 0"}
+                              textAlign={'center'}/>;
 
     return (
         <ProfileStyle>
-            {/*<div className="profile-left">
-                <img src={selfie} alt="Einere's selfie" className="selfie"/>
-                <Name/>
-                <Occupation/>
-            </div>*/}
             <ProfileCard/>
-            <div className="information">
+            <div className="description">
                 <Intro/>
-                <ul>
-                    <li>
-                        <div className="info">
-                            <i className="far fa-calendar-alt"/> dd MM, yyyy
-                        </div>
-
-                    </li>
-                    <li>
-                        <div className="info">
-                            <i className="fa fa-phone"/> +82 10-xxxx-xxxx
-                        </div>
-                    </li>
-                    <li>
-                        <div className="info">
-                            <i className="fa fa-envelope"/> kjwsx23@gmail.com
-                        </div>
-                    </li>
-                    <li>
-                        <div className="info">
-                            <i className="fa fa-home"/> Seoul, Republic of Korea
-                        </div>
-                    </li>
-                </ul>
+                <Information/>
                 <div className="sns">
                     <a target="_blank" rel="noopener noreferrer" href="https://facebook.com/hyungjun.choi.146">
                         <i className="fab fa-facebook-f"/>

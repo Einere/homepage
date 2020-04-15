@@ -6,50 +6,11 @@ export const ProfileStyle = styled.article`
   padding: 1rem 0;
   vertical-align: bottom;
   
-  & > .profile-left {
-    display: inline-block;
-    margin: 0 5rem;
-    
-    & > .selfie {
-      max-width: 300px;
-      max-height: 300px;
-      border-radius: 15px;
-    }
-    
-    & > .name {
-      font-size: 2rem;
-      text-align: center;
-      padding: 1rem 0;
-    }
-    
-    & > .occupation {
-      font-size: 1rem;
-      font-family: 'Noto Sans KR', sans-serif;
-    }
-  }
-  
-  
-  
-  & > .information {
+  & > .description {
     display: inline-block;
     padding: 2rem;
     vertical-align: bottom;
     text-align: left;
-    
-    & > .intro {
-      padding: 1rem 0;
-      font-family: 'Noto Sans KR', sans-serif;
-      letter-spacing: 1.5px;
-    }
-    
-    & > ul {
-      padding: 20px 0;
-      margin: 0 auto;
-      
-      & > li > .info > i {
-        width: 20px;
-      }
-    }
     
     & > .sns > a {
       width: 50px;
@@ -88,17 +49,9 @@ export const ProfileStyle = styled.article`
     width: 100%;
     padding: 1rem 0;
     
-    & > .profile-left {
-      margin: 0 auto;
-    }
-    
-    & > .information {
+    & > .description {
       width: 100%;
       padding: 1rem 0;
-      
-      & > ul {
-        width: 50%;
-      }
     }
   }
 `;
