@@ -8,10 +8,12 @@ interface Prop {
 }
 
 export const Logo: FunctionComponent<Prop> = function ({width}) {
+    const alt = "logo";
+
     return (
         <LogoStyle
             src={logo}
-            alt="logo"
+            alt={alt}
             className="nav-bar-logo"
             width={width}
         />
