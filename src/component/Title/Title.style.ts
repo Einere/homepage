@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const TitleStyle = styled.section`
+export const TitleStyle = styled.div`
   font-size: 3.5rem;
   font-weight: bold;
   text-align: center;
   letter-spacing: 3px;
-  padding-bottom: 3rem;  
+  padding: 3rem 0;  
 
   &::after {
     content: "";
