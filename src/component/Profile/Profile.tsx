@@ -6,6 +6,7 @@ import {ProfileCard} from "./ProfileCard";
 import {Information} from "./Information";
 import {SnsContainer} from "./SnsContainer";
 import {History} from "./History";
+import {InterestedIn} from "./InterestedIn";
 
 export const Profile: FunctionComponent = function () {
     const Intro = () => <Text className="intro"
@@ -22,6 +23,7 @@ export const Profile: FunctionComponent = function () {
                 <Information/>
                 <SnsContainer/>
             </div>
+            <InterestedIn/>
             <History/>
         </ProfileStyle>
     );
