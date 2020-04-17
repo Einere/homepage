@@ -11,7 +11,7 @@ export const SkillItemStyle = styled.div`
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
   }
 
-  & > .service {
+  & > .category {
     font-size: 32px;
     font-weight: bold;
     padding: 10px 0;

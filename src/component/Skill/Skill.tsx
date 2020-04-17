@@ -8,7 +8,7 @@ export const Skill: FunctionComponent = function () {
     const title = 'SKILL';
 
     return (
-        <SkillStyle className="services-area" id="service">
+        <SkillStyle className="skill" id="skill">
             <Title title={title}/>
             <SkillItemContainer/>
         </SkillStyle>

@@ -10,7 +10,7 @@ export const SkillItem: FunctionComponent<SkillData> = function({icons, category
     return (
         <SkillItemStyle>
             {Icons}
-            <div className="service">{category}</div>
+            <div className="category">{category}</div>
             <div className="content">{contents.join(', ')}</div>
         </SkillItemStyle>
     );
