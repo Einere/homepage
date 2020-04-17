@@ -5,7 +5,7 @@ export const TitleStyle = styled.div`
   font-weight: bold;
   text-align: center;
   letter-spacing: 3px;
-  padding: 3rem 0;  
+  margin: 2rem 0;  
 
   &::after {
     content: "";
