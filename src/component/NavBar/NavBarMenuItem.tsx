@@ -7,8 +7,14 @@ interface Prop {
 }
 
 export const NavBarMenuItem: FunctionComponent<Prop> = function ({text}) {
+    function onClickHandle(e: React.MouseEvent<HTMLDivElement>) {
+        const target = e.target as HTMLElement;
+        const element = document.querySelector(`#${target.textContent}`);
+        if(element) element.scrollIntoView();
+    }
+
     return (
-        <NavBarMenuItemStyle className="nav-bar-menu-item">
+        <NavBarMenuItemStyle className="nav-bar-menu-item" onClick={onClickHandle}>
             {text}
         </NavBarMenuItemStyle>
     );

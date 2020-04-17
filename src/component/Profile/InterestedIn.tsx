@@ -6,7 +6,7 @@ import {InterestedInStyle} from "./InterestdIn.style";
 export const InterestedIn: FunctionComponent = function () {
     const title = 'INTERESTED IN';
     const interests = ["UI/UX 🖥", "Data Visualization 📈", "Writing 📝", "Calisthenics💪"];
-    const Interests = interests.map(interest => <li>{interest}</li>);
+    const Interests = interests.map((interest, i) => <li key={i}>{interest}</li>);
 
     return (
         <InterestedInStyle>

@@ -23,8 +23,6 @@ export const Header: FunctionComponent = function () {
                     const currentHeaderHeight = currentHeader?.offsetHeight!;
                     const lastScrollTop = lastScrollTopRef.current;
 
-                    console.log(currentScrollTop, lastScrollTop, currentHeaderHeight);
-
                     if(currentScrollTop === 0) {
                         currentHeader?.classList.remove(scroll.up);
                         return;
