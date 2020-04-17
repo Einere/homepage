@@ -12,7 +12,7 @@ export const Profile: FunctionComponent = function () {
                               text={"Sustainable Web Developer"}
                               fontFamily={"'Noto Sans KR', sans-serif"}
                               letterSpacing={1.5} padding={"1rem 0"}
-                              textAlign={'center'}/>;
+                              textAlign={'left'}/>;
 
     return (
         <ProfileStyle>
