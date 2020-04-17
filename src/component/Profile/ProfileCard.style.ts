@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const ProfileCardStyle = styled.div`
   display: inline-block;
   margin: 0 5rem;
+  padding: 2rem 0;
   
   & > .selfie {
     max-width: 300px;
