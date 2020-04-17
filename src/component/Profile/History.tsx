@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {FunctionComponent} from 'react';
 import {HistoryStyle} from "./History.style";
+import {SubTitle} from "../Title/SubTitle";
 
 const histories = [
     {
@@ -65,7 +66,7 @@ export const History: FunctionComponent = function() {
 
     return (
         <HistoryStyle className="history">
-            <div className="history-title">{title}</div>
+            <SubTitle title={title}/>
             {historyParagraph}
         </HistoryStyle>
     );
