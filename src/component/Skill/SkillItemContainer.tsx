@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {FunctionComponent} from 'react';
-import {SkillItemContainerStyle} from "./SkillItemContainerStyle";
+import {SkillItemContainerStyle} from "./SkillItemContainer.style";
 import {SkillItem} from "./SkillItem";
 import {faJsSquare, faNodeJs, faReact, faVuejs} from "@fortawesome/free-brands-svg-icons";
 import {IconProp} from "@fortawesome/fontawesome-svg-core";
