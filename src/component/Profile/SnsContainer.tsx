@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {FunctionComponent} from 'react';
-import {IconButton} from "./IconButton";
+import {IconButton} from "../IconButton/IconButton";
 import {SnsContainerStyle} from "./SnsContainer.style";
 import {faFacebookF, faInstagram} from "@fortawesome/free-brands-svg-icons";
 
