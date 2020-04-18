@@ -8,12 +8,9 @@ export const NavBarStyle = styled.nav`
   justify-content: space-between;
   align-items: center;
   
-  & .nav-bar-logo, & .nav-bar-menu-icon {
-    cursor: pointer;
-  }
-  
   & .nav-bar-menu-icon {
     display: none;
+    cursor: pointer;
   }
   
   @media (max-width: 992px) {
