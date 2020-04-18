@@ -10,7 +10,7 @@ export const HeaderStyle = styled.header`
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease;
   
-  &.scroll-up {
+  &.scroll-down {
       top: -5rem;
   }
 `;
