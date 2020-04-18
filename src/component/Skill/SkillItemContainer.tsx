@@ -29,7 +29,7 @@ const skills: SkillData[] = [
     },
     {
         icons: [faDocker],
-        category: "DebOps",
+        category: "DevOps",
         contents: ["Docker"]
     },
 ];
