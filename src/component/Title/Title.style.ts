@@ -6,6 +6,7 @@ export const TitleStyle = styled.div`
   text-align: center;
   letter-spacing: 3px;
   margin: 2rem 0;  
+  text-transform: uppercase;
 
   &::after {
     content: "";

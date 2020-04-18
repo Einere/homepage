@@ -15,6 +15,8 @@ export const Header: FunctionComponent = function () {
     const headerRef = useRef<HTMLElement>(null);
 
     function handelScroll() {
+        const navBarMenu = document.querySelector('.nav-bar-menu');
+
         if (timeoutId === null) {
             setTimeoutId(
                 setTimeout(() => {
@@ -23,19 +25,18 @@ export const Header: FunctionComponent = function () {
                     const currentHeaderHeight = currentHeader?.offsetHeight!;
                     const lastScrollTop = lastScrollTopRef.current;
 
-                    console.log(currentScrollTop, lastScrollTop, currentHeaderHeight);
-
                     if(currentScrollTop === 0) {
-                        currentHeader?.classList.remove(scroll.up);
+                        currentHeader?.classList.remove(scroll.down);
                         return;
                     }
 
                     if (Math.abs(lastScrollTop - currentScrollTop) <= scrollDelta) return;
 
                     if (currentScrollTop > currentHeaderHeight && currentScrollTop > lastScrollTop) {
-                        currentHeader?.classList.add(scroll.up);
+                        currentHeader?.classList.add(scroll.down);
+                        navBarMenu?.classList.remove('show');
                     } else {
-                        currentHeader?.classList.remove(scroll.up);
+                        currentHeader?.classList.remove(scroll.down);
                     }
 
                     lastScrollTopRef.current = currentScrollTop;

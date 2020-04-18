@@ -5,11 +5,11 @@ import {Title} from "../Title/Title";
 import {Profile} from "../Profile/Profile";
 
 export const About: FunctionComponent = function () {
-    const title = 'ABOUT';
+    const title = 'about';
 
     return (
         <SectionStyle>
-            <Title title={title}/>
+            <Title id={title} title={title}/>
             <Profile/>
         </SectionStyle>
     );
