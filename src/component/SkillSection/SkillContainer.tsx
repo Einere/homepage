@@ -2,7 +2,7 @@ import * as React from 'react';
 import {FunctionComponent} from 'react';
 import {SkillContainerStyle} from "./SkillContainer.style";
 import {Skill} from "./Skill";
-import {faDocker, faJsSquare, faNodeJs, faReact, faVuejs} from "@fortawesome/free-brands-svg-icons";
+import {faCss3, faDocker, faHtml5, faJsSquare, faNodeJs, faReact, faVuejs} from "@fortawesome/free-brands-svg-icons";
 import {IconProp} from "@fortawesome/fontawesome-svg-core";
 
 export interface SkillData {
@@ -13,9 +13,9 @@ export interface SkillData {
 
 const skills: SkillData[] = [
     {
-        icons: [faJsSquare],
+        icons: [faHtml5, faCss3, faJsSquare],
         category: "Language",
-        contents: ["Java", "JavaScript", "TypeScript", "Functional Programming"]
+        contents: ["HTML", "CSS", "Java", "JavaScript", "TypeScript"]
     },
     {
         icons: [faReact, faVuejs],
