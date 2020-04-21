@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {FunctionComponent} from 'react';
-import {SkillItemContainerStyle} from "./SkillItemContainer.style";
-import {SkillItem} from "./SkillItem";
-import {faDocker, faJsSquare, faNodeJs, faReact, faVuejs} from "@fortawesome/free-brands-svg-icons";
+import {SkillContainerStyle} from "./SkillContainer.style";
+import {Skill} from "./Skill";
+import {faCss3, faDocker, faHtml5, faJsSquare, faNodeJs, faReact, faVuejs} from "@fortawesome/free-brands-svg-icons";
 import {IconProp} from "@fortawesome/fontawesome-svg-core";
 
 export interface SkillData {
@@ -13,9 +13,9 @@ export interface SkillData {
 
 const skills: SkillData[] = [
     {
-        icons: [faJsSquare],
+        icons: [faHtml5, faCss3, faJsSquare],
         category: "Language",
-        contents: ["Java", "JavaScript", "TypeScript", "functional JS"]
+        contents: ["HTML", "CSS", "Java", "JavaScript", "TypeScript"]
     },
     {
         icons: [faReact, faVuejs],
@@ -34,16 +34,16 @@ const skills: SkillData[] = [
     },
 ];
 
-export const SkillItemContainer: FunctionComponent = function () {
+export const SkillContainer: FunctionComponent = function () {
     const SkillItems = skills.map(
-        ({icons, category, contents}, index) => <SkillItem key={index} icons={icons}
-                                                          category={category}
-                                                          contents={contents}/>
+        ({icons, category, contents}, index) => <Skill key={index} icons={icons}
+                                                       category={category}
+                                                       contents={contents}/>
     );
 
     return (
-        <SkillItemContainerStyle>
+        <SkillContainerStyle>
             {SkillItems}
-        </SkillItemContainerStyle>
+        </SkillContainerStyle>
     );
 };

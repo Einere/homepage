@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SkillItemStyle = styled.div`
+export const SkillStyle = styled.div`
   background-color: white;
   padding: 1rem;
   margin: 2rem;

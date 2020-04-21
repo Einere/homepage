@@ -1,15 +1,17 @@
 import * as React from 'react';
 import {FunctionComponent} from 'react';
 import {Header} from '../../component/Header/Header';
-import {About} from "../../component/About/About";
-import {Skill} from "../../component/Skill/Skill";
+import {AboutSection} from "../../component/AboutSection/AboutSection";
+import {SkillSection} from "../../component/SkillSection/SkillSection";
+import {ProjectSection} from "../../component/ProjectSection/ProjectSection";
 
 export const Main: FunctionComponent = function () {
     return (
         <>
             <Header/>
-            <About/>
-            <Skill/>
+            <AboutSection/>
+            <SkillSection/>
+            <ProjectSection/>
         </>
     );
 };
