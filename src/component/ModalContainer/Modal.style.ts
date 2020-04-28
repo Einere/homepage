@@ -67,6 +67,12 @@ export const ModalStyle = styled.section`
       margin-top: 1rem;
       font-size: 1.1rem;
     }
+    
+    & > .modal-github {
+      font-size: 2rem;
+      margin: 1rem;
+      cursor: pointer;
+    }
   }
 `;
 

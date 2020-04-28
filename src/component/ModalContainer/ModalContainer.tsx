@@ -15,12 +15,14 @@ export const ModalContainer: FunctionComponent<ModalType> = function (props) {
         title,
         image,
         content,
+        repository,
         toggleIsOpened,
     } = props;
 
     return (
         <>
-            <Modal isOpened={isOpened} title={title} image={image} content={content} toggleIsOpened={toggleIsOpened}/>
+            <Modal isOpened={isOpened} title={title} image={image} content={content} repository={repository}
+                   toggleIsOpened={toggleIsOpened}/>
             <ModalBackgroundStyle className={isOpened ? 'open' : ''}/>
         </>
     );
