@@ -6,6 +6,7 @@ export const ProjectStyle = styled.article`
   padding-bottom: 1rem;
   text-align: center;
   transition: box-shadow 0.5s ease;
+  cursor: pointer;
 
   &:hover {
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);

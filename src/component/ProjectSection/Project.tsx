@@ -16,10 +16,11 @@ export const Project: FunctionComponent<ProjectType> = function (props) {
         description,
         task,
         repository,
+        onClick,
     } = props;
 
     return (
-        <ProjectStyle>
+        <ProjectStyle onClick={onClick}>
             {thumbnail ?
                 <img src={thumbnail} alt="project thumbnail" className="project-thumbnail"/>
                 :
