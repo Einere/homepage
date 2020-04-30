@@ -1,10 +1,73 @@
-# Shangri-la
+<img src="./src/asset/image/logo.png" alt="project logo"/>
+<h1>Shangri-la</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+</p>
 
-Einere's Homepage
+> Einere's homepage for portfolio
 
-## About
+### 🏠 [Homepage](https://einere.github.io/homepage)
 
-Shangri-la는 모바일 환경을 고려한 포트폴리오용 홈페이지입니다.
-GitHub Page를 이용해 정적 호스팅 할 예정입니다.
+## Introduction
 
-##  
+저의 포트폴리오용 정적 SPA입니다.
+
+## Environment
+
+### Front
+
+- HTML
+- CSS
+- TypeScript
+- React
+- styled-components
+
+### VCS
+
+- Git
+- GitHub
+
+## Architecture
+
+(추후 이미지 삽입)
+정적 웹페이지 이므로 따로 data fetch를 위한 서버는 구성하지 않았습니다.
+
+## Install
+
+```sh
+yarn install
+```
+
+## Usage
+
+```sh
+yarn start
+```
+
+## Run tests
+
+```sh
+yarn test
+```
+
+## Author
+
+👤 **Einere**
+
+* Github: [@Einere](https://github.com/Einere)
+
+## License
+
+[MIT license]()
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!  
+Feel free to check [issues page](https://github.com/Einere/homepage/issues). 
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
