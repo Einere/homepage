@@ -58,7 +58,7 @@ yarn test
 
 ## License
 
-[MIT license]()
+[MIT license](./LICENSE)
 
 ## 🤝 Contributing
 
