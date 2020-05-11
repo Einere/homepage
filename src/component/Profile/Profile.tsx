@@ -12,7 +12,7 @@ export const Profile: FunctionComponent = function () {
     const Intro = () => <Text className="intro"
                               text={"Sustainable Web Developer"}
                               fontFamily={"'Noto Sans KR', sans-serif"}
-                              letterSpacing={1.5} padding={"1rem 0"}
+                              letterSpacing={1.2} padding={"1rem 0"}
                               textAlign={'left'}/>;
 
     return (
