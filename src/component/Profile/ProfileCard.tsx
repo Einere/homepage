@@ -6,16 +6,16 @@ import {Text} from "../Text/Text";
 
 export const ProfileCard: FunctionComponent = function () {
     const name = "Einere";
-    const occupation = "Student";
+    const introduction = "I'm voyaging to Shangri-la 🚀";
     const alt = "Einere's selfie";
     const Name = () => <Text className="name" text={name} fontSize={2} textAlign="center" padding={"1rem 0"}/>;
-    const Occupation = () => <Text className="occupation" text={occupation} fontFamily={"'Noto Sans KR', sans-serif"}/>;
+    const Introduction = () => <Text className="introduction" text={introduction} fontFamily={"'Noto Sans KR', sans-serif"}/>;
 
     return (
         <ProfileCardStyle>
             <img src={selfie2} alt={alt} className="selfie"/>
             <Name/>
-            <Occupation/>
+            <Introduction/>
         </ProfileCardStyle>
     );
 };

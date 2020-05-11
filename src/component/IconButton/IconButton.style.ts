@@ -10,6 +10,7 @@ export const IconButtonStyle = styled.a`
   cursor: pointer;
   margin-right: 5px;
   transition: background-color 0.5s ease;
+  font-size: 16px;
   
   &:hover {
     background-color: #DDC4C2;

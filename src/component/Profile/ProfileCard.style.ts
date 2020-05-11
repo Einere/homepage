@@ -17,7 +17,7 @@ export const ProfileCardStyle = styled.div`
     padding: 1rem 0;
   }
   
-  & > .occupation {
+  & > .introduction {
     font-size: 1rem;
     font-family: 'Noto Sans KR', sans-serif;
   }
