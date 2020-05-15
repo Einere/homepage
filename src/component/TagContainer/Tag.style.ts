@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const TagStyle = styled.span`
-  border: 1px solid rgba(209,221,205,1);;
-  border-radius: 5px;
-  background-color: rgba(209,221,205,0.5);
+  border: ${props => props.theme.color.tasman};
+  border-radius: ${props => props.theme.size.borderRadius}px;
+  background-color: ${props => props.theme.color.transparentTasman};
   padding: 0 5px;
-  margin: 0 2px;
+  margin: 2px;
 `;

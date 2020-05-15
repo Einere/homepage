@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const IconStyle = styled.div`
   display: inline-block;
-  font-size: 3rem;
+  font-size: ${props => props.theme.size.bigIcon};
   margin-right: 0.5rem;
-  color: #CCA7B4;
+  color: ${props => props.theme.color.lily};
 `;

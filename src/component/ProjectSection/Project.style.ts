@@ -1,33 +1,32 @@
 import styled from "styled-components";
 
 export const ProjectStyle = styled.article`
-  width: 400px;
-  margin: 1rem;
-  padding-bottom: 1rem;
+  width: ${props => props.theme.size.projectWidth}px;
+  margin: ${props => props.theme.spacing.default};
+  padding-bottom: ${props => props.theme.spacing.default};
   text-align: center;
-  transition: box-shadow 0.5s ease;
+  transition: box-shadow ${props => props.theme.time.transition}s ease;
   cursor: pointer;
 
   &:hover {
-    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: ${props => props.theme.shadow.card};
   }
 
   & > .project-thumbnail {
     width: 100%;
-    height: 256px;
-    border-radius: 15px;
-    line-height: 256px;
+    height: ${props => props.theme.size.image}px;
+    line-height: ${props => props.theme.size.image}px;
     font-size: 5rem;
-    color: rgba(204, 167, 180, 0.6); 
+    color: ${props => props.theme.color.lily}; 
     object-fit: contain;
     object-position: center;
   }
   
   & > .project-title {
-    font-size: 1.5rem;
+    font-size: ${props => props.theme.size.smallTitle};
   }
   
-  @media(max-width: 992px) {
-    width: 80%;
+  @media(max-width: ${props => props.theme.size.desktopMinWidth}px) {
+    width: ${props => props.theme.size.defaultWidth}%;
   }
 `;

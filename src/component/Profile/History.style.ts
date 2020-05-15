@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const HistoryStyle = styled.div`
-  margin: 2rem 0;
+  margin: ${props => props.theme.spacing.normal} 0;
   
   & > p {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: ${props => props.theme.font.korean};
   }
 `;

@@ -20,34 +20,34 @@ export const ModalStyle = styled.section`
       position: fixed;
       top: 3vh;
       right: 3vw;
-      font-size: 3rem;
-      transition: color 0.5s ease;
+      font-size: ${props => props.theme.size.bigIcon};
+      transition: color ${props => props.theme.time.transition}s ease;
       cursor: pointer;
       
       &:hover {
-        color: rgb(204, 167, 180);
+        color: ${props => props.theme.color.lily};
       }
     }
     
     & > .modal-title {
-      font-size: 3rem;
+      font-size: ${props => props.theme.size.bigIcon};
       font-weight: bold;
     }
     
     & > .modal-hr {
-      width: 20rem;
-      margin: 1rem 0;
+      width: ${props => props.theme.size.horizontalBar};
+      margin: ${props => props.theme.spacing.default} 0;
       
-      @media(max-width: 992px) {
-        width: 10rem;
+      @media(max-width: ${props => props.theme.size.desktopMinWidth}px) {
+        width: calc(${props => props.theme.size.horizontalBar} / 2);
       }
     }
     
     & > .modal-image {
       width: 25vw;
       height: 25vh;
-      min-width: 256px;
-      min-height: 256px;
+      min-width: ${props => props.theme.size.image}px;
+      min-height: ${props => props.theme.size.image}px;
       object-fit: contain;
       object-position: center;
     }
@@ -55,21 +55,21 @@ export const ModalStyle = styled.section`
     & > .modal-none-image {
       width: 25vw;
       height: 25vh;
-      min-width: 256px;
-      min-height: 256px;
-      font-size: 5rem;
+      min-width: ${props => props.theme.size.image}px;
+      min-height: ${props => props.theme.size.image}px;
+      font-size: ${props => props.theme.size.navBar};
       text-align: center;
-      line-height: 256px;
+      line-height: ${props => props.theme.size.image}px;
     }
     
     & > .modal-content {
-      font-family: 'Noto Sans KR', sans-serif;
+      font-family: ${props => props.theme.font.korean};
       margin-top: 1rem;
-      font-size: 1.1rem;
+      font-size: ${props => props.theme.size.modalContent};
     }
     
     & > .modal-github {
-      font-size: 2rem;
+      font-size: ${props => props.theme.size.smallIcon};
       margin: 1rem;
       cursor: pointer;
     }

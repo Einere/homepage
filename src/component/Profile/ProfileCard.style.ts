@@ -2,27 +2,27 @@ import styled from "styled-components";
 
 export const ProfileCardStyle = styled.div`
   display: inline-block;
-  margin: 0 5rem;
-  padding: 2rem 0;
+  margin: 0 ${props => props.theme.spacing.wide};
+  padding: ${props => props.theme.spacing.normal} 0;
   
   & > .selfie {
-    max-width: 300px;
-    max-height: 300px;
-    border-radius: 15px;
+    max-width: ${props => props.theme.size.selfie}px;
+    max-height: ${props => props.theme.size.selfie}px;
+    border-radius: ${props => props.theme.size.borderRadius}px;
   }
   
   & > .name {
-    font-size: 2rem;
+    font-size: ${props => props.theme.size.subTitle};
     text-align: center;
-    padding: 1rem 0;
+    padding: ${props => props.theme.spacing.default} 0;
   }
   
   & > .introduction {
-    font-size: 1rem;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-size: ${props => props.theme.size.relativeDefault};
+    font-family: ${props => props.theme.font.korean};
   }
   
-  @media (max-width: 992px) {
+  @media (max-width: ${props => props.theme.size.desktopMinWidth}px) {
     margin: 0 auto;
   }
 `;

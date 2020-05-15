@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const FooterStyle = styled.section`
-  height: 5rem;
+  height: ${props => props.theme.size.navBar};
   text-align: center;
-  line-height: 5rem;
+  line-height: ${props => props.theme.size.navBar};
   // pure css gradient background 
   // https://codepen.io/P1N2O/pen/pyBNzX
-  background: linear-gradient(-45deg, rgba(209,221,205,1), rgb(204, 167, 180));
+  background: ${props => props.theme.color.footer};
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   

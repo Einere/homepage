@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SubTitleStyle = styled.div`
-  font-size: 2rem;
+  font-size: ${props => props.theme.size.subTitle};
   font-weight: bold;
-  padding: 1rem 0;
+  padding: ${props => props.theme.spacing.default} 0;
 `;

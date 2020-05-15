@@ -4,19 +4,20 @@ export const NavBarMenuStyle = styled.div`
   display: flex;
   height: 100%;
 
-  @media(max-width: 992px) {
+  @media(max-width: ${props => props.theme.size.desktopMinWidth}px) {
     display: block;
     position: absolute;
     height: 0;
     width: 100%;
-    top: 3rem;
+    top: ${props => props.theme.size.mobileNavBarHeight};
     left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: ${props => props.theme.color.transparentDimBlack};
     overflow: hidden;
-    transition: height 0.5s ease;
+    transition: height ${props => props.theme.time.transition}s ease;
     
     &.show {
-      height: 9rem;
+      // 좀 더 우아한 방법이 없을까...
+      height: calc(${props => props.theme.size.mobileNavBarHeight} * 3);
     }
   }
 `;

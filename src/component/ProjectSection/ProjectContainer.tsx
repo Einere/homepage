@@ -34,20 +34,19 @@ const projects: ProjectType[] = [
             start: '2019.11.',
             end: '2019.12.'
         },
-        skill: ["HTML", "CSS", "JS", "React", "Express", "Docker", "Travis", "HTML", "CSS",],
+        skill: ["HTML", "CSS", "JavaScript", "React", "Express", "GraphQL", "Sequelize", "MySQL", "Docker", "Travis CI",],
         description: "웹으로 즐기는 캐치마인드",
         task: ["권한인증 및 접근제어", "게임 진행 로직", "타이머", "문서화"],
         repository: "https://github.com/connect-foundation/2019-15",
     },
     {
         id: 1,
-        // thumbnail: selfie,
         title: 'todo-ts-react',
         type: 'personal',
         period: {
             start: '2020.01.',
         },
-        skill: ["HTML", "CSS", "TypeScript", "React", "Docker"],
+        skill: ["HTML", "CSS", "TypeScript", "React", "styled-components", "Docker", "GitHub Pages"],
         description: "간단한 투두 웹 앱",
         task: ["설계", "개발"],
         repository: "https://github.com/Einere/todo-ts-react",
@@ -60,7 +59,7 @@ const projects: ProjectType[] = [
         period: {
             start: '2020.04.',
         },
-        skill: ["HTML", "CSS", "TypeScript", "React"],
+        skill: ["HTML", "CSS", "TypeScript", "React", "styled-components", "GitHub Pages"],
         description: "포트폴리오용 개인 홈페이지",
         task: ["설계", "개발"],
         repository: "https://github.com/Einere/einere.github.io2",

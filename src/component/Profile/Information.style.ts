@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const InformationStyle = styled.ul`
-  padding: 20px 0;
+  padding: ${props => props.theme.spacing.default} 0;
   margin: 0 auto;
   
   & > li > .info {
-    width: 20px;
+    width: ${props => props.theme.size.miniIcon}px;
     margin-right: 5px;
   }
 
-  @media (max-width: 992px) {
+  @media (max-width: ${props => props.theme.size.desktopMinWidth}px) {
     width: 50%;
   }
 `;

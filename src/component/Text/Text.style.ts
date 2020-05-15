@@ -17,7 +17,7 @@ export const TextStyle = styled.section<Props>`
   padding: ${({padding}) => padding};
   letter-spacing: ${({letterSpacing}) => letterSpacing}px;
   
-  @media(max-width: 992px) {
+  @media(max-width: ${props => props.theme.size.desktopMinWidth}px) {
     text-align: center;
   }
 `;

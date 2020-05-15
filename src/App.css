@@ -6,7 +6,7 @@
 }
 
 body {
-    padding-top: 6rem;
+    padding-top: 5rem;
     box-sizing: border-box;
     /* chrome, safari */
     -webkit-box-sizing: border-box;
@@ -14,6 +14,12 @@ body {
     -moz-box-sizing: border-box;
     word-break: break-all;
     font-family: 'Heebo', sans-serif;
+}
+
+@media (max-width: 1024px) {
+    body {
+        padding-top: 3rem;
+    }
 }
 
 a {
