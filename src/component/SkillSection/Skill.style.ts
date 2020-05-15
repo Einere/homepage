@@ -2,25 +2,23 @@ import styled from "styled-components";
 
 export const SkillStyle = styled.div`
   background-color: white;
-  padding: 1rem;
-  margin: 2rem;
-  transition: all 0.5s ease;
+  padding: ${props => props.theme.spacing.default};
+  margin: ${props => props.theme.spacing.normal};
+  transition: all ${props => props.theme.time.transition}s ease;
 
   &:hover {
     transform: scale(1.02);
-    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: ${props => props.theme.shadow.card};
   }
 
   & > .category {
-    font-size: 32px;
+    font-size: ${props => props.theme.size.subTitle};
     font-weight: bold;
-    padding: 10px 0;
   }
 
   & > .content {
-    font-size: 16px;
-    font-family: 'Noto Sans KR', sans-serif;
-    letter-spacing: 1px;
-    padding: 10px 0;
+    font-size: ${props => props.theme.size.absoluteDefault}px;
+    font-family: ${props => props.theme.font.korean};
+    margin: calc(${props => props.theme.spacing.default} / 2) 0;
   }
 `;

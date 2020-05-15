@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const NavBarStyle = styled.nav`
   width: calc(100% - 10rem);
-  height: 5rem;
+  height: ${props => props.theme.size.navBar};
   margin: 0 auto;
   overflow: hidden;
   display: flex;
@@ -14,14 +14,14 @@ export const NavBarStyle = styled.nav`
     cursor: pointer;
   }
   
-  @media (max-width: 992px) {
-    width: calc(100% - 2rem);;
-    height: 3rem;
+  @media (max-width: ${props => props.theme.size.desktopMinWidth}px) {
+    width: calc(100% - 2rem);
+    height: ${props => props.theme.size.mobileNavBarHeight};
     margin: 0 auto;
     
     & .nav-bar-menu-icon {
       display: block;
-      font-size: 2rem;
+      font-size: ${props => props.theme.size.smallIcon};
     }
   }
 `;

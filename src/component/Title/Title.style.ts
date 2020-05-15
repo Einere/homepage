@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
 export const TitleStyle = styled.div`
-  font-size: 3.5rem;
+  font-size: ${props => props.theme.size.title};
   font-weight: bold;
   text-align: center;
   letter-spacing: 3px;
-  margin: 2rem 0;  
+  margin: ${props => props.theme.spacing.default} 0;  
   text-transform: uppercase;
 
   &::after {
     content: "";
     display: block;
-    width: 12rem;
-    height: 10px;
+    width: ${props => props.theme.size.shortHorizontalBar};
+    height: ${props => props.theme.size.horizontalBarHeight}px;
     margin: 0 auto;
-    background-image: linear-gradient(to right, #B17F94, #CCA7B4, #DDC4C2, #EBDCD5);
+    background-image: ${props => props.theme.color.title};
   }
 `;

@@ -2,21 +2,21 @@ import styled from "styled-components";
 
 export const NavBarMenuItemStyle = styled.div`
   cursor: pointer;
-  width: 5rem;
-  height: 5rem;
-  line-height: 5rem;
-  transition: background-color 0.5s ease;
+  width: ${props => props.theme.size.navBar};
+  height: ${props => props.theme.size.navBar};
+  line-height: ${props => props.theme.size.navBar};
+  transition: background-color ${props => props.theme.time.transition}s ease;
   text-align: center;
   text-transform: uppercase;
   
   &:hover {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: ${props => props.theme.color.transparentGray};
   }
   
-  @media(max-width: 992px) {
+  @media(max-width: ${props => props.theme.size.desktopMinWidth}px) {
     width: 100%;
-    height: 3rem;
-    line-height: 3rem;
+    height: ${props => props.theme.size.mobileNavBarHeight};
+    line-height: ${props => props.theme.size.mobileNavBarHeight};
     color: white;
   }
 `;

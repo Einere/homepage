@@ -6,11 +6,11 @@ export const HeaderStyle = styled.header`
   left: 0;
   width: 100%;
   z-index: 99;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
-  transition: all 0.5s ease;
+  background-color: ${props => props.theme.color.transparentWhite};
+  box-shadow: ${props => props.theme.shadow.header};
+  transition: all ${props => props.theme.time.transition}s ease;
   
   &.scroll-down {
-      top: -5rem;
+      top: -${props => props.theme.size.navBar};
   }
 `;
