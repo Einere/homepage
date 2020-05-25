@@ -16,23 +16,31 @@ export const Modal: FunctionComponent<ModalType> = function (props) {
         toggleIsOpened,
     } = props;
 
+    const modalClose = 'modal-close';
+    const modalTitle = 'modal-title';
+    const modalHr = 'modal-hr';
+    const modalImage = 'modal-image';
+    const modalEmptyImage = 'modal-empty-image';
+    const modalContent = 'modal-content';
+    const modalGitHub = 'modal-github';
+
     const onClickHandler = function () {
         window.open(repository);
     };
 
     return (
         <ModalStyle className={isOpened ? 'open' : ''}>
-            <FontAwesomeIcon icon={faTimes} className="modal-close" onClick={toggleIsOpened}/>
-            <span className="modal-title">{title}</span>
-            <hr className="modal-hr"/>
+            <FontAwesomeIcon icon={faTimes} className={modalClose} onClick={toggleIsOpened}/>
+            <span className={modalTitle}>{title}</span>
+            <hr className={modalHr}/>
             {image ?
-                <img className="modal-image" src={image} alt="project"/> :
-                <div className="modal-none-image">
+                <img className={modalImage} src={image} alt="project"/> :
+                <div className={modalEmptyImage}>
                     <FontAwesomeIcon icon={faImage}/>
                 </div>
             }
-            <p className="modal-content">{content}</p>
-            {repository ? <FontAwesomeIcon icon={faGithub} className="modal-github" onClick={onClickHandler}/> : null}
+            <p className={modalContent}>{content}</p>
+            {repository ? <FontAwesomeIcon icon={faGithub} className={modalGitHub} onClick={onClickHandler}/> : null}
         </ModalStyle>
     );
 };

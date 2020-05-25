@@ -4,12 +4,15 @@ import {InformationStyle} from "./Information.style";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope, faHome, faPhone} from "@fortawesome/free-solid-svg-icons";
 import {faCalendarAlt} from "@fortawesome/free-regular-svg-icons";
+import {informationData} from "../../data/informationData";
 
 export const Information: FunctionComponent = function () {
-    const birth = "dd MM, yyyy";
-    const phone = "+82 10-xxxx-xxxx";
-    const email = "kjwsx23@gmail.com";
-    const location = "Seoul, Republic of Korea";
+    const {
+        birth,
+        phone,
+        email,
+        location
+    } = informationData;
 
     return (
         <InformationStyle>
