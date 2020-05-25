@@ -3,11 +3,14 @@ import {FunctionComponent} from 'react';
 import {IconButton} from "../IconButton/IconButton";
 import {SnsContainerStyle} from "./SnsContainer.style";
 import {faFacebookF, faInstagram, faGithub} from "@fortawesome/free-brands-svg-icons";
+import {snsData} from "../../data/snsData";
 
 export const SnsContainer: FunctionComponent = function() {
-    const facebookHref = "https://www.facebook.com/hyungjun.choi.146";
-    const instagramHref = "https://www.instagram.com/alban_arthuan";
-    const githubHref = "https://github.com/Einere";
+    const {
+        facebookHref,
+        instagramHref,
+        githubHref,
+    } = snsData;
 
     return (
         <SnsContainerStyle className="sns">

@@ -52,7 +52,7 @@ export const ModalStyle = styled.section`
       object-position: center;
     }
     
-    & > .modal-none-image {
+    & > .modal-empty-image {
       width: 25vw;
       height: 25vh;
       min-width: ${props => props.theme.size.image}px;
