@@ -37,6 +37,7 @@
 - 반응형 웹이며, desktop-first design을 적용했습니다.
   - 사용자의 스크롤링에 반응하는 반응형 네비게이션 바를 구현했습니다.
 - styled-components에서 지원하는 theming기능을 이용해, 스타일 시스템을 구축했습니다.
+- throttling을 이용하여, 스크롤 이벤트의 성능을 최적화했습니다.
 
 ## Install
 
