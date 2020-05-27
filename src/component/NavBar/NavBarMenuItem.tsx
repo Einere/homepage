@@ -1,5 +1,5 @@
 import * as React from "react";
-import {forwardRef, RefObject} from "react";
+import {FunctionComponent} from "react";
 import {NavBarMenuItemStyle} from "./NavBarMenuItem.style";
 import {scroll} from "../../util/scroll";
 
@@ -7,16 +7,13 @@ interface Prop {
     text: string;
 }
 
-export const NavBarMenuItem = forwardRef<HTMLDivElement, Prop>(({text}, ref) => {
+export const NavBarMenuItem: FunctionComponent<Prop> = function ({text}) {
     function onClickHandle(e: React.MouseEvent<HTMLDivElement>) {
         const isSafari = /constructor/i.test(window.HTMLElement.toString()) || (function (p) {
             return p.toString() === "[object SafariRemoteNotification]";
             // @ts-ignore
         })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));
         const target = e.target as HTMLElement;
-        const current = (ref as RefObject<HTMLDivElement>).current;
-        current?.classList.remove('show');
-
         const element = document.querySelector(`#${target.textContent}`);
 
         // safari
@@ -30,4 +27,4 @@ export const NavBarMenuItem = forwardRef<HTMLDivElement, Prop>(({text}, ref) => 
             {text}
         </NavBarMenuItemStyle>
     );
-});
+};
