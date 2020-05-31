@@ -2,12 +2,9 @@ import * as React from "react";
 import {FunctionComponent} from "react";
 import logo from "../../asset/image/logo.png";
 import {LogoStyle} from './Logo.style';
+import {LogoProp} from "../../@types";
 
-interface Prop {
-    width: number;
-}
-
-export const Logo: FunctionComponent<Prop> = function ({width}) {
+export const Logo: FunctionComponent<LogoProp> = function ({width}) {
     const alt = "logo";
 
     function onClickHandle() {

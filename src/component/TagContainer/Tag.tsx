@@ -1,12 +1,9 @@
 import * as React from 'react';
 import {FunctionComponent} from 'react';
 import {TagStyle} from "./Tag.style";
+import {TagProp} from "../../@types";
 
-interface Prop {
-    text: string;
-}
-
-export const Tag: FunctionComponent<Prop> = function (props) {
+export const Tag: FunctionComponent<TagProp> = function (props) {
     const {
         text
     } = props;

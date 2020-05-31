@@ -1,18 +1,9 @@
 import * as React from 'react';
-import {FunctionComponent, HTMLAttributes} from 'react';
+import {FunctionComponent} from 'react';
 import {TextStyle} from "./Text.style";
+import {TextProp} from "../../@types";
 
-interface Prop {
-    text: string;
-    fontSize?: number;
-    textAlign?: string;
-    fontFamily?: string;
-    margin?: string;
-    padding?: string;
-    letterSpacing?: number;
-}
-
-export const Text: FunctionComponent<Prop & HTMLAttributes<HTMLDivElement>> = function ({
+export const Text: FunctionComponent<TextProp> = function ({
         text,
         className,
         fontSize= 1,

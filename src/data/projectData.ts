@@ -1,6 +1,6 @@
 import catchMyMind from "../asset/image/catch_my_mind.png";
 import logo from "../asset/image/logo.png";
-import {ProjectType} from "../component/ProjectSection/ProjectContainer";
+import {ProjectType} from "../@types";
 
 export const projects: ProjectType[] = [
     {

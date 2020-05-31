@@ -2,14 +2,9 @@ import * as React from 'react';
 import {FunctionComponent} from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {IconButtonStyle} from "./IconButton.style";
-import {IconProp} from "@fortawesome/fontawesome-svg-core";
+import {IconButtonProp} from "../../@types";
 
-interface Prop {
-    href: string;
-    icon: IconProp;
-}
-
-export const IconButton: FunctionComponent<Prop> = function ({href, icon}) {
+export const IconButton: FunctionComponent<IconButtonProp> = function ({href, icon}) {
     return (
         <IconButtonStyle target="_blank" rel="noopener noreferrer" href={href}>
             <FontAwesomeIcon icon={icon}/>

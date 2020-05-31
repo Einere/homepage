@@ -1,11 +1,6 @@
-export interface ModalData {
-    image?: string;
-    title: string;
-    content: string;
-    repository?: string;
-}
+import {ModalType} from "../@types";
 
-export const defaultModalData: ModalData = {
+export const defaultModalData: ModalType = {
     image: undefined,
     title: '',
     content: '',

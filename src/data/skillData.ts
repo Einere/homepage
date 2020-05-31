@@ -1,7 +1,7 @@
 import {faCss3, faDocker, faHtml5, faJsSquare, faNodeJs, faReact, faVuejs} from "@fortawesome/free-brands-svg-icons";
-import {SkillData} from "../component/SkillSection/SkillContainer";
+import {SkillType} from "../@types";
 
-export const skills: SkillData[] = [
+export const skills: SkillType[] = [
     {
         icons: [faHtml5, faCss3, faJsSquare],
         category: "Language",

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {FunctionComponent} from 'react';
-import {ProjectType} from "./ProjectContainer";
+import {ProjectType} from "../../@types";
 import {ProjectStyle} from "./Project.style";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faImage} from "@fortawesome/free-solid-svg-icons";
@@ -10,12 +10,7 @@ export const Project: FunctionComponent<ProjectType> = function (props) {
     const {
         title,
         thumbnail,
-        type,
-        period,
         skill,
-        description,
-        task,
-        repository,
         onClick,
     } = props;
 
@@ -30,11 +25,7 @@ export const Project: FunctionComponent<ProjectType> = function (props) {
             }
 
             <p className="project-title">{title}</p>
-            {/*<p>{type}</p>*/}
             <TagContainer tags={skill}/>
-            {/*<p>{description}</p>*/}
-            {/*<p>{task}</p>*/}
-            {/*<a href={repository}>repository</a>*/}
         </ProjectStyle>
     );
 };
