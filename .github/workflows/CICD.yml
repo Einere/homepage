@@ -22,5 +22,7 @@ jobs:
         # Runs a set of commands using the runners shell
       - name: Install and deploy
         run: |
+          git config --global user.email "kjwsx23@gmail.com"
+          git config --global user.name "Einere"
           yarn install
           yarn deploy
