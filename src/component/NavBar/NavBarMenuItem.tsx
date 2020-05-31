@@ -2,12 +2,9 @@ import * as React from "react";
 import {FunctionComponent} from "react";
 import {NavBarMenuItemStyle} from "./NavBarMenuItem.style";
 import {scroll} from "../../util/scroll";
+import {NavBarMenuItemProp} from "../../@types";
 
-interface Prop {
-    text: string;
-}
-
-export const NavBarMenuItem: FunctionComponent<Prop> = function ({text}) {
+export const NavBarMenuItem: FunctionComponent<NavBarMenuItemProp> = function ({text}) {
     function onClickHandle(e: React.MouseEvent<HTMLDivElement>) {
         const isSafari = /constructor/i.test(window.HTMLElement.toString()) || (function (p) {
             return p.toString() === "[object SafariRemoteNotification]";

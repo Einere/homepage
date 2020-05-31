@@ -1,12 +1,12 @@
 import * as React from 'react';
 import {FunctionComponent} from 'react';
 import {ModalStyle} from "./Modal.style";
-import {ModalType} from "./ModalContainer";
+import {ModalContainerProp} from "../../@types";
 import {faImage, faTimes} from "@fortawesome/free-solid-svg-icons";
 import {faGithub} from "@fortawesome/free-brands-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-export const Modal: FunctionComponent<ModalType> = function (props) {
+export const Modal: FunctionComponent<ModalContainerProp> = function (props) {
     const {
         isOpened,
         title,

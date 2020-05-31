@@ -2,11 +2,7 @@ import * as React from 'react';
 import {FunctionComponent, useEffect, useRef, useState} from 'react';
 import {NavBar} from "../NavBar/NavBar";
 import {HeaderStyle} from "./Header.style";
-
-enum scroll {
-    up = 'scroll-up',
-    down = 'scroll-down',
-}
+import {Scroll} from "../../@types";
 
 export const Header: FunctionComponent = function () {
     const [timeoutId, setTimeoutId] = useState<number | null>(null);
@@ -25,18 +21,18 @@ export const Header: FunctionComponent = function () {
                     const currentHeaderHeight = currentHeader?.offsetHeight!;
                     const lastScrollTop = lastScrollTopRef.current;
 
-                    if(currentScrollTop === 0) {
-                        currentHeader?.classList.remove(scroll.down);
+                    if (currentScrollTop === 0) {
+                        currentHeader?.classList.remove(Scroll.down);
                         return;
                     }
 
                     if (Math.abs(lastScrollTop - currentScrollTop) <= scrollDelta) return;
 
                     if (currentScrollTop > currentHeaderHeight && currentScrollTop > lastScrollTop) {
-                        currentHeader?.classList.add(scroll.down);
+                        currentHeader?.classList.add(Scroll.down);
                         navBarMenu?.classList.remove('show');
                     } else {
-                        currentHeader?.classList.remove(scroll.down);
+                        currentHeader?.classList.remove(Scroll.down);
                     }
 
                     lastScrollTopRef.current = currentScrollTop;
@@ -48,6 +44,7 @@ export const Header: FunctionComponent = function () {
 
     useEffect(() => {
         window.onscroll = handelScroll;
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

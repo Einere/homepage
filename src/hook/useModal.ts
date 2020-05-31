@@ -1,15 +1,16 @@
 import {useEffect, useState} from "react";
-import {defaultModalData, ModalData} from "../context/ModalContext";
+import {defaultModalData} from "../context/ModalContext";
+import {ModalType} from "../@types";
 import {ModalBackgroundStyle} from "../component/ModalContainer/ModalBackground.style";
 
 interface OptionType {
     initIsOpened?: boolean;
-    initModalData?: ModalData;
+    initModalData?: ModalType;
 }
 
 export function useModal({initIsOpened = false, initModalData = defaultModalData}: OptionType) {
     const [isOpened, setIsOpened] = useState(initIsOpened);
-    const [modalData, setModalData] = useState<ModalData>(initModalData);
+    const [modalData, setModalData] = useState<ModalType>(initModalData);
 
     function toggleIsOpened() {
         setIsOpened(!isOpened);

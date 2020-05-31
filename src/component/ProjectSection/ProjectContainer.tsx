@@ -3,25 +3,9 @@ import {FunctionComponent} from 'react';
 import {ProjectContainerStyle} from "./ProjectContainer.style";
 import {Project} from "./Project";
 import {useModal} from "../../hook/useModal";
-import {ModalData} from "../../context/ModalContext";
+import {ModalType} from "../../@types";
 import {ModalContainer} from "../ModalContainer/ModalContainer";
 import {projects} from "../../data/projectData";
-
-export interface ProjectType {
-    id: number;
-    thumbnail?: string;
-    title: string;
-    type: 'team' | 'personal';
-    period: {
-        start: string | Date;
-        end?: string | Date;
-    };
-    skill: string[];
-    description: string;
-    task: string[];
-    repository: string;
-    onClick?: () => void;
-}
 
 export const ProjectContainer: FunctionComponent = function () {
     const {
@@ -32,7 +16,7 @@ export const ProjectContainer: FunctionComponent = function () {
         toggleIsOpened,
     } = useModal({});
 
-    function makeOnClickHandle(newModalData: ModalData) {
+    function makeOnClickHandle(newModalData: ModalType) {
         return function () {
             setModalData(newModalData);
             setIsOpened(true);

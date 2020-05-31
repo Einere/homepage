@@ -1,12 +1,9 @@
 import * as React from 'react';
 import {FunctionComponent} from 'react';
 import {SubTitleStyle} from "./SubTitle.style";
+import {SubTitleProp} from "../../@types";
 
-interface Prop {
-    title: string;
-}
-
-export const SubTitle: FunctionComponent<Prop> = function ({title}) {
+export const SubTitle: FunctionComponent<SubTitleProp> = function ({title}) {
     return (
         <SubTitleStyle>{title}</SubTitleStyle>
     );

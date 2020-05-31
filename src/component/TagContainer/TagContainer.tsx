@@ -2,12 +2,9 @@ import * as React from 'react';
 import {FunctionComponent} from 'react';
 import {TagContainerStyle} from "./TagContainer.style";
 import {Tag} from "./Tag";
+import {TagContainerProp} from "../../@types";
 
-interface Prop {
-    tags: string[];
-}
-
-export const TagContainer: FunctionComponent<Prop> = function (props) {
+export const TagContainer: FunctionComponent<TagContainerProp> = function (props) {
     const {
         tags
     } = props;
