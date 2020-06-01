@@ -29,8 +29,6 @@ jobs:
         run: |
           git config --global user.email $MY_EMAIL
           git config --global user.name $MY_NAME
-          git config --global user.email
-          git config --global user.name
-          gh-pages -u ${MY_NAME} <${MY_EMAIL}>
+          gh-pages -u $MY_NAME <$MY_EMAIL>
           yarn install
           yarn deploy
