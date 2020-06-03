@@ -29,6 +29,6 @@ jobs:
         run: |
           git config --global user.email $MY_EMAIL
           git config --global user.name $MY_NAME
-          git remote add origin https://github.com/$MY_NAME/homepage.git
+          git remote set-url origin https://$MY_NAME:${{ secrets.MY_PASSWORD }}@github.com/Einere/homepage.git
           yarn install
           yarn deploy
