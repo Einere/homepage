@@ -5,7 +5,10 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
+    "deploy-prepare": "git switch -c gh-pages-deploy origin/gh-pages && git merge main && rm -rf node_modules/.cache",
+    "deploy-build": "next build && next export && touch out/.nojekyll && git add -f out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages",
+    "deploy-cleanup": "git switch main && git branch -D gh-pages-deploy",
+    "deploy": "npm run deploy-prepare && npm run deploy-build && npm run deploy-cleanup"
   },
   "dependencies": {
     "next": "latest",
