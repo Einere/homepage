@@ -26,15 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/api/hello.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/Home.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/about.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/about.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,6 +65,9 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="run.prettier.on.save" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -123,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633936251646</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="env: set typescript">
+      <created>1633937025109</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1633937025109</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,32 +164,41 @@
     <MESSAGE value="env: fix command" />
     <MESSAGE value="env: set package manager to yarn berry" />
     <MESSAGE value="env: set eslint" />
-    <option name="LAST_COMMIT_MESSAGE" value="env: set eslint" />
+    <MESSAGE value="env: set typescript" />
+    <option name="LAST_COMMIT_MESSAGE" value="env: set typescript" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="429" y="29" key="CommitChangelistDialog2" timestamp="1633936251516">
+    <state x="429" y="29" key="CommitChangelistDialog2" timestamp="1633937024992">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="429" y="29" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1633936251516" />
-    <state x="257" y="82" width="1344" height="840" key="DiffContextDialog" timestamp="1633936563682">
+    <state x="429" y="29" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1633937024992" />
+    <state x="257" y="82" width="1344" height="840" key="DiffContextDialog" timestamp="1633937015877">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="257" y="82" width="1344" height="840" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1633936563682" />
+    <state x="257" y="82" width="1344" height="840" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1633937015877" />
     <state x="620" y="148" key="RollbackChangesDialog" timestamp="1633934293056">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="620" y="148" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1633934293056" />
-    <state x="440" y="258" key="Vcs.Push.Dialog.v2" timestamp="1633365706073">
+    <state x="349" y="161" key="SettingsEditor" timestamp="1633937173648">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="258" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1633365706073" />
+    <state x="349" y="161" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1633937173648" />
+    <state x="440" y="258" key="Vcs.Push.Dialog.v2" timestamp="1633937027451">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="258" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1633937027451" />
     <state x="630" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1633936065765">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="630" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1050@0.0.1680.1050" timestamp="1633936065765" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1633361606969">
+    <state x="542" y="264" width="595" height="522" key="find.popup" timestamp="1633937475923">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1633361606969" />
+    <state x="542" y="264" width="595" height="522" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1633937475923" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1633937782518">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1633937782518" />
   </component>
 </project>
