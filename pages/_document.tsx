@@ -6,7 +6,6 @@ class MyDocument extends Document {
       <Html lang="ko">
         <Head>
           <link rel="preload" href="/fonts/FZuanSu/FZuanSu.ttf" as="font" />
-          <title>香格里拉</title>
         </Head>
         <body>
           <Main />

@@ -25,16 +25,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="feat: implements banner">
-      <change afterPath="$PROJECT_DIR$/pages/_document.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/FZuanSu/FZuanSu.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/videos/sea.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/videos/sea.webm" afterDir="false" />
+    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/about.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/Home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Home.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633937854799</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: implements banner">
+      <created>1633951298765</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1633951298765</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,10 +193,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="feat: implements banner" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="429" y="29" key="CommitChangelistDialog2" timestamp="1633951267104">
+    <state x="429" y="29" key="CommitChangelistDialog2" timestamp="1633951298614">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="429" y="29" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1633951267104" />
+    <state x="429" y="29" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1633951298614" />
     <state x="257" y="82" width="1344" height="840" key="DiffContextDialog" timestamp="1633937015877">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -224,10 +225,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="349" y="161" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1633937173648" />
-    <state x="440" y="258" key="Vcs.Push.Dialog.v2" timestamp="1633937857080">
+    <state x="440" y="258" key="Vcs.Push.Dialog.v2" timestamp="1633951302508">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="258" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1633937857080" />
+    <state x="440" y="258" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1633951302508" />
     <state x="630" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1633936065765">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
