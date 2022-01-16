@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import React from "react";
+import Navigation from "./components/Navigation";
 
 const Home: NextPage = () => {
   return (
@@ -26,7 +27,8 @@ const Home: NextPage = () => {
         </video>
         <span className={styles.bannerTitle}>香格里拉</span>
       </div>
-      <header>헤더입니다</header>
+      <Navigation />
+      <div className={styles.tmp} />
     </div>
   );
 };

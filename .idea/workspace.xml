@@ -26,9 +26,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pages/components/Navigation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/Navigation.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_document.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/Home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Home.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +45,8 @@
       <list>
         <option value="tsconfig.json" />
         <option value="TypeScript File" />
+        <option value="CSS File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -63,6 +70,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/styles" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -73,6 +81,7 @@
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="run.prettier.on.save" value="true" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -122,6 +131,12 @@
       <updated>1633771500990</updated>
       <workItem from="1633771507414" duration="16000" />
       <workItem from="1633930372699" duration="1415000" />
+      <workItem from="1633962319911" duration="14000" />
+      <workItem from="1633963415009" duration="339000" />
+      <workItem from="1634455075715" duration="501000" />
+      <workItem from="1635677032848" duration="2284000" />
+      <workItem from="1635855710903" duration="28000" />
+      <workItem from="1642323028791" duration="2319000" />
     </task>
     <task id="LOCAL-00005" summary="env: set eslint">
       <created>1633936251646</created>
@@ -151,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633951298765</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="env: modify static asset uri">
+      <created>1635680817004</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1635680817004</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,13 +212,14 @@
     <MESSAGE value="env: set prettier" />
     <MESSAGE value="feat: banner" />
     <MESSAGE value="feat: implements banner" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implements banner" />
+    <MESSAGE value="env: modify static asset uri" />
+    <option name="LAST_COMMIT_MESSAGE" value="env: modify static asset uri" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="429" y="29" key="CommitChangelistDialog2" timestamp="1633951298614">
+    <state x="429" y="29" key="CommitChangelistDialog2" timestamp="1635680816652">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="429" y="29" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1633951298614" />
+    <state x="429" y="29" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1635680816652" />
     <state x="257" y="82" width="1344" height="840" key="DiffContextDialog" timestamp="1633937015877">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -225,10 +248,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="349" y="161" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1633937173648" />
-    <state x="440" y="258" key="Vcs.Push.Dialog.v2" timestamp="1633951302508">
+    <state x="440" y="258" key="Vcs.Push.Dialog.v2" timestamp="1635680818807">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="440" y="258" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1633951302508" />
+    <state x="440" y="258" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1635680818807" />
     <state x="630" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1633936065765">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -237,9 +260,9 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="542" y="264" width="595" height="522" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1633937475923" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1633937782518">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1635678854956">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1633937782518" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1635678854956" />
   </component>
 </project>

@@ -1,0 +1,8 @@
+.navigation {
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    height: var(--navigation-height);
+    background-color: #000000AA;
+
+}
