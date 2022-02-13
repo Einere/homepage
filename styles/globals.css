@@ -1,29 +1,24 @@
-/* 정상적으로 작동하지만, CORS 에러가 뜬다. */
-/*@font-face {
-  font-family: "FZuanSu";
-  src: url("https://firebasestorage.googleapis.com/v0/b/homepage-229db.appspot.com/o/static%2FFZuanSu.ttf?alt=media&token=d4a5f655-5cf3-4e1d-9a3b-2b1c07d5ce1e");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 :root {
-  --navigation-height: 4rem;
+    --navigation-height: 4rem;
 }
