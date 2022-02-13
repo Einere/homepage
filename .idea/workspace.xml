@@ -8,11 +8,6 @@
       </path>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:style" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
       <path>
@@ -25,21 +20,18 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:style" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:style/4" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/styles/colorSystem.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/components/ColorSelector.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/components/ThemeSelector.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/ColorSelector.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next-env.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/components/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/Navigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/Navigation.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Navigation.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/colorSystem.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/colorSystem.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,6 +235,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="85" y="48" width="1516" height="944" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1642326941123" />
+    <state x="563" y="148" key="RollbackChangesDialog" timestamp="1644757218167">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="563" y="148" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1644757218167" />
     <state x="440" y="258" key="Vcs.Push.Dialog.v2" timestamp="1642326943003">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -251,9 +247,9 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="630" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1050@0.0.1680.1050" timestamp="1644751347640" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1644750582245">
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1644760788166">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1644750582245" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1644760788166" />
   </component>
 </project>

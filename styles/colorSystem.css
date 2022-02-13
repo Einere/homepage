@@ -2,10 +2,12 @@
     /* hue */
     --eweca: 240, 88.6%;
     --light-eweca: 215, 92.5%;
+    --ivory: 43, 100%;
 
     /* saturation */
     --set-eweca: 65.7%;
     --set-light-eweca: 73.9%;
+    --set-ivory: 91.6%;
 
     /* base variables */
     --base-color: var(--light-eweca);
