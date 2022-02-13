@@ -1,0 +1,20 @@
+:root {
+    /* hue */
+    --eweca: 240, 88.6%;
+    --light-eweca: 215, 92.5%;
+
+    /* saturation */
+    --set-eweca: 65.7%;
+    --set-light-eweca: 73.9%;
+
+    /* base variables */
+    --base-color: var(--light-eweca);
+    --base-brightness: var(--set-light-eweca);
+
+    /* presets */
+    --primary: hsla(var(--base-color), var(--base-brightness), 1);
+    --emphasis: hsla(var(--base-color), calc(var(--base-brightness) - 30%), 1);
+    --primary-hover: hsla(var(--base-color), calc(var(--base-brightness) + 10%), 100%);
+    --primary-focus: hsla(var(--base-color), calc(var(--base-brightness) - 10%), 100%);
+
+}

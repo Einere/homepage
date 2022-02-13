@@ -8,6 +8,11 @@
       </path>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:style" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
       <path>
@@ -20,20 +25,21 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:style" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:style/4" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/components/Navigation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/Navigation.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/colorSystem.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/Home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Home.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/Navigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/Navigation.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Navigation.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,15 +51,15 @@
       <list>
         <option value="tsconfig.json" />
         <option value="TypeScript File" />
-        <option value="CSS File" />
         <option value="TypeScript JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="gh-pages-deploy" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -136,7 +142,8 @@
       <workItem from="1634455075715" duration="501000" />
       <workItem from="1635677032848" duration="2284000" />
       <workItem from="1635855710903" duration="28000" />
-      <workItem from="1642323028791" duration="2319000" />
+      <workItem from="1642323028791" duration="2489000" />
+      <workItem from="1644750174948" duration="3114000" />
     </task>
     <task id="LOCAL-00005" summary="env: set eslint">
       <created>1633936251646</created>
@@ -173,7 +180,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635680817004</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="env: setup swr">
+      <created>1642326897597</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1642326897597</updated>
+    </task>
+    <task id="LOCAL-00011" summary="style: implement sticky header">
+      <created>1642326941214</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1642326941214</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +211,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="style/4" />
                       </list>
                     </value>
                   </entry>
@@ -213,56 +234,26 @@
     <MESSAGE value="feat: banner" />
     <MESSAGE value="feat: implements banner" />
     <MESSAGE value="env: modify static asset uri" />
-    <option name="LAST_COMMIT_MESSAGE" value="env: modify static asset uri" />
+    <MESSAGE value="env: setup swr" />
+    <MESSAGE value="style: implement sticky header" />
+    <option name="LAST_COMMIT_MESSAGE" value="style: implement sticky header" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="429" y="29" key="CommitChangelistDialog2" timestamp="1635680816652">
+    <state x="85" y="48" width="1516" height="944" key="CommitChangelistDialog2" timestamp="1642326941123">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="429" y="29" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1635680816652" />
-    <state x="257" y="82" width="1344" height="840" key="DiffContextDialog" timestamp="1633937015877">
+    <state x="85" y="48" width="1516" height="944" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1642326941123" />
+    <state x="440" y="258" key="Vcs.Push.Dialog.v2" timestamp="1642326943003">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="257" y="82" width="1344" height="840" key="DiffContextDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1633937015877" />
-    <state width="1638" height="290" key="GridCell.Tab.0.bottom" timestamp="1633939760317">
+    <state x="440" y="258" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1642326943003" />
+    <state x="630" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1644751347640">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="290" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1633939760317" />
-    <state width="1638" height="290" key="GridCell.Tab.0.center" timestamp="1633939760315">
+    <state x="630" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1050@0.0.1680.1050" timestamp="1644751347640" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1644750582245">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="290" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1633939760315" />
-    <state width="1638" height="290" key="GridCell.Tab.0.left" timestamp="1633939760313">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1638" height="290" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1633939760313" />
-    <state width="1638" height="290" key="GridCell.Tab.0.right" timestamp="1633939760316">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1638" height="290" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1633939760316" />
-    <state x="620" y="148" key="RollbackChangesDialog" timestamp="1633934293056">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="620" y="148" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1633934293056" />
-    <state x="349" y="161" key="SettingsEditor" timestamp="1633937173648">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="349" y="161" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1633937173648" />
-    <state x="440" y="258" key="Vcs.Push.Dialog.v2" timestamp="1635680818807">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="440" y="258" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1635680818807" />
-    <state x="630" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1633936065765">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="630" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1050@0.0.1680.1050" timestamp="1633936065765" />
-    <state x="542" y="264" width="595" height="522" key="find.popup" timestamp="1633937475923">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="542" y="264" width="595" height="522" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1633937475923" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1635678854956">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1635678854956" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1644750582245" />
   </component>
 </project>
