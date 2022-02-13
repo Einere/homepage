@@ -1,7 +1,7 @@
 import React from "react";
 import { ColorSelector } from "./ColorSelector";
 
-const themeList = ["light-eweca", "ivory"];
+const themeList = ["light-eweca", "burly-wood"];
 
 export const ThemeSelector: React.FC = (porps) => {
   const renderColorSelectors = themeList.map((theme) => (
