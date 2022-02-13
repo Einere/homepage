@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/ColorSelector.module.css";
+import styles from "../styles/ColorSelector.module.css";
 
 function getCssBaseColor() {
   return "--base-color";

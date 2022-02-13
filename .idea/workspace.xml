@@ -8,6 +8,11 @@
       </path>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:style" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
       <path>
@@ -20,15 +25,23 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:style" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:style/6" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/einere.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/components/ThemeSelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/ThemeSelector.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/colorSystem.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/colorSystem.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/ColorSelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ColorSelector.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/ThemeSelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ThemeSelector.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +66,16 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/next/dist/pages/_document.d.ts" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="JsBowerSettings">
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1zGPYhhPzKeRDCTrKtNoR7K8Dfj" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -61,6 +84,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
@@ -74,18 +98,20 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.콘솔 글꼴" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/fonts/FZuanSu" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/styles" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/public/fonts/FZuanSu" />
+    </key>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -133,6 +159,13 @@
       <workItem from="1635855710903" duration="28000" />
       <workItem from="1642323028791" duration="2489000" />
       <workItem from="1644750174948" duration="3114000" />
+      <workItem from="1644762145293" duration="246000" />
+      <workItem from="1644762405726" duration="98000" />
+      <workItem from="1644762516491" duration="216000" />
+      <workItem from="1644762849756" duration="175000" />
+      <workItem from="1644763041833" duration="69000" />
+      <workItem from="1644763125954" duration="15000" />
+      <workItem from="1644763156552" duration="739000" />
     </task>
     <task id="LOCAL-00005" summary="env: set eslint">
       <created>1633936251646</created>
@@ -197,11 +230,25 @@
       <option name="project" value="LOCAL" />
       <updated>1644760982518</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="style: add burly-wood theme">
+      <created>1644761489981</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1644761489981</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fix: change theme list">
+      <created>1644761498075</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1644761498075</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -214,7 +261,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="style/4" />
+                        <option value="style/6" />
                       </list>
                     </value>
                   </entry>
@@ -225,7 +272,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="env: update .gitignore, commands" />
@@ -241,28 +287,12 @@
     <MESSAGE value="style: implement sticky header" />
     <MESSAGE value="style: add ivory theme" />
     <MESSAGE value="feat: add ThemeSelector with ColorSelector" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add ThemeSelector with ColorSelector" />
+    <MESSAGE value="style: add burly-wood theme" />
+    <MESSAGE value="fix: change theme list" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: change theme list" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="85" y="48" width="1516" height="944" key="CommitChangelistDialog2" timestamp="1644760982404">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="85" y="48" width="1516" height="944" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1644760982404" />
-    <state x="563" y="148" key="RollbackChangesDialog" timestamp="1644757218167">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="563" y="148" key="RollbackChangesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1644757218167" />
-    <state x="440" y="258" key="Vcs.Push.Dialog.v2" timestamp="1644761234601">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="440" y="258" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1644761234601" />
-    <state x="630" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1644751347640">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="630" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1680.1050@0.0.1680.1050" timestamp="1644751347640" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1644761045857">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1644761045857" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
