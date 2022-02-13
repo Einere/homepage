@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -31,17 +34,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/einere.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="style: set-up tailwind">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/components/ColorSelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ColorSelector.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/components/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/components/ThemeSelector.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ThemeSelector.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/Home.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +62,14 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/node_modules/next/dist/pages/_document.d.ts" root0="SKIP_INSPECTION" />
@@ -165,7 +170,7 @@
       <workItem from="1644762849756" duration="175000" />
       <workItem from="1644763041833" duration="69000" />
       <workItem from="1644763125954" duration="15000" />
-      <workItem from="1644763156552" duration="739000" />
+      <workItem from="1644763156552" duration="3697000" />
     </task>
     <task id="LOCAL-00005" summary="env: set eslint">
       <created>1633936251646</created>
@@ -244,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644761498075</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="style: set-up tailwind">
+      <created>1644763999787</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1644763999787</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +301,8 @@
     <MESSAGE value="feat: add ThemeSelector with ColorSelector" />
     <MESSAGE value="style: add burly-wood theme" />
     <MESSAGE value="fix: change theme list" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: change theme list" />
+    <MESSAGE value="style: set-up tailwind" />
+    <option name="LAST_COMMIT_MESSAGE" value="style: set-up tailwind" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

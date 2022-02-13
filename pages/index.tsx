@@ -1,19 +1,22 @@
 import type { NextPage } from "next";
-import styles from "../styles/Home.module.css";
 import React from "react";
 import Navigation from "../components/Navigation";
 
 const Home: NextPage = () => {
   return (
     <div>
-      <div className={styles.banner}>
+      <div
+        className={
+          "relative w-screen h-banner-height grayscale-70 overflow-hidden"
+        }
+      >
         <video
           width={"100%"}
           loop
           muted
           autoPlay
           playsInline // for mobile
-          className={styles.bannerVideo}
+          className={"min-w-full min-h-full h-auto object-cover object-center"}
         >
           <source
             src="https://firebasestorage.googleapis.com/v0/b/homepage-229db.appspot.com/o/static%2Fsea.mp4?alt=media&token=3ec9816f-0665-4c58-86eb-11d233678c56"
@@ -25,10 +28,16 @@ const Home: NextPage = () => {
           />
           Oops! Your browser doesn't support video. 😢
         </video>
-        <span className={styles.bannerTitle}>香格里拉</span>
+        <span
+          className={
+            "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-8xl font-zuan-su w-fit"
+          }
+        >
+          香格里拉
+        </span>
       </div>
       <Navigation />
-      <div className={styles.tmp} />
+      <div className={"h-screen bg-slate-300"} />
     </div>
   );
 };
