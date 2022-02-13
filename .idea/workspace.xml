@@ -34,10 +34,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="style: set-up tailwind">
+    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="style: migrate vanilla css to tailwind in index.tsx">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/Home.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/Navigation.module.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,7 +170,7 @@
       <workItem from="1644762849756" duration="175000" />
       <workItem from="1644763041833" duration="69000" />
       <workItem from="1644763125954" duration="15000" />
-      <workItem from="1644763156552" duration="3697000" />
+      <workItem from="1644763156552" duration="4194000" />
     </task>
     <task id="LOCAL-00005" summary="env: set eslint">
       <created>1633936251646</created>
@@ -256,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644763999787</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="style: migrate vanilla css to tailwind in index.tsx">
+      <created>1644767162594</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1644767162594</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +309,8 @@
     <MESSAGE value="style: add burly-wood theme" />
     <MESSAGE value="fix: change theme list" />
     <MESSAGE value="style: set-up tailwind" />
-    <option name="LAST_COMMIT_MESSAGE" value="style: set-up tailwind" />
+    <MESSAGE value="style: migrate vanilla css to tailwind in index.tsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="style: migrate vanilla css to tailwind in index.tsx" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

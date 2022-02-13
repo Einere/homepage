@@ -7,7 +7,14 @@ module.exports = {
       "zuan-su": ["FZuanSu"],
     },
     extend: {
+      colors: {
+        primary: "var(--primary)",
+        emphasis: "var(--emphasis)",
+        "primary-hover": "var(--primary-hover)",
+        "primary-focus": "var(--primary-focus)",
+      },
       spacing: {
+        "nav-height": "var(--navigation-height)",
         "banner-height": "calc(100vh - var(--navigation-height))",
       },
       grayscale: {

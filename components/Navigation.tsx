@@ -5,7 +5,11 @@ import { ThemeSelector } from "./ThemeSelector";
 
 const Navigation: NextPage = () => {
   return (
-    <header className={styles.navigation}>
+    <header
+      className={
+        "sticky top-0 w-full h-nav-height text-primary hover:bg-primary-hover"
+      }
+    >
       헤더입니다
       <ThemeSelector />
     </header>
