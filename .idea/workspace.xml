@@ -25,13 +25,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="">
+    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="feat: add ThemeSelector with ColorSelector">
       <change afterPath="$PROJECT_DIR$/pages/components/ColorSelector.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pages/components/ThemeSelector.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/styles/ColorSelector.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/components/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/Navigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/colorSystem.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/colorSystem.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642326941214</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="style: add ivory theme">
+      <created>1644760928332</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1644760928332</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,13 +233,15 @@
     <MESSAGE value="env: modify static asset uri" />
     <MESSAGE value="env: setup swr" />
     <MESSAGE value="style: implement sticky header" />
-    <option name="LAST_COMMIT_MESSAGE" value="style: implement sticky header" />
+    <MESSAGE value="style: add ivory theme" />
+    <MESSAGE value="feat: add ThemeSelector with ColorSelector" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add ThemeSelector with ColorSelector" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="85" y="48" width="1516" height="944" key="CommitChangelistDialog2" timestamp="1642326941123">
+    <state x="85" y="48" width="1516" height="944" key="CommitChangelistDialog2" timestamp="1644760967149">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="85" y="48" width="1516" height="944" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1642326941123" />
+    <state x="85" y="48" width="1516" height="944" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1644760967149" />
     <state x="563" y="148" key="RollbackChangesDialog" timestamp="1644757218167">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
