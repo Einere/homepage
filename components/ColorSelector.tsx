@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styles from "../styles/ColorSelector.module.css";
 
 function getCssBaseColor() {
@@ -28,14 +28,16 @@ export const ColorSelector: React.FC<{ theme: string }> = (props) => {
 
   return (
     <button
-      className={styles.outer}
+      className={
+        "inline-block w-24px h-24px bg-transparent rounded-full border border-solid p-4px cursor-pointer"
+      }
       style={{
         borderColor: `hsl(${getCssColor(theme)}, ${getCssLightness(theme)});`,
       }}
       onClick={changeTheme}
     >
       <div
-        className={styles.palette}
+        className={"w-full h-full rounded-full"}
         style={{
           backgroundColor: `hsl(${getCssColor(theme)}, ${getCssLightness(
             theme

@@ -8,5 +8,5 @@ export const ThemeSelector: React.FC = (porps) => {
     <ColorSelector key={theme} theme={theme} />
   ));
 
-  return <div>{renderColorSelectors}</div>;
+  return <div className={"space-x-1"}>{renderColorSelectors}</div>;
 };
