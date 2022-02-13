@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "../styles/Navigation.module.css";
 import { NextPage } from "next";
 import { ThemeSelector } from "./ThemeSelector";
 

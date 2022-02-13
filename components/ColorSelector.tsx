@@ -1,5 +1,4 @@
-import React, { useMemo } from "react";
-import styles from "../styles/ColorSelector.module.css";
+import React from "react";
 
 function getCssBaseColor() {
   return "--base-color";
