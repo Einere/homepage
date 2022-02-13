@@ -3,11 +3,13 @@
     --eweca: 240, 88.6%;
     --light-eweca: 215, 92.5%;
     --ivory: 43, 100%;
+    --burly-wood: 35, 49.6%;
 
     /* saturation */
     --set-eweca: 65.7%;
     --set-light-eweca: 73.9%;
     --set-ivory: 91.6%;
+    --set-burly-wood: 72.7%;
 
     /* base variables */
     --base-color: var(--light-eweca);
