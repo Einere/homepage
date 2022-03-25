@@ -890,6 +890,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/underscore@npm:^1.11.4":
+  version: 1.11.4
+  resolution: "@types/underscore@npm:1.11.4"
+  checksum: db9f8486bc851b732259e51f42d62aad1ae2158be5724612dc125ece5f5d61c51447f9dea28284c2a0f79cb95e788d01cb5ce97709880019213e69fab0dd1696
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/parser@npm:^4.20.0":
   version: 4.33.0
   resolution: "@typescript-eslint/parser@npm:4.33.0"
@@ -3764,6 +3771,7 @@ resolve@^2.0.0-next.3:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@types/react": ^17.0.27
+    "@types/underscore": ^1.11.4
     autoprefixer: latest
     babel-plugin-transform-define: ^1.3.0
     eslint: ^8.0.0
@@ -3778,6 +3786,7 @@ resolve@^2.0.0-next.3:
     swr: ^1.1.2
     tailwindcss: latest
     typescript: ^4.4.3
+    underscore: ^1.13.2
   languageName: unknown
   linkType: soft
 
@@ -4269,6 +4278,13 @@ typescript@^4.4.3:
     has-symbols: ^1.0.2
     which-boxed-primitive: ^1.0.2
   checksum: 89d950e18fb45672bc6b3c961f1e72c07beb9640c7ceed847b571ba6f7d2af570ae1a2584cfee268b9d9ea1e3293f7e33e0bc29eaeb9f8e8a0bab057ff9e6bba
+  languageName: node
+  linkType: hard
+
+"underscore@npm:^1.13.2":
+  version: 1.13.2
+  resolution: "underscore@npm:1.13.2"
+  checksum: 6ab156c845ccc757fd01d8b9eb28be18ba89ac68993370dd7397a66a95b124f2ba26947fd53e687c084d334429914fc3dd1620d5123b6e0a7cf112cdcf4e859f
   languageName: node
   linkType: hard
 
