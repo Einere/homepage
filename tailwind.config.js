@@ -25,6 +25,9 @@ module.exports = {
       grayscale: {
         70: "70%",
       },
+      transitionProperty: {
+        "scroll-indicator": "width var(--color-properties)",
+      },
     },
   },
   plugins: [],

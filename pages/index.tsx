@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   const shangrila = "香格里拉";
 
   return (
-    <div>
+    <main>
       <div
         className={
           "relative w-screen h-banner-height grayscale-70 overflow-hidden"
@@ -41,7 +41,7 @@ const Home: NextPage = () => {
       </div>
       <Navigation />
       <div className={"h-screen bg-slate-300"} />
-    </div>
+    </main>
   );
 };
 
