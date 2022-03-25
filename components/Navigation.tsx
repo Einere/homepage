@@ -34,7 +34,7 @@ const Navigation: NextPage = () => {
         <div
           ref={scrollIndicatorRef}
           className={
-            "scroll-indicator w-0 h-full bg-primary transition-scroll-indicator duration-300"
+            "scroll-indicator w-0 max-w-full h-full bg-primary transition-scroll-indicator duration-300"
           }
         />
       </div>
