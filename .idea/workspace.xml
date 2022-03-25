@@ -34,9 +34,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="chore: remove unused code">
+    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,9 +69,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/node_modules/next/dist/pages/_document.d.ts" root0="SKIP_INSPECTION" />
-  </component>
   <component name="JsBowerSettings">
     <bower-package value="" />
     <bower.json value="" />
@@ -91,7 +88,7 @@
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/styles" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -172,6 +169,7 @@
       <workItem from="1645581399353" duration="65000" />
       <workItem from="1645581479529" duration="16000" />
       <workItem from="1646831870777" duration="364000" />
+      <workItem from="1648204494947" duration="1494000" />
     </task>
     <task id="LOCAL-00005" summary="env: set eslint">
       <created>1633936251646</created>
@@ -278,7 +276,28 @@
       <option name="project" value="LOCAL" />
       <updated>1644770412318</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="env: update yarn version to latest">
+      <created>1648205950401</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1648205950401</updated>
+    </task>
+    <task id="LOCAL-00021" summary="env: update yarn version to latest">
+      <created>1648205961573</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1648205961573</updated>
+    </task>
+    <task id="LOCAL-00022" summary="env: update yarn version to latest">
+      <created>1648205974234</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1648205974234</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,7 +314,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="style/6" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -306,6 +325,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="env: update .gitignore, commands" />
@@ -328,7 +348,8 @@
     <MESSAGE value="style: migrate vanilla css to tailwind in Navigation.tsx" />
     <MESSAGE value="style: migrate to tailwind in ThemeSelector, ColorSelector" />
     <MESSAGE value="chore: remove unused code" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: remove unused code" />
+    <MESSAGE value="env: update yarn version to latest" />
+    <option name="LAST_COMMIT_MESSAGE" value="env: update yarn version to latest" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
