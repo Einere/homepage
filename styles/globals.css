@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --navigation-height: 4rem;
+    --color-properties: color, background-color, border-color, text-decoration-color, fill, stroke;
+}
+
 html,
 body {
     padding: 0;
@@ -17,9 +22,7 @@ a {
 
 * {
     box-sizing: border-box;
-    transition: color 0.5s, background-color 0.5s;
-}
-
-:root {
-    --navigation-height: 4rem;
+    transition-property: var(--color-properties);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
 }
