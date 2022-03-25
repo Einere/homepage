@@ -3,6 +3,9 @@ import React from "react";
 import Navigation from "../components/Navigation";
 
 const Home: NextPage = () => {
+  const notSupportVideoTag = "Oops! Your browser doesn't support video. 😢";
+  const shangrila = "香格里拉";
+
   return (
     <div>
       <div
@@ -26,14 +29,14 @@ const Home: NextPage = () => {
             src="https://firebasestorage.googleapis.com/v0/b/homepage-229db.appspot.com/o/static%2Fsea.webm?alt=media&token=04a89de7-d913-4bf8-82ac-6fbef57ce2bc"
             type={"video/webm"}
           />
-          Oops! Your browser doesn't support video. 😢
+          {notSupportVideoTag}
         </video>
         <span
           className={
             "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-8xl font-zuan-su w-fit"
           }
         >
-          香格里拉
+          {shangrila}
         </span>
       </div>
       <Navigation />
