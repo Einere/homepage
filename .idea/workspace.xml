@@ -34,12 +34,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="style: limit maximum width to scroll indicator&#10;&#10;모바일같은 경우, 최하단에서 스크롤을 더 하는 경우,">
-      <change afterPath="$PROJECT_DIR$/components/Screen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/ScreenContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="fix:">
       <change beforePath="$PROJECT_DIR$/components/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navigation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -348,7 +344,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648217351011</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="feat: implement one-page-scroll">
+      <created>1649000490259</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1649000490259</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,7 +381,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="env: set package manager to yarn berry" />
     <MESSAGE value="env: set eslint" />
     <MESSAGE value="env: set typescript" />
     <MESSAGE value="env: set prettier" />
@@ -403,7 +405,8 @@
     <MESSAGE value="env: update tailwind and style settings" />
     <MESSAGE value="env: modify font settings&#10;&#10;- 기존 코드는 FZuanSu 폰트가 깔려있는 노트북에서만 정상작동하고, 모바일 등 외부 기기에서는 제대로 폰트가 설정되지 않음.&#10;이를 해결하기 위해, css font-face를 이용해 해결함" />
     <MESSAGE value="style: limit maximum width to scroll indicator&#10;&#10;모바일같은 경우, 최하단에서 스크롤을 더 하는 경우,currentHeight 가 totalHeight 를 넘어 100% 를 넘어버릴 수 있다.&#10;이 경우, 늘어난 너비로 인해 자동으로 뷰포트가 축소 -&gt; 스크롤이 변경 -&gt; percentage가 변하는 무한루프에 빠질 수 있음.&#10;이를 방지하기 위해 최대 너비를 설정함." />
-    <option name="LAST_COMMIT_MESSAGE" value="style: limit maximum width to scroll indicator&#10;&#10;모바일같은 경우, 최하단에서 스크롤을 더 하는 경우,currentHeight 가 totalHeight 를 넘어 100% 를 넘어버릴 수 있다.&#10;이 경우, 늘어난 너비로 인해 자동으로 뷰포트가 축소 -&gt; 스크롤이 변경 -&gt; percentage가 변하는 무한루프에 빠질 수 있음.&#10;이를 방지하기 위해 최대 너비를 설정함." />
+    <MESSAGE value="feat: implement one-page-scroll" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement one-page-scroll" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

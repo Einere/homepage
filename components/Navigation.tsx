@@ -7,18 +7,25 @@ const Navigation: NextPage = () => {
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
+    const target = document.querySelector<HTMLElement>("#screen-container");
+
     const setIndicatorByOffsetY = throttle((e) => {
-      const totalHeight = global.innerHeight;
-      const currentHeight = global.scrollY;
-      const percentage = Math.floor((currentHeight / totalHeight) * 100);
+      const totalHeight = target.scrollHeight;
+      const viewportHeight = target.clientHeight;
+      const currentHeight = target.scrollTop;
+
+      const isLastPage = currentHeight >= totalHeight - viewportHeight;
+      const percentage = isLastPage
+        ? 100
+        : Math.floor((currentHeight / totalHeight) * 100);
 
       scrollIndicatorRef.current.style.width = `${percentage}%`;
     }, 200);
 
-    global.addEventListener("scroll", setIndicatorByOffsetY);
+    target.addEventListener("scroll", setIndicatorByOffsetY);
 
     return () => {
-      global.removeEventListener("scroll", setIndicatorByOffsetY);
+      target.removeEventListener("scroll", setIndicatorByOffsetY);
     };
   }, []);
 
@@ -34,7 +41,7 @@ const Navigation: NextPage = () => {
         <div
           ref={scrollIndicatorRef}
           className={
-            "scroll-indicator w-0 max-w-full h-full bg-primary transition-scroll-indicator duration-300"
+            "scroll-indicator w-0 max-w-full h-full bg-primary transition-scroll-indicator ease-linear duration-300"
           }
         />
       </div>
