@@ -1,13 +1,15 @@
 import type { NextPage } from "next";
 import React from "react";
 import Navigation from "../components/Navigation";
+import { ScreenContainer } from "../components/ScreenContainer";
+import { Screen } from "../components/Screen";
 
 const Home: NextPage = () => {
   const notSupportVideoTag = "Oops! Your browser doesn't support video. 😢";
   const shangrila = "香格里拉";
 
   return (
-    <main>
+    <div>
       <div
         className={
           "relative w-screen h-banner-height grayscale-70 overflow-hidden"
@@ -40,8 +42,17 @@ const Home: NextPage = () => {
         </span>
       </div>
       <Navigation />
-      <div className={"h-screen bg-slate-300"} />
-    </main>
+      <ScreenContainer>
+        <Screen className={"bg-red-100 flex flex-col"}>
+          <span className={"bg-amber-100 text-right"}>
+            {"배너로 돌아가고 싶다면 부드럽게 스크롤해주세요."}
+          </span>
+        </Screen>
+        <Screen className={"bg-blue-100"} />
+        <Screen className={"bg-green-100"} />
+        <Screen className={"bg-gray-400"} />
+      </ScreenContainer>
+    </div>
   );
 };
 

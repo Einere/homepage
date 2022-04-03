@@ -34,9 +34,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="fix:">
+      <change beforePath="$PROJECT_DIR$/components/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navigation.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,15 +47,15 @@
       <list>
         <option value="tsconfig.json" />
         <option value="TypeScript File" />
-        <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="style/6" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,6 +67,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/next/dist/pages/_document.d.ts" root0="SKIP_INSPECTION" />
   </component>
   <component name="JsBowerSettings">
     <bower-package value="" />
@@ -170,6 +172,9 @@
       <workItem from="1645581479529" duration="16000" />
       <workItem from="1646831870777" duration="364000" />
       <workItem from="1648204494947" duration="1494000" />
+      <workItem from="1648300047065" duration="169000" />
+      <workItem from="1648457423305" duration="39000" />
+      <workItem from="1648990128269" duration="2459000" />
     </task>
     <task id="LOCAL-00005" summary="env: set eslint">
       <created>1633936251646</created>
@@ -297,7 +302,56 @@
       <option name="project" value="LOCAL" />
       <updated>1648205974234</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="env: add underscore for throttle">
+      <created>1648216259768</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1648216259768</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat: implement scroll indicator">
+      <created>1648216296624</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1648216296624</updated>
+    </task>
+    <task id="LOCAL-00025" summary="chore: apply symantic markup">
+      <created>1648216318914</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1648216318914</updated>
+    </task>
+    <task id="LOCAL-00026" summary="env: update tailwind and style settings">
+      <created>1648216345326</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1648216345326</updated>
+    </task>
+    <task id="LOCAL-00027" summary="env: modify font settings&#10;&#10;- 기존 코드는 FZuanSu 폰트가 깔려있는 노트북에서만 정상작동하고, 모바일 등 외부 기기에서는 제대로 폰트가 설정되지 않음.&#10;이를 해결하기 위해, css font-face를 이용해 해결함">
+      <created>1648217033314</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1648217033314</updated>
+    </task>
+    <task id="LOCAL-00028" summary="style: limit maximum width to scroll indicator&#10;&#10;모바일같은 경우, 최하단에서 스크롤을 더 하는 경우,currentHeight 가 totalHeight 를 넘어 100% 를 넘어버릴 수 있다.&#10;이 경우, 늘어난 너비로 인해 자동으로 뷰포트가 축소 -&gt; 스크롤이 변경 -&gt; percentage가 변하는 무한루프에 빠질 수 있음.&#10;이를 방지하기 위해 최대 너비를 설정함.">
+      <created>1648217351011</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1648217351011</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feat: implement one-page-scroll">
+      <created>1649000490259</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1649000490259</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,12 +379,8 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="env: update .gitignore, commands" />
-    <MESSAGE value="env: fix command" />
-    <MESSAGE value="env: set package manager to yarn berry" />
     <MESSAGE value="env: set eslint" />
     <MESSAGE value="env: set typescript" />
     <MESSAGE value="env: set prettier" />
@@ -349,7 +399,14 @@
     <MESSAGE value="style: migrate to tailwind in ThemeSelector, ColorSelector" />
     <MESSAGE value="chore: remove unused code" />
     <MESSAGE value="env: update yarn version to latest" />
-    <option name="LAST_COMMIT_MESSAGE" value="env: update yarn version to latest" />
+    <MESSAGE value="env: add underscore for throttle" />
+    <MESSAGE value="feat: implement scroll indicator" />
+    <MESSAGE value="chore: apply symantic markup" />
+    <MESSAGE value="env: update tailwind and style settings" />
+    <MESSAGE value="env: modify font settings&#10;&#10;- 기존 코드는 FZuanSu 폰트가 깔려있는 노트북에서만 정상작동하고, 모바일 등 외부 기기에서는 제대로 폰트가 설정되지 않음.&#10;이를 해결하기 위해, css font-face를 이용해 해결함" />
+    <MESSAGE value="style: limit maximum width to scroll indicator&#10;&#10;모바일같은 경우, 최하단에서 스크롤을 더 하는 경우,currentHeight 가 totalHeight 를 넘어 100% 를 넘어버릴 수 있다.&#10;이 경우, 늘어난 너비로 인해 자동으로 뷰포트가 축소 -&gt; 스크롤이 변경 -&gt; percentage가 변하는 무한루프에 빠질 수 있음.&#10;이를 방지하기 위해 최대 너비를 설정함." />
+    <MESSAGE value="feat: implement one-page-scroll" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement one-page-scroll" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
