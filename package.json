@@ -12,6 +12,7 @@
     "deploy": "npm run deploy-prepare && npm run deploy-build && npm run deploy-cleanup"
   },
   "dependencies": {
+    "@react-three/fiber": "^8.2.1",
     "autoprefixer": "latest",
     "firebase": "^9.2.0",
     "next": "latest",
@@ -20,6 +21,7 @@
     "react-dom": "latest",
     "swr": "^1.1.2",
     "tailwindcss": "latest",
+    "three": "^0.142.0",
     "underscore": "^1.13.2"
   },
   "devDependencies": {

@@ -34,8 +34,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="fix:">
-      <change beforePath="$PROJECT_DIR$/components/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navigation.tsx" afterDir="false" />
+    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/components/screenInMain/Scene.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/api/hello.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,9 +72,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/node_modules/next/dist/pages/_document.d.ts" root0="SKIP_INSPECTION" />
   </component>
   <component name="JsBowerSettings">
     <bower-package value="" />
@@ -175,6 +177,7 @@
       <workItem from="1648300047065" duration="169000" />
       <workItem from="1648457423305" duration="39000" />
       <workItem from="1648990128269" duration="2459000" />
+      <workItem from="1658654351861" duration="1278000" />
     </task>
     <task id="LOCAL-00005" summary="env: set eslint">
       <created>1633936251646</created>
@@ -351,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649000490259</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="env: update react version to 18">
+      <created>1658654528265</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1658654528265</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,7 +391,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="env: set eslint" />
     <MESSAGE value="env: set typescript" />
     <MESSAGE value="env: set prettier" />
     <MESSAGE value="feat: banner" />
@@ -406,7 +415,8 @@
     <MESSAGE value="env: modify font settings&#10;&#10;- 기존 코드는 FZuanSu 폰트가 깔려있는 노트북에서만 정상작동하고, 모바일 등 외부 기기에서는 제대로 폰트가 설정되지 않음.&#10;이를 해결하기 위해, css font-face를 이용해 해결함" />
     <MESSAGE value="style: limit maximum width to scroll indicator&#10;&#10;모바일같은 경우, 최하단에서 스크롤을 더 하는 경우,currentHeight 가 totalHeight 를 넘어 100% 를 넘어버릴 수 있다.&#10;이 경우, 늘어난 너비로 인해 자동으로 뷰포트가 축소 -&gt; 스크롤이 변경 -&gt; percentage가 변하는 무한루프에 빠질 수 있음.&#10;이를 방지하기 위해 최대 너비를 설정함." />
     <MESSAGE value="feat: implement one-page-scroll" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement one-page-scroll" />
+    <MESSAGE value="env: update react version to 18" />
+    <option name="LAST_COMMIT_MESSAGE" value="env: update react version to 18" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

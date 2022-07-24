@@ -3,6 +3,7 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import { ScreenContainer } from "../components/ScreenContainer";
 import { Screen } from "../components/Screen";
+import Scene from "../components/screenInMain/Scene";
 
 const Home: NextPage = () => {
   const notSupportVideoTag = "Oops! Your browser doesn't support video. 😢";
@@ -43,11 +44,12 @@ const Home: NextPage = () => {
       </div>
       <Navigation />
       <ScreenContainer>
-        <Screen className={"bg-red-100 flex flex-col"}>
+        {/*<Screen className={"bg-red-100 flex flex-col"}>
           <span className={"bg-amber-100 text-right"}>
             {"배너로 돌아가고 싶다면 부드럽게 스크롤해주세요."}
           </span>
-        </Screen>
+        </Screen>*/}
+        <Scene />
         <Screen className={"bg-blue-100"} />
         <Screen className={"bg-green-100"} />
         <Screen className={"bg-gray-400"} />
