@@ -1,20 +1,23 @@
-import React, { useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import React, { Suspense, useRef, useState } from "react";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { Screen } from "../Screen";
 import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 function WolfMesh(props: JSX.IntrinsicElements["mesh"]) {
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
   const mesh = useRef<THREE.Mesh>(null);
 
-  useFrame(
+  const gltf = useLoader(GLTFLoader, "/model/lowPolyWolf/scene.gltf");
+
+  /*useFrame(
     (state, delta) =>
       (mesh.current.rotation.y = mesh.current.rotation.z += 0.01)
-  );
+  );*/
 
   return (
-    <mesh
+    /*<mesh
       {...props}
       ref={mesh}
       onClick={(event) => setActive(!active)}
@@ -23,7 +26,8 @@ function WolfMesh(props: JSX.IntrinsicElements["mesh"]) {
     >
       <boxGeometry />
       <meshStandardMaterial wireframe={hovered} />
-    </mesh>
+    </mesh>*/
+    <primitive object={gltf.scene} scale={0.01} />
   );
 }
 
@@ -32,7 +36,9 @@ function CustomCanvas() {
     <Canvas>
       <ambientLight />
       <directionalLight />
-      <WolfMesh />
+      <Suspense fallback={null}>
+        <WolfMesh />
+      </Suspense>
     </Canvas>
   );
 }

@@ -34,13 +34,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/components/screenInMain/Scene.tsx" afterDir="false" />
+    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="fix: loading custom model">
+      <change afterPath="$PROJECT_DIR$/public/model/lowPolyWolf/license.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/model/lowPolyWolf/scene.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/model/lowPolyWolf/scene.gltf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/model/lowPolyWolf/textures/Wolf_Material_baseColor.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/api/hello.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/screenInMain/Scene.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/screenInMain/Scene.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +177,7 @@
       <workItem from="1648300047065" duration="169000" />
       <workItem from="1648457423305" duration="39000" />
       <workItem from="1648990128269" duration="2459000" />
-      <workItem from="1658654351861" duration="1278000" />
+      <workItem from="1658654351861" duration="2169000" />
     </task>
     <task id="LOCAL-00005" summary="env: set eslint">
       <created>1633936251646</created>
@@ -361,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658654528265</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="feat: implement basic threejs scene">
+      <created>1658656061517</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1658656061517</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,8 +398,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="env: set typescript" />
-    <MESSAGE value="env: set prettier" />
     <MESSAGE value="feat: banner" />
     <MESSAGE value="feat: implements banner" />
     <MESSAGE value="env: modify static asset uri" />
@@ -416,7 +421,9 @@
     <MESSAGE value="style: limit maximum width to scroll indicator&#10;&#10;모바일같은 경우, 최하단에서 스크롤을 더 하는 경우,currentHeight 가 totalHeight 를 넘어 100% 를 넘어버릴 수 있다.&#10;이 경우, 늘어난 너비로 인해 자동으로 뷰포트가 축소 -&gt; 스크롤이 변경 -&gt; percentage가 변하는 무한루프에 빠질 수 있음.&#10;이를 방지하기 위해 최대 너비를 설정함." />
     <MESSAGE value="feat: implement one-page-scroll" />
     <MESSAGE value="env: update react version to 18" />
-    <option name="LAST_COMMIT_MESSAGE" value="env: update react version to 18" />
+    <MESSAGE value="feat: implement basic threejs scene" />
+    <MESSAGE value="fix: loading custom model" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: loading custom model" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
