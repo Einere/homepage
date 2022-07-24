@@ -39,6 +39,7 @@ function CustomCanvas() {
     <Canvas>
       <ambientLight />
       <directionalLight />
+      {/* @ts-ignore */}
       <PerspectiveCamera
         ref={cameraRef}
         makeDefault={true}
