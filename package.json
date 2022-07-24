@@ -16,8 +16,8 @@
     "firebase": "^9.2.0",
     "next": "latest",
     "postcss": "latest",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "latest",
+    "react-dom": "latest",
     "swr": "^1.1.2",
     "tailwindcss": "latest",
     "underscore": "^1.13.2"
