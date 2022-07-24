@@ -12,6 +12,7 @@
     "deploy": "npm run deploy-prepare && npm run deploy-build && npm run deploy-cleanup"
   },
   "dependencies": {
+    "@react-three/drei": "^9.17.3",
     "@react-three/fiber": "^8.2.1",
     "autoprefixer": "latest",
     "firebase": "^9.2.0",
