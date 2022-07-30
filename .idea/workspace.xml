@@ -34,10 +34,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="">
+    <list default="true" id="957d91e8-21af-433e-a21c-860d05fde119" name="Default Changelist" comment="fix: show rotating 3d wolf&#10;&#10;1. glft 특성 상, uri로 필요한 부수 파일을 가져온다.&#10;2. Google의 firestore를 사용 시, token 파라미터 값 및 uri 주소 이슈로 인해 제대로 불러오지 못함.&#10;3. 이를 해결하기 위해 base64 인코딩을 해서 파일을 직접 임베딩하고, 이 파일을 firestore 에 업로드&#10;4. 해당 파일을 로더로 불러와 해결">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/screenInMain/Scene.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/screenInMain/Scene.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,9 +46,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="tsconfig.json" />
-        <option value="TypeScript File" />
         <option value="CSS File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -104,7 +102,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -384,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658666042756</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="fix: show rotating 3d wolf&#10;&#10;1. glft 특성 상, uri로 필요한 부수 파일을 가져온다.&#10;2. Google의 firestore를 사용 시, token 파라미터 값 및 uri 주소 이슈로 인해 제대로 불러오지 못함.&#10;3. 이를 해결하기 위해 base64 인코딩을 해서 파일을 직접 임베딩하고, 이 파일을 firestore 에 업로드&#10;4. 해당 파일을 로더로 불러와 해결">
+      <created>1659192244209</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1659192244209</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,8 +419,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: implements banner" />
-    <MESSAGE value="env: modify static asset uri" />
     <MESSAGE value="env: setup swr" />
     <MESSAGE value="style: implement sticky header" />
     <MESSAGE value="style: add ivory theme" />
@@ -439,7 +442,9 @@
     <MESSAGE value="feat: implement basic threejs scene" />
     <MESSAGE value="fix: loading custom model" />
     <MESSAGE value="fix: show rotating 3d wolf" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: show rotating 3d wolf" />
+    <MESSAGE value="fix: show rotating 3d wolf&#10;&#10;1. glft 특성 상, uri로 필요한 부수 파일을 가져온다.&#10;2. Google의 firestore를 사용 시, token 파라미터 값 및 uri 주소 이슈로 인해 제대로 불러오지 못함.&#10;3. 이를 해결하기 위해 base64 인코딩을 해서 파일을 직접 임베딩함" />
+    <MESSAGE value="fix: show rotating 3d wolf&#10;&#10;1. glft 특성 상, uri로 필요한 부수 파일을 가져온다.&#10;2. Google의 firestore를 사용 시, token 파라미터 값 및 uri 주소 이슈로 인해 제대로 불러오지 못함.&#10;3. 이를 해결하기 위해 base64 인코딩을 해서 파일을 직접 임베딩하고, 이 파일을 firestore 에 업로드&#10;4. 해당 파일을 로더로 불러와 해결" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: show rotating 3d wolf&#10;&#10;1. glft 특성 상, uri로 필요한 부수 파일을 가져온다.&#10;2. Google의 firestore를 사용 시, token 파라미터 값 및 uri 주소 이슈로 인해 제대로 불러오지 못함.&#10;3. 이를 해결하기 위해 base64 인코딩을 해서 파일을 직접 임베딩하고, 이 파일을 firestore 에 업로드&#10;4. 해당 파일을 로더로 불러와 해결" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
