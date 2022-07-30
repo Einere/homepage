@@ -2,13 +2,15 @@ import React, { Suspense, useRef, useState } from "react";
 import { Camera, Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { Screen } from "../Screen";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 
 function WolfMesh(props: JSX.IntrinsicElements["mesh"]) {
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
 
-  const gltf = useLoader(GLTFLoader, "/model/lowPolyWolf/scene.gltf");
+  const gltf = useLoader(
+    GLTFLoader,
+    "https://firebasestorage.googleapis.com/v0/b/homepage-229db.appspot.com/o/static%2FlowPolyWolf%2Fscene.gltf?alt=media&token=d55f9671-5a8f-41ef-a9c8-39908de7dec9"
+  );
 
   useFrame((state, delta, frame) => {
     const mesh = gltf.scene.children[0];
@@ -21,7 +23,7 @@ function WolfMesh(props: JSX.IntrinsicElements["mesh"]) {
     <>
       <primitive
         object={gltf.scene}
-        scale={0.1}
+        scale={0.01}
         onPointerOver={(e) => setHover(true)}
         onPointerOut={(e) => setHover(false)}
         onClick={(e) =>
@@ -39,8 +41,9 @@ function CustomCanvas() {
     <Canvas>
       <ambientLight />
       <directionalLight />
+      {/* 모바일 환경을 고려하여 조작 금지 */}
       {/* @ts-ignore */}
-      <PerspectiveCamera
+      {/*<PerspectiveCamera
         ref={cameraRef}
         makeDefault={true}
         position={[0, 0, 50]}
@@ -49,9 +52,9 @@ function CustomCanvas() {
         camera={cameraRef.current}
         makeDefault={true}
         enableZoom={false}
-      />
+      />*/}
       <Suspense fallback={null}>
-        <WolfMesh position={[0, 0, -50]} />
+        <WolfMesh position={[0, 0, -10]} />
       </Suspense>
     </Canvas>
   );
