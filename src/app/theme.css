@@ -1,0 +1,28 @@
+/* @NOTICE: https://tailwindcss.com/docs/theme */
+@theme {
+  /* Font */
+  --font-sans: "GowunDodum-Regular";
+  --font-mono: D2Coding;
+
+  /* Color */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-pink-*: initial;
+  --color-pink-100: #fff7f7;
+  --color-pink-200: #ffdddd;
+  --color-pink-300: #ffc4c4;
+  --color-pink-400: #ffaaaa;
+  --color-pink-500: #ff9191;
+  --color-pink-600: #ff7777;
+  --color-pink-700: #ff5e5e;
+
+  --color-blue-*: initial;
+  --color-blue-100: #f7fbff;
+  --color-blue-200: #ddeeff;
+  --color-blue-300: #c4e2ff;
+  --color-blue-400: #aad5ff;
+  --color-blue-500: #91c8ff;
+  --color-blue-600: #77bcff;
+  --color-blue-700: #5eafff;
+}
