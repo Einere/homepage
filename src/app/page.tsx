@@ -1,23 +1,22 @@
-export default function Home() {
+import Image from "next/image";
+import RecentPostsSection from "@/app/components/RecentPostsSection";
+
+export default function HomePage() {
   return (
-    <div>
-      <main>
-        <div className="columns-2">
-          <p className="text-base">안녕하세요!</p>
-          <p className="text-lg">안녕하세요!</p>
-          <p className="text-xl">안녕하세요!</p>
-          <p className="text-2xl">안녕하세요!</p>
-
-          <p className="text-base font-bold">안녕하세요!</p>
-          <p className="text-lg font-bold">안녕하세요!</p>
-          <p className="text-xl font-bold">안녕하세요!</p>
-          <p className="text-2xl font-bold">안녕하세요!</p>
+    <main>
+      <h1 className="text-4xl">이 공간을 찾아주신 당신을 환영합니다.</h1>
+      <div className="columns-2">
+        <Image
+          src="/image-from-rawpixel-id-13194800.jpg"
+          alt="분홍색과 푸른색의 수국 꽃의 압화 사진"
+          width="673"
+          height="1200"
+          className="rounded-xl"
+        />
+        <div>
+          <RecentPostsSection />
         </div>
-
-        <p className="text-primary">프라이머리 색상은 무엇인가요?</p>
-        <p className="text-secondary">세컨더리 색상은 무엇인가요?</p>
-      </main>
-      <footer></footer>
-    </div>
+      </div>
+    </main>
   );
 }
