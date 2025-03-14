@@ -18,6 +18,13 @@
     --color-primary: var(--color-blue-500);
     --color-secondary: var(--color-blue-400);
   }
+
+  a {
+    text-decoration-line: underline;
+  }
+  header a {
+    text-decoration-line: none;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
