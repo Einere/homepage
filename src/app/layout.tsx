@@ -4,7 +4,10 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 
 export const metadata: Metadata = {
-  title: "香格里拉",
+  title: {
+    template: "%s | 香格里拉",
+    default: "香格里拉",
+  },
   description: "이상향을 좇는 여행자의 작은 공간에 오신 것을 환영합니다.",
 };
 

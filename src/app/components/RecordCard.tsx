@@ -1,13 +1,13 @@
 import Link from "next/link";
 
-export interface PostCardProps {
+export interface RecordCardProps {
   url: string;
   title: string;
   description: string;
   createdDate: number;
 }
 
-export default function PostCard(props: PostCardProps) {
+export default function RecordCard(props: RecordCardProps) {
   const { url, title, description, createdDate } = props;
 
   return (

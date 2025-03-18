@@ -16,7 +16,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/blog" className="text-2xl">
+            <Link href="/records" className="text-2xl">
               여정의 기록들
             </Link>
           </li>

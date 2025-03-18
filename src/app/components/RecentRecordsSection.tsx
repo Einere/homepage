@@ -1,10 +1,10 @@
-import SectionWithPostcards from "@/app/components/SectionWithPostcards";
+import SectionWithRecordCards from "@/app/components/SectionWithRecordCards";
 
-export default function RecentPostsSection() {
+export default function RecentRecordsSection() {
   return (
-    <SectionWithPostcards
+    <SectionWithRecordCards
       title="새로운 여정의 기록들"
-      postList={[
+      records={[
         {
           title: "기록 1",
           description: "기록 1입니다.",
