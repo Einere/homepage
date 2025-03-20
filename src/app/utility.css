@@ -4,3 +4,6 @@
 @utility text-secondary {
   color: var(--color-secondary);
 }
+@utility text-emphasis {
+  color: var(--color-emphasis);
+}

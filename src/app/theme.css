@@ -8,21 +8,51 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --color-pink-*: initial;
-  --color-pink-100: #fff7f7;
-  --color-pink-200: #ffdddd;
-  --color-pink-300: #ffc4c4;
-  --color-pink-400: #ffaaaa;
-  --color-pink-500: #ff9191;
-  --color-pink-600: #ff7777;
-  --color-pink-700: #ff5e5e;
+  --lightness-100: 98.4%;
+  --lightness-200: 93.3%;
+  --lightness-300: 88.4%;
+  --lightness-400: 83.3%;
+  --lightness-500: 78.4%;
+  --lightness-600: 73.3%;
+  --lightness-700: 68.4%;
+  --lightness-800: 63.5%;
+  --lightness-900: 58.4%;
 
+  --base-pink: 0, 100%;
+  --color-pink-*: initial;
+  --color-pink-100: hsl(var(--base-pink), var(--lightness-100));
+  --color-pink-200: hsl(var(--base-pink), var(--lightness-200));
+  --color-pink-300: hsl(var(--base-pink), var(--lightness-300));
+  --color-pink-400: hsl(var(--base-pink), var(--lightness-400));
+  --color-pink-500: hsl(var(--base-pink), var(--lightness-500));
+  --color-pink-600: hsl(var(--base-pink), var(--lightness-600));
+  --color-pink-700: hsl(var(--base-pink), var(--lightness-700));
+  --color-pink-800: hsl(var(--base-pink), var(--lightness-800));
+  --color-pink-900: hsl(var(--base-pink), var(--lightness-900));
+
+  --base-blue: 210, 100%;
   --color-blue-*: initial;
-  --color-blue-100: #f7fbff;
-  --color-blue-200: #ddeeff;
-  --color-blue-300: #c4e2ff;
-  --color-blue-400: #aad5ff;
-  --color-blue-500: #91c8ff;
-  --color-blue-600: #77bcff;
-  --color-blue-700: #5eafff;
+  --color-blue-100: hsl(var(--base-blue), var(--lightness-100));
+  --color-blue-200: hsl(var(--base-blue), var(--lightness-200));
+  --color-blue-300: hsl(var(--base-blue), var(--lightness-300));
+  --color-blue-400: hsl(var(--base-blue), var(--lightness-400));
+  --color-blue-500: hsl(var(--base-blue), var(--lightness-500));
+  --color-blue-600: hsl(var(--base-blue), var(--lightness-600));
+  --color-blue-700: hsl(var(--base-blue), var(--lightness-700));
+  --color-blue-800: hsl(var(--base-blue), var(--lightness-800));
+  --color-blue-900: hsl(var(--base-blue), var(--lightness-900));
+
+  --color-main-100: hsl(var(--main-color), var(--lightness-100));
+  --color-main-200: hsl(var(--main-color), var(--lightness-200));
+  --color-main-300: hsl(var(--main-color), var(--lightness-300));
+  --color-main-400: hsl(var(--main-color), var(--lightness-400));
+  --color-main-500: hsl(var(--main-color), var(--lightness-500));
+  --color-main-600: hsl(var(--main-color), var(--lightness-600));
+  --color-main-700: hsl(var(--main-color), var(--lightness-700));
+  --color-main-800: hsl(var(--main-color), var(--lightness-800));
+  --color-main-900: hsl(var(--main-color), var(--lightness-900));
+
+  --color-primary: hsla(var(--main-color), var(--lightness-600), 100%);
+  --color-secondary: hsla(var(--main-color), var(--lightness-400), 100%);
+  --color-emphasis: hsla(var(--main-color), var(--lightness-900), 100%);
 }

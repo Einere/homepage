@@ -10,20 +10,16 @@
   }
 
   html[data-theme="pink"] {
-    --color-secondary: var(--color-pink-400);
-    --color-primary: var(--color-pink-500);
-    --color-primary-600: var(--color-pink-600);
+    --main-color: var(--base-pink);
   }
 
   html[data-theme="blue"] {
-    --color-secondary: var(--color-blue-400);
-    --color-primary: var(--color-blue-500);
-    --color-primary-600: var(--color-blue-600);
+    --main-color: var(--base-blue);
   }
 
   a {
     text-decoration-line: underline;
-    color: var(--color-primary-600);
+    color: var(--color-main-600);
   }
   header a {
     text-decoration-line: none;
