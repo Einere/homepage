@@ -55,4 +55,5 @@
   --color-primary: hsla(var(--main-color), var(--lightness-600), 100%);
   --color-secondary: hsla(var(--main-color), var(--lightness-400), 100%);
   --color-emphasis: hsla(var(--main-color), var(--lightness-900), 100%);
+  --color-header-bg: hsla(var(--main-color), 100%, 90%);
 }

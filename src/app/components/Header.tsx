@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header>
-      <nav>
-        <ul className="flex flex-row gap-4 justify-end">
+    <header className="bg-header-bg border-b-main-200 sticky top-0 border-b py-2">
+      <nav className="mx-auto max-w-[768px]">
+        <ul className="flex flex-row justify-end gap-4">
           <li className="mr-auto">
             <Link href="/" className="font-[FZuanSu] text-4xl">
               香格里拉

@@ -12,15 +12,22 @@ export default function RecentRecordsSection() {
           createdDate: Date.now(),
         },
         {
-          title: "기록 2",
-          description: "기록 2입니다.",
+          title: "기록 2 기록 2",
+          description: "기록 2입니다. 기록 2입니다.",
           url: "2",
           createdDate: Date.now(),
         },
         {
-          title: "기록 3",
-          description: "기록 3입니다.",
+          title: "기록 3 기록 3 기록 3",
+          description: "기록 3입니다. 기록 3입니다. 기록 3입니다.",
           url: "3",
+          createdDate: Date.now(),
+        },
+        {
+          title: "기록 4 기록 4 기록 4 기록 4",
+          description:
+            "기록 4입니다. 기록 4입니다. 기록 4입니다. 기록 4입니다.",
+          url: "4",
           createdDate: Date.now(),
         },
       ]}
