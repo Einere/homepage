@@ -11,7 +11,7 @@ export default function SectionWithRecordCards(props: RecentPostsSectionProps) {
   return (
     <section>
       <h2>{title}</h2>
-      <ol className="flex flex-col gap-4 pt-8">
+      <ol className="flex flex-col gap-4 pt-4">
         {records.map((record) => (
           <li key={record.url}>
             <RecordCard
