@@ -17,7 +17,7 @@ export default function RecordCard(props: RecordCardProps) {
   console.debug(_createDate.locale(), _createDate.format("LL"));
   return (
     <article className="bg-main-100 rounded-lg p-4">
-      <Link href={url}>
+      <Link href={url} className="block">
         <h3 className="text-2xl font-bold">{title}</h3>
         <p className="mt-4 mb-2">{description}</p>
         <time dateTime={_createDate.toISOString()}>
