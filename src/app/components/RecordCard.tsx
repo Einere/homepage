@@ -14,7 +14,6 @@ export default function RecordCard(props: RecordCardProps) {
 
   const _createDate = dayjs(createdDate).locale("ko");
 
-  console.debug(_createDate.locale(), _createDate.format("LL"));
   return (
     <article className="bg-main-100 rounded-lg p-4">
       <Link href={url} className="block">
