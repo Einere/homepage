@@ -9,6 +9,7 @@ export default function Profile() {
         alt="최형준의 프로필 사진"
         width={200}
         height={247}
+        className="rounded-lg"
       />
       <div>
         <h2>최형준</h2>
