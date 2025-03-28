@@ -1,36 +1,40 @@
-import SectionWithRecordCards from "@/app/components/SectionWithRecordCards";
+import {
+  SectionWithRecordCards,
+  SectionWithRecordCardsSkeleton,
+} from "@/app/components/SectionWithRecordCards";
+import { getRecordsFromNotion } from "@/app/lib/recordAPI";
+import {
+  getCreatedTimeFromPageObjectResponse,
+  getDescriptionFromPageObjectResponse,
+  getIdFromPageObjectResponse,
+  getTagsFromPageObjectResponse,
+  getTitleFromQueryPageObjectResponse,
+  isPageObjectResponse,
+} from "@/app/utils/notionUtils";
 
-export default function RecentRecordsSection() {
+const RECENT_RECORDS_SECTION_TITLE = "새로운 여정의 기록들";
+
+export async function RecentRecordsSection() {
+  const { results } = await getRecordsFromNotion();
+
   return (
     <SectionWithRecordCards
-      title="새로운 여정의 기록들"
-      records={[
-        {
-          title: "기록 1",
-          description: "기록 1입니다.",
-          url: "1",
-          createdDate: Date.now(),
-        },
-        {
-          title: "기록 2 기록 2",
-          description: "기록 2입니다. 기록 2입니다.",
-          url: "2",
-          createdDate: Date.now(),
-        },
-        {
-          title: "기록 3 기록 3 기록 3",
-          description: "기록 3입니다. 기록 3입니다. 기록 3입니다.",
-          url: "3",
-          createdDate: Date.now(),
-        },
-        {
-          title: "기록 4 기록 4 기록 4 기록 4",
-          description:
-            "기록 4입니다. 기록 4입니다. 기록 4입니다. 기록 4입니다.",
-          url: "4",
-          createdDate: Date.now(),
-        },
-      ]}
+      title={RECENT_RECORDS_SECTION_TITLE}
+      records={results.filter(isPageObjectResponse).map((record) => {
+        return {
+          title: getTitleFromQueryPageObjectResponse(record) ?? "",
+          description: getDescriptionFromPageObjectResponse(record) ?? "",
+          id: getIdFromPageObjectResponse(record),
+          createdDate: getCreatedTimeFromPageObjectResponse(record),
+          tags: getTagsFromPageObjectResponse(record),
+        };
+      })}
     />
+  );
+}
+
+export function RecentRecordsSectionSkeleton() {
+  return (
+    <SectionWithRecordCardsSkeleton title={RECENT_RECORDS_SECTION_TITLE} />
   );
 }

@@ -2,21 +2,39 @@ import Link from "next/link";
 import dayjs from "dayjs";
 import "dayjs/locale/ko";
 
+type SelectColor =
+  | "default"
+  | "gray"
+  | "brown"
+  | "orange"
+  | "yellow"
+  | "green"
+  | "blue"
+  | "purple"
+  | "pink"
+  | "red";
+type PartialSelectResponse = {
+  id: string;
+  name: string;
+  color: SelectColor;
+};
+
 export interface RecordCardProps {
-  url: string;
+  id: string;
   title: string;
   description: string;
-  createdDate: number;
+  createdDate: string;
+  tags: Array<PartialSelectResponse>;
 }
 
 export default function RecordCard(props: RecordCardProps) {
-  const { url, title, description, createdDate } = props;
+  const { id, title, description, createdDate, tags } = props;
 
   const _createDate = dayjs(createdDate).locale("ko");
 
   return (
     <article className="bg-main-100 rounded-lg p-4">
-      <Link href={url} className="block">
+      <Link href={`/records/${id}`} className="block">
         <h3 className="text-2xl font-bold">{title}</h3>
         <p className="mt-4 mb-2">{description}</p>
         <time dateTime={_createDate.toISOString()}>
@@ -26,12 +44,11 @@ export default function RecordCard(props: RecordCardProps) {
         </time>
       </Link>
       <ul className="mt-4 flex gap-2">
-        {["#태그 1", "#태그 2", "#태그 3", "#태그 4"].map((tag) => (
-          <li key={tag}>
-            {/* TODO: Link 로 대체하기 */}
-            <button className="bg-main-200 hover:bg-main-300 cursor-pointer rounded-lg px-2 py-1 transition-colors">
-              {tag}
-            </button>
+        {tags.map((tag) => (
+          <li key={tag.id}>
+            <ol className="bg-main-200 rounded-lg px-2 py-1 text-sm transition-colors">
+              {`#${tag.name}`}
+            </ol>
           </li>
         ))}
       </ul>

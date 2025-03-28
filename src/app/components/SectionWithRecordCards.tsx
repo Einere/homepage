@@ -1,28 +1,56 @@
 import RecordCard, { type RecordCardProps } from "@/app/components/RecordCard";
+import { PropsWithChildren } from "react";
+
+function SectionWithRecordCardsLayout(
+  props: PropsWithChildren<{
+    title: string;
+  }>,
+) {
+  const { title, children } = props;
+
+  return (
+    <section>
+      <h2 className="pb-4">{title}</h2>
+      {children}
+    </section>
+  );
+}
 
 interface RecentPostsSectionProps {
   title: string;
   records: Array<RecordCardProps>;
 }
 
-export default function SectionWithRecordCards(props: RecentPostsSectionProps) {
+export function SectionWithRecordCards(props: RecentPostsSectionProps) {
   const { title, records } = props;
 
   return (
-    <section>
-      <h2>{title}</h2>
-      <ol className="flex flex-col gap-4 pt-4">
+    <SectionWithRecordCardsLayout title={title}>
+      <ol className="flex flex-col gap-4">
         {records.map((record) => (
-          <li key={record.url}>
+          <li key={record.id}>
             <RecordCard
-              url={record.url}
+              id={record.id}
               title={record.title}
               description={record.description}
               createdDate={record.createdDate}
+              tags={record.tags}
             />
           </li>
         ))}
       </ol>
-    </section>
+    </SectionWithRecordCardsLayout>
+  );
+}
+
+export function SectionWithRecordCardsSkeleton(
+  props: Pick<RecentPostsSectionProps, "title">,
+) {
+  const { title } = props;
+
+  return (
+    <SectionWithRecordCardsLayout title={title}>
+      <div>기록들을 불러오는 중입니다...</div>
+    </SectionWithRecordCardsLayout>
   );
 }

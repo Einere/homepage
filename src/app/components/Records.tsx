@@ -1,16 +1,10 @@
-import { Client } from "@notionhq/client";
-import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import Link from "next/link";
-
-function getRecordsFromNotion() {
-  const notion = new Client({
-    auth: process.env.NEXT_NOTION_API_AUTH_TOKEN,
-  });
-
-  return notion.databases.query({
-    database_id: process.env.NEXT_NOTION_API_DATABASE_ID,
-  });
-}
+import { getRecordsFromNotion } from "../lib/recordAPI";
+import {
+  getIdFromPageObjectResponse,
+  getTitleFromQueryPageObjectResponse,
+  isPageObjectResponse,
+} from "@/app/utils/notionUtils";
 
 export async function Records() {
   const body = await getRecordsFromNotion();
@@ -22,14 +16,13 @@ export async function Records() {
 
   return (
     <ul>
-      {(results as Array<PageObjectResponse>).map((page) => {
-        const property = page.properties["이름"];
-        const title =
-          property.type === "title" ? property.title[0].plain_text : undefined;
+      {results.filter(isPageObjectResponse).map((record) => {
+        const title = getTitleFromQueryPageObjectResponse(record);
+        const id = getIdFromPageObjectResponse(record);
 
         return (
-          <li key={page.id}>
-            <Link href={`/records/${page.id}`}>{title}</Link>
+          <li key={id}>
+            <Link href={`/records/${id}`}>{title}</Link>
           </li>
         );
       })}
