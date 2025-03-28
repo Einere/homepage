@@ -9,6 +9,10 @@
     --foreground: #171717;
   }
 
+  * {
+    @apply transition-colors;
+  }
+
   html[data-theme="pink"] {
     --main-color: var(--base-pink);
   }
@@ -34,6 +38,11 @@
   header a {
     text-decoration-line: none;
     color: unset;
+  }
+
+  hr {
+    padding-bottom: 24px;
+    border-color: var(--color-main-200);
   }
 
   blockquote {
