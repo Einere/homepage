@@ -1,10 +1,13 @@
-import Link from "next/link";
 import { getRecordsFromNotion } from "../lib/recordAPI";
 import {
+  getCreatedTimeFromPageObjectResponse,
+  getDescriptionFromPageObjectResponse,
   getIdFromPageObjectResponse,
+  getTagsFromPageObjectResponse,
   getTitleFromQueryPageObjectResponse,
   isPageObjectResponse,
 } from "@/app/utils/notionUtils";
+import RecordCard from "@/app/components/RecordCard";
 
 export async function Records() {
   const body = await getRecordsFromNotion();
@@ -15,14 +18,25 @@ export async function Records() {
   }
 
   return (
+    /* TODO: 페이지네이션 도입하기 */
+    /* TODO: 태그 분류 기능 도입하기 */
     <ul>
       {results.filter(isPageObjectResponse).map((record) => {
-        const title = getTitleFromQueryPageObjectResponse(record);
+        const title = getTitleFromQueryPageObjectResponse(record) ?? "";
+        const description = getDescriptionFromPageObjectResponse(record) ?? "";
         const id = getIdFromPageObjectResponse(record);
+        const createdDate = getCreatedTimeFromPageObjectResponse(record);
+        const tags = getTagsFromPageObjectResponse(record);
 
         return (
           <li key={id}>
-            <Link href={`/records/${id}`}>{title}</Link>
+            <RecordCard
+              id={id}
+              title={title}
+              description={description}
+              createdDate={createdDate}
+              tags={tags}
+            />
           </li>
         );
       })}
