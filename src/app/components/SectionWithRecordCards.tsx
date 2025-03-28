@@ -10,7 +10,8 @@ function SectionWithRecordCardsLayout(
 
   return (
     <section>
-      <h2 className="pb-4">{title}</h2>
+      <h2 className="">{title}</h2>
+      <hr />
       {children}
     </section>
   );
