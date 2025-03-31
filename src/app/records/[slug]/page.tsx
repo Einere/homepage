@@ -31,7 +31,13 @@ export default async function RecordPage({
   const { slug } = await params;
   const recordMap = await getPageByPageId(slug);
 
-  return <NotionPage recordMap={recordMap} />;
+  return (
+    <div className="mx-auto min-h-screen max-w-[768px]">
+      <div className="mt-16 mb-6">
+        <NotionPage recordMap={recordMap} />
+      </div>
+    </div>
+  );
 }
 
 function getPageByPageId(pageId: string) {
