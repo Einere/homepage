@@ -8,6 +8,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
+  --lightness-50: 99%;
   --lightness-100: 98.4%;
   --lightness-200: 93.3%;
   --lightness-300: 88.4%;
@@ -20,6 +21,7 @@
 
   --base-pink: 0, 100%;
   --color-pink-*: initial;
+  --color-pink-50: hsl(var(--base-pink), var(--lightness-50));
   --color-pink-100: hsl(var(--base-pink), var(--lightness-100));
   --color-pink-200: hsl(var(--base-pink), var(--lightness-200));
   --color-pink-300: hsl(var(--base-pink), var(--lightness-300));
@@ -32,6 +34,7 @@
 
   --base-blue: 210, 100%;
   --color-blue-*: initial;
+  --color-blue-50: hsl(var(--base-blue), var(--lightness-50));
   --color-blue-100: hsl(var(--base-blue), var(--lightness-100));
   --color-blue-200: hsl(var(--base-blue), var(--lightness-200));
   --color-blue-300: hsl(var(--base-blue), var(--lightness-300));
@@ -42,6 +45,7 @@
   --color-blue-800: hsl(var(--base-blue), var(--lightness-800));
   --color-blue-900: hsl(var(--base-blue), var(--lightness-900));
 
+  --color-main-50: hsl(var(--main-color), var(--lightness-50));
   --color-main-100: hsl(var(--main-color), var(--lightness-100));
   --color-main-200: hsl(var(--main-color), var(--lightness-200));
   --color-main-300: hsl(var(--main-color), var(--lightness-300));
