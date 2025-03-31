@@ -69,38 +69,59 @@
   .notion {
     header.notion-header {
       @apply bg-main-50 p-2;
-    }
-    .breadcrumbs {
-    }
-    h1 {
-      margin: 20px 0;
+
+      .breadcrumbs {
+      }
     }
 
-    h2 > span,
-    h3 > span,
-    h4 > span {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    ul {
-      margin-inline-start: 16px;
-      list-style-type: disc;
-    }
-    ol {
-      margin-inline-start: 16px;
-      list-style-type: decimal;
-    }
-    details > div {
-      padding: 16px;
-    }
-    pre {
-      display: flex;
-      justify-content: space-between;
+    main.notion-page {
+      h1 {
+        margin: 20px 0;
+      }
 
-      .notion-code-copy {
-        order: 1;
-        padding: 8px;
+      div.notion-page-content > article {
+        & > *:not(blockquote) {
+          margin-bottom: 8px;
+        }
+
+        h2,
+        h3,
+        h4 {
+          margin-bottom: 20px;
+
+          span {
+            display: flex;
+            align-items: center;
+          }
+        }
+        .notion-hash-link {
+          margin-right: 4px;
+        }
+
+        ul {
+          margin-inline-start: 16px;
+          list-style-type: disc;
+        }
+        ol {
+          margin-inline-start: 16px;
+          list-style-type: decimal;
+        }
+        details {
+          & > div {
+            padding: 16px;
+          }
+        }
+        pre {
+          display: flex;
+          justify-content: space-between;
+
+          .notion-code-copy {
+            order: 1;
+            padding: 8px;
+          }
+        }
+        figure {
+        }
       }
     }
   }
