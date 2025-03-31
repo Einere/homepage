@@ -2,6 +2,13 @@
 
 import { type ExtendedRecordMap } from "notion-types";
 import { NotionRenderer } from "react-notion-x";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import Link from "next/link";
+
+const Code = dynamic(() =>
+  import("react-notion-x/build/third-party/code").then((m) => m.Code),
+);
 
 export function NotionPage({
   recordMap,
@@ -20,6 +27,14 @@ export function NotionPage({
       fullPage={true}
       darkMode={false}
       rootPageId={rootPageId}
+      components={{
+        Code,
+        nextImage: Image,
+        nextLink: Link,
+      }}
+      mapImageUrl={(url) => {
+        return url;
+      }}
     />
   );
 }
