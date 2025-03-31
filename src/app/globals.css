@@ -107,6 +107,9 @@
           list-style-type: decimal;
         }
         details {
+          summary {
+            cursor: pointer;
+          }
           & > div {
             padding: 16px;
           }
@@ -118,6 +121,7 @@
           .notion-code-copy {
             order: 1;
             padding: 8px;
+            cursor: pointer;
           }
         }
         figure {
