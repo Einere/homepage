@@ -16,7 +16,7 @@ export default function Header() {
       <nav className="mx-auto max-w-[768px] px-4 lg:px-0">
         <ul className="flex flex-row items-center justify-end gap-2 min-[375px]:gap-4">
           <li className="mr-auto">
-            <Link href="/" className="font-[FZuanSu] text-2xl md:text-4xl">
+            <Link href="/" className="font-chiness text-2xl md:text-4xl">
               香格里拉
             </Link>
           </li>
