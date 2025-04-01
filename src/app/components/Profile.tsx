@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Profile() {
   return (
-    <article className="grid grid-rows-2 gap-6 sm:grid-cols-[auto_1fr] sm:grid-rows-none">
+    <article className="grid grid-rows-none gap-6 pb-16 sm:grid-cols-[auto_1fr] md:pb-0">
       <Image
         src="/moowonjae_from_kimtaejun.png"
         alt="최형준의 프로필 사진"

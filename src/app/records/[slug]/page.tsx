@@ -32,7 +32,7 @@ export default async function RecordPage({
   const recordMap = await getPageByPageId(slug);
 
   return (
-    <div className="mx-auto min-h-screen max-w-[768px]">
+    <div className="mx-auto min-h-screen max-w-[768px] px-4 lg:px-0">
       <div className="mt-16 mb-6">
         <NotionPage recordMap={recordMap} />
       </div>
