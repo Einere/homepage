@@ -1,5 +1,5 @@
 import { NotionPage } from "@/app/components/NotionPage";
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import { getPageTitle } from "notion-utils";
 import { notionAPI } from "@/app/lib/notionAPI";
 
@@ -8,10 +8,7 @@ type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata(
-  { params, searchParams }: Props,
-  parent: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // read route params
   const { slug } = await params;
 
@@ -26,7 +23,7 @@ export async function generateMetadata(
 export default async function RecordPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
   const recordMap = await getPageByPageId(slug);
