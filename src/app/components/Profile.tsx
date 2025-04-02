@@ -8,7 +8,7 @@ export default function Profile() {
         src="/moowonjae_from_kimtaejun.png"
         alt="최형준의 프로필 사진"
         width={200}
-        height={247}
+        height={248}
         className="rounded-lg"
       />
       <div>
