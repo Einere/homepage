@@ -33,7 +33,7 @@ export default function RecordCard(props: RecordCardProps) {
   const _createDate = dayjs(createdDate).locale("ko");
 
   return (
-    <article className="bg-main-100 rounded-lg p-4">
+    <article className="/*bg-main-100*/ rounded-lg py-4">
       <Link href={`/records/${id}`} className="block">
         <h3 className="text-2xl font-bold">{title}</h3>
         <p className="mt-4 mb-2">{description}</p>
