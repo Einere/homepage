@@ -34,7 +34,7 @@ export default function RecordCard(props: RecordCardProps) {
 
   return (
     <article className="/*bg-main-100*/ rounded-lg py-4">
-      <Link href={`/records/${id}`} className="block">
+      <Link href={`/records/${id}`} className="">
         <h3 className="text-2xl font-bold">{title}</h3>
         <p className="mt-4 mb-2">{description}</p>
         <time dateTime={_createDate.toISOString()}>
