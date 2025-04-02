@@ -1,5 +1,5 @@
 import { getRecordsDBFromNotion } from "@/app/lib/recordAPI";
-import Link from "next/link";
+import { NavLink } from "@/app/components/NavLink";
 
 export async function Tags() {
   const db = await getRecordsDBFromNotion();
@@ -9,13 +9,13 @@ export async function Tags() {
 
   return (
     <ul className="flex gap-4 pb-4">
-      <Link href="/records">#All</Link>
+      <NavLink href="/records">#All</NavLink>
       {tagOptions.map((tagOption) => {
         return (
-          <Link
+          <NavLink
             key={tagOption.id}
             href={`/records?tag=${tagOption.name}`}
-          >{`#${tagOption.name}`}</Link>
+          >{`#${tagOption.name}`}</NavLink>
         );
       })}
     </ul>
