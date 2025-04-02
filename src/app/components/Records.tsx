@@ -9,8 +9,18 @@ import {
 } from "@/app/utils/notionUtils";
 import RecordCard from "@/app/components/RecordCard";
 
-export async function Records() {
-  const body = await getRecordsFromNotion();
+type RecordsProps = {
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function Records(params: RecordsProps) {
+  const tagFilter = getFilter(params.searchParams.tag);
+
+  const body = tagFilter
+    ? await getRecordsFromNotion({
+        filter: tagFilter,
+      })
+    : await getRecordsFromNotion();
   const { results } = body;
 
   if (results.length === 0) {
@@ -19,7 +29,6 @@ export async function Records() {
 
   return (
     /* TODO: 페이지네이션 도입하기 */
-    /* TODO: 태그 분류 기능 도입하기 */
     <ul>
       {results.filter(isPageObjectResponse).map((record) => {
         const title = getTitleFromQueryPageObjectResponse(record) ?? "";
@@ -29,7 +38,7 @@ export async function Records() {
         const tags = getTagsFromPageObjectResponse(record);
 
         return (
-          <li key={id}>
+          <li key={id} className="pb-4">
             <RecordCard
               id={id}
               title={title}
@@ -42,4 +51,17 @@ export async function Records() {
       })}
     </ul>
   );
+}
+
+function getFilter(searchParamValue: string | string[] | undefined) {
+  if (searchParamValue === undefined || searchParamValue instanceof Array) {
+    return null;
+  }
+
+  return {
+    property: "태그",
+    multi_select: {
+      contains: searchParamValue,
+    },
+  };
 }
