@@ -7,7 +7,7 @@ import { Suspense } from "react";
 export default function HomePage() {
   return (
     <main className="min-h-screen">
-      <h1 className="mx-auto max-h-[673px] bg-[url(/pink_blue_flowers.webp)] bg-fixed bg-center px-6 py-24 text-center text-5xl break-keep text-white [-webkit-text-stroke:0.1px_var(--color-main-300)] xl:bg-cover">
+      <h1 className="text-main-300 mx-auto max-h-[673px] bg-[url(/pink_blue_flowers.webp)] bg-fixed bg-center px-6 py-24 text-center text-5xl break-keep [-webkit-text-stroke:0.4px_white] xl:bg-cover">
         이 공간을 찾아주신 당신을 환영합니다.
       </h1>
       <div className="mx-auto max-w-[768px] px-4 py-20 lg:px-0">
