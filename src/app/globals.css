@@ -43,7 +43,7 @@
 
   a {
     text-decoration-line: underline;
-    color: var(--color-main-600);
+    color: var(--color-main-700);
   }
   header a {
     text-decoration-line: none;
