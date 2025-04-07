@@ -1,9 +1,10 @@
 import { getRecordsDBFromNotion } from "@/app/lib/recordAPI";
 import { NavLink } from "@/app/components/NavLink";
+import { NOTION_BLOG_RECORDS_PROPERTIES } from "@/app/utils/notionUtils";
 
 export async function Tags() {
   const db = await getRecordsDBFromNotion();
-  const tagProperty = db.properties["태그"];
+  const tagProperty = db.properties[NOTION_BLOG_RECORDS_PROPERTIES.TAGS];
   const tagOptions =
     tagProperty.type === "multi_select" ? tagProperty.multi_select.options : [];
 

@@ -1,11 +1,12 @@
 import { getRecordsFromNotion } from "../lib/recordAPI";
 import {
-  getCreatedTimeFromPageObjectResponse,
   getDescriptionFromPageObjectResponse,
   getIdFromPageObjectResponse,
+  getPublishedDateFromPageObjectResponse,
   getTagsFromPageObjectResponse,
   getTitleFromQueryPageObjectResponse,
   isPageObjectResponse,
+  NOTION_BLOG_RECORDS_PROPERTIES,
 } from "@/app/utils/notionUtils";
 import RecordCard from "@/app/components/RecordCard";
 
@@ -34,7 +35,7 @@ export async function Records(params: RecordsProps) {
         const title = getTitleFromQueryPageObjectResponse(record) ?? "";
         const description = getDescriptionFromPageObjectResponse(record) ?? "";
         const id = getIdFromPageObjectResponse(record);
-        const createdDate = getCreatedTimeFromPageObjectResponse(record);
+        const publishedDate = getPublishedDateFromPageObjectResponse(record);
         const tags = getTagsFromPageObjectResponse(record);
 
         return (
@@ -43,7 +44,7 @@ export async function Records(params: RecordsProps) {
               id={id}
               title={title}
               description={description}
-              createdDate={createdDate}
+              publishedDate={publishedDate}
               tags={tags}
             />
           </li>
@@ -59,7 +60,7 @@ function getFilter(searchParamValue: string | string[] | undefined) {
   }
 
   return {
-    property: "태그",
+    property: NOTION_BLOG_RECORDS_PROPERTIES.TAGS,
     multi_select: {
       contains: searchParamValue,
     },

@@ -23,14 +23,14 @@ export interface RecordCardProps {
   id: string;
   title: string;
   description: string;
-  createdDate: string;
+  publishedDate: string;
   tags: Array<PartialSelectResponse>;
 }
 
 export default function RecordCard(props: RecordCardProps) {
-  const { id, title, description, createdDate, tags } = props;
+  const { id, title, description, publishedDate, tags } = props;
 
-  const _createDate = dayjs(createdDate).locale("ko");
+  const _createDate = dayjs(publishedDate).locale("ko");
 
   return (
     <article className="/*bg-main-100*/ rounded-lg py-4">

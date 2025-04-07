@@ -34,7 +34,7 @@ export function SectionWithRecordCards(props: RecentPostsSectionProps) {
               id={record.id}
               title={record.title}
               description={record.description}
-              createdDate={record.createdDate}
+              publishedDate={record.publishedDate}
               tags={record.tags}
             />
           </li>

@@ -4,9 +4,9 @@ import {
 } from "@/app/components/SectionWithRecordCards";
 import { getRecordsFromNotion } from "@/app/lib/recordAPI";
 import {
-  getCreatedTimeFromPageObjectResponse,
   getDescriptionFromPageObjectResponse,
   getIdFromPageObjectResponse,
+  getPublishedDateFromPageObjectResponse,
   getTagsFromPageObjectResponse,
   getTitleFromQueryPageObjectResponse,
   isPageObjectResponse,
@@ -25,7 +25,7 @@ export async function RecentRecordsSection() {
           title: getTitleFromQueryPageObjectResponse(record) ?? "",
           description: getDescriptionFromPageObjectResponse(record) ?? "",
           id: getIdFromPageObjectResponse(record),
-          createdDate: getCreatedTimeFromPageObjectResponse(record),
+          publishedDate: getPublishedDateFromPageObjectResponse(record),
           tags: getTagsFromPageObjectResponse(record),
         };
       })}
