@@ -9,7 +9,7 @@ export async function Tags() {
     tagProperty.type === "multi_select" ? tagProperty.multi_select.options : [];
 
   return (
-    <ul className="flex gap-4 pb-4">
+    <ul className="flex flex-wrap gap-4 pb-4">
       <NavLink href="/records">#All</NavLink>
       {tagOptions.map((tagOption) => {
         return (
