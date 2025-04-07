@@ -1,5 +1,3 @@
-import Profile from "@/app/components/Profile";
-
 export default function NotFoundPage() {
   return (
     <main className="mx-auto min-h-screen max-w-[768px] px-4 lg:px-0">
