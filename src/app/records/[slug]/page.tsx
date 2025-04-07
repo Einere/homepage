@@ -2,6 +2,7 @@ import { NotionPage } from "@/app/components/NotionPage";
 import type { Metadata } from "next";
 import { getPageTitle } from "notion-utils";
 import { notionAPI } from "@/app/lib/notionAPI";
+import { RecordPageLayout } from "@/app/records/[slug]/_layout";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -29,11 +30,9 @@ export default async function RecordPage({
   const recordMap = await getPageByPageId(slug);
 
   return (
-    <div className="mx-auto min-h-screen max-w-[768px] px-4 lg:px-0">
-      <div className="mt-16 mb-6">
-        <NotionPage recordMap={recordMap} />
-      </div>
-    </div>
+    <RecordPageLayout>
+      <NotionPage recordMap={recordMap} />
+    </RecordPageLayout>
   );
 }
 
