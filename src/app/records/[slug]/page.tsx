@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getPageTitle } from "notion-utils";
 import { notionAPI } from "@/app/lib/notionAPI";
 import { RecordPageLayout } from "@/app/records/[slug]/_layout";
+import { getRecordsFromNotion } from "@/app/lib/recordAPI";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -19,6 +20,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: getPageTitle(recordMap),
   };
+}
+
+export const revalidate = 86400; // 24 hours
+export const dynamicParams = true; // true is default
+export async function generateStaticParams() {
+  const body = await getRecordsFromNotion();
+  const { results } = body;
+
+  return results.map((record) => ({
+    slug: String(record.id),
+  }));
 }
 
 export default async function RecordPage({
