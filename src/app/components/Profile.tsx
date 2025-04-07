@@ -5,10 +5,10 @@ export default function Profile() {
   return (
     <article className="grid grid-rows-none gap-6 pb-16 sm:grid-cols-[auto_1fr] md:pb-0">
       <Image
-        src="/moowonjae_from_kimtaejun.png"
+        src="/profile_picture.webp"
         alt="최형준의 프로필 사진"
-        width={200}
-        height={248}
+        width={256}
+        height={384}
         className="rounded-lg"
       />
       <div>
