@@ -15,13 +15,13 @@ export enum NOTION_BLOG_RECORDS_PROPERTIES {
 
 export function getTitleFromQueryPageObjectResponse(page: PageObjectResponse) {
   const property = page.properties[NOTION_BLOG_RECORDS_PROPERTIES.TITLE];
-  return property.type === "title" ? property.title[0].plain_text : undefined;
+  return property.type === "title" ? property.title[0]?.plain_text : undefined;
 }
 
 export function getDescriptionFromPageObjectResponse(page: PageObjectResponse) {
   const property = page.properties[NOTION_BLOG_RECORDS_PROPERTIES.DESCRIPTION];
   return property.type === "rich_text"
-    ? property.rich_text[0].plain_text
+    ? property.rich_text[0]?.plain_text
     : undefined;
 }
 
@@ -34,7 +34,7 @@ export function getPublishedDateFromPageObjectResponse(
 ) {
   const property =
     page.properties[NOTION_BLOG_RECORDS_PROPERTIES.PUBLISHED_DATE];
-  return property.type === "date" && property.date ? property.date.start : "";
+  return property.type === "date" && property.date ? property.date?.start : "";
 }
 
 export function getTagsFromPageObjectResponse(page: PageObjectResponse) {
