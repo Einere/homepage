@@ -15,13 +15,15 @@ export enum NOTION_BLOG_RECORDS_PROPERTIES {
 
 export function getTitleFromQueryPageObjectResponse(page: PageObjectResponse) {
   const property = page.properties[NOTION_BLOG_RECORDS_PROPERTIES.TITLE];
+  // 노션 글 작성 시, 제목을 비워두면 nullable 이 될 수 있다.
   return property.type === "title" ? property.title[0]?.plain_text : undefined;
 }
 
 export function getDescriptionFromPageObjectResponse(page: PageObjectResponse) {
   const property = page.properties[NOTION_BLOG_RECORDS_PROPERTIES.DESCRIPTION];
   return property.type === "rich_text"
-    ? property.rich_text[0]?.plain_text
+    ? // 노션 글 작성 시, 요약을 비워두면 nullable 이 될 수 있다.
+      property.rich_text[0]?.plain_text
     : undefined;
 }
 
@@ -34,6 +36,7 @@ export function getPublishedDateFromPageObjectResponse(
 ) {
   const property =
     page.properties[NOTION_BLOG_RECORDS_PROPERTIES.PUBLISHED_DATE];
+  // 노션 글 작성 시, 발행일을 비워두면 nullable 이 될 수 있다.
   return property.type === "date" && property.date ? property.date?.start : "";
 }
 
