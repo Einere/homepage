@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export const revalidate = 86400; // 24 hours
+export const revalidate = 3600; // NotionRenderer 가 자원 요청 시, 기본 X-Amz-Expires 헤더 값이 3600이라서, 맞춰줌.
 export const dynamicParams = true; // true is default
 export async function generateStaticParams() {
   const body = await getRecordsFromNotion();
