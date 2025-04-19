@@ -7,6 +7,7 @@
   :root {
     --background: #ffffff;
     --foreground: #171717;
+    --notion-font: var(--font-sans) !important;
   }
 
   * {
@@ -68,65 +69,28 @@
 
   .notion {
     header.notion-header {
-      @apply bg-main-50 p-2;
-
-      .breadcrumbs {
-      }
+      display: none !important;
     }
 
-    main.notion-page {
-      h1 {
-        margin: 20px 0;
-      }
+    .notion-hash-link {
+      padding-top: 0.5rem !important;
+    }
 
-      div.notion-page-content > article {
-        & > *:not(blockquote) {
-          margin-bottom: 8px;
-        }
+    .notion-link {
+      color: var(--color-main-700) !important;
+      text-decoration: underline !important;
+      border-bottom: unset !important;
+      border-color: unset !important;
+      opacity: unset !important;
+      transition: unset !important;
+    }
 
-        h2,
-        h3,
-        h4 {
-          margin-bottom: 20px;
+    .notion-code {
+      @apply font-mono;
+    }
 
-          span {
-            display: flex;
-            align-items: center;
-          }
-        }
-        .notion-hash-link {
-          margin-right: 4px;
-        }
-
-        ul {
-          margin-inline-start: 16px;
-          list-style-type: disc;
-        }
-        ol {
-          margin-inline-start: 16px;
-          list-style-type: decimal;
-        }
-        details {
-          summary {
-            cursor: pointer;
-          }
-          & > div {
-            padding: 16px;
-          }
-        }
-        pre {
-          display: flex;
-          justify-content: space-between;
-
-          .notion-code-copy {
-            order: 1;
-            padding: 8px;
-            cursor: pointer;
-          }
-        }
-        figure {
-        }
-      }
+    .notion-quote {
+      border-color: var(--color-main-200) !important;
     }
   }
 }

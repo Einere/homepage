@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import "react-notion-x/src/styles.css";
 import "./styles/globals.css";
+import "./styles/prism-dracula.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 

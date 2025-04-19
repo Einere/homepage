@@ -12,7 +12,7 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-header-bg border-b-main-200 sticky top-0 border-b py-2">
+    <header className="bg-header-bg border-b-main-200 sticky top-0 z-1 border-b py-2">
       <nav className="mx-auto max-w-[768px] px-4 lg:px-0">
         <ul className="flex flex-row items-center justify-end gap-2 min-[375px]:gap-4">
           <li className="mr-auto">
