@@ -4,6 +4,7 @@ import { getPageTitle } from "notion-utils";
 import { notionAPI } from "@/app/lib/notionAPI";
 import { RecordPageLayout } from "@/app/records/[slug]/_layout";
 import { getRecordsFromNotion } from "@/app/lib/recordAPI";
+import { Comments } from "@/app/components/Comments";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -44,6 +45,7 @@ export default async function RecordPage({
   return (
     <RecordPageLayout>
       <NotionPage recordMap={recordMap} />
+      <Comments />
     </RecordPageLayout>
   );
 }
