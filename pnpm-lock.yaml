@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@einere/common-utils': ^1.0.11
   '@eslint/eslintrc': ^3
   '@giscus/react': ^3.1.0
   '@notionhq/client': ^2.3.0
@@ -28,6 +29,7 @@ specifiers:
   typescript: ^5
 
 dependencies:
+  '@einere/common-utils': 1.0.11
   '@giscus/react': 3.1.0_upmzqgzhjrquwzo2dphtigtdgi
   '@notionhq/client': 2.3.0
   clsx: 2.1.1
@@ -68,6 +70,10 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.1
+    dev: false
+
+  /@einere/common-utils/1.0.11:
+    resolution: {integrity: sha512-UDehPMckA4mKVL5uf9cGLHaL0ufxWACdfl72lzZlwl8irz85RsbGNNleVffvcII5qsVgBVsQqjfjqYhOq+1AfQ==}
     dev: false
 
   /@emnapi/runtime/1.4.0:
