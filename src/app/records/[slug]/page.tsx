@@ -1,7 +1,7 @@
 import { NotionPage } from "@/app/components/NotionPage";
 import type { Metadata } from "next";
 import { getPageTitle } from "notion-utils";
-import { notionAPI } from "@/app/lib/notionAPI";
+import { getPageByPageId } from "@/app/lib/notionAPI";
 import { RecordPageLayout } from "@/app/records/[slug]/_layout";
 import { getRecordsFromNotion } from "@/app/lib/recordAPI";
 import { Comments } from "@/app/components/Comments";
@@ -48,8 +48,4 @@ export default async function RecordPage({
       <Comments />
     </RecordPageLayout>
   );
-}
-
-function getPageByPageId(pageId: string) {
-  return notionAPI.getPage(pageId);
 }
