@@ -12,6 +12,8 @@
     "@einere/common-utils": "^1.0.11",
     "@giscus/react": "^3.1.0",
     "@notionhq/client": "^2.3.0",
+    "@tanstack/react-query": "^5.83.0",
+    "@tanstack/react-query-devtools": "^5.83.0",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
     "next": "15.2.3",

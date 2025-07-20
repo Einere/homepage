@@ -4,6 +4,7 @@ import "./styles/globals.css";
 import "./styles/prism-dracula.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import QueryProvider from "@/app/providers/query-provider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.einere.me"),
@@ -44,9 +45,11 @@ export default function RootLayout({
   return (
     <html lang="ko" data-theme="pink">
       <body className="antialiased">
-        <Header />
-        {children}
-        <Footer />
+        <QueryProvider>
+          <Header />
+          {children}
+          <Footer />
+        </QueryProvider>
       </body>
     </html>
   );
