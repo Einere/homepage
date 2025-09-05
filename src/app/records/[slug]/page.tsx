@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 import { getPageByPageId } from "@/app/lib/notionCompatAPI";
 import { RecordPageLayout } from "@/app/records/[slug]/_layout";
-import { getPageFromNotion, getRecordsFromNotion } from "@/app/lib/recordAPI";
+import { getPageFromNotion, getRecordsFromNotion } from "@/app/lib/notionAPI";
 import { Comments } from "@/app/components/Comments";
 import { identity } from "@einere/common-utils";
 import { getPageImageUrls, getPageTitle } from "notion-utils";

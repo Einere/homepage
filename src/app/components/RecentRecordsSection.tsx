@@ -2,7 +2,7 @@ import {
   SectionWithRecordCards,
   SectionWithRecordCardsSkeleton,
 } from "@/app/components/SectionWithRecordCards";
-import { getRecordsFromNotion } from "@/app/lib/recordAPI";
+import { getRecordsFromNotion } from "@/app/lib/notionAPI";
 import {
   getDescriptionFromPageObjectResponse,
   getIdFromPageObjectResponse,

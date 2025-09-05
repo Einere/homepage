@@ -1,4 +1,4 @@
-import { getRecordsFromNotion } from "../lib/recordAPI";
+import { getRecordsFromNotion } from "../lib/notionAPI";
 import {
   getDescriptionFromPageObjectResponse,
   getIdFromPageObjectResponse,

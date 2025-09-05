@@ -1,4 +1,4 @@
-import { retrieveDataSource } from "@/app/lib/recordAPI";
+import { retrieveDataSource } from "@/app/lib/notionAPI";
 import { NavLink } from "@/app/components/NavLink";
 import { NOTION_BLOG_RECORDS_PROPERTIES } from "@/app/utils/notionUtils";
 
