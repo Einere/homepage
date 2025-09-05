@@ -32,8 +32,6 @@ export const metadata: Metadata = {
         alt: "香格里拉",
       },
     ],
-    videos: [],
-    audio: [],
   },
 };
 

@@ -19,7 +19,9 @@ export function getTitleFromQueryPageObjectResponse(page: PageObjectResponse) {
   return property.type === "title" ? property.title[0]?.plain_text : undefined;
 }
 
-export function getDescriptionFromPageObjectResponse(page: PageObjectResponse) {
+export function getDescriptionFromPageObjectResponse(
+  page: Pick<PageObjectResponse, "properties">,
+) {
   const property = page.properties[NOTION_BLOG_RECORDS_PROPERTIES.DESCRIPTION];
   return property.type === "rich_text"
     ? // 노션 글 작성 시, 요약을 비워두면 nullable 이 될 수 있다.

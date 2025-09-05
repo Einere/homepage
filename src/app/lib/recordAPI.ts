@@ -1,16 +1,13 @@
-import { Client } from "@notionhq/client";
-import { QueryDatabaseParameters } from "@notionhq/client/build/src/api-endpoints";
+import { Client, QueryDataSourceParameters } from "@notionhq/client";
 import { NOTION_BLOG_RECORDS_PROPERTIES } from "@/app/utils/notionUtils";
 
 const notion = new Client({
   auth: process.env.NEXT_NOTION_API_AUTH_TOKEN,
 });
 
-export function getRecordsFromNotion(
-  queryOptions?: Omit<QueryDatabaseParameters, "database_id">,
-) {
-  return notion.databases.query({
-    database_id: process.env.NEXT_NOTION_API_DATABASE_ID,
+export function getRecordsFromNotion(queryOptions?: QueryDataSourceParameters) {
+  return notion.dataSources.query({
+    data_source_id: process.env.NEXT_NOTION_API_DATA_SOURCE_ID,
     sorts: [
       {
         property: NOTION_BLOG_RECORDS_PROPERTIES.PUBLISHED_DATE,
@@ -24,5 +21,11 @@ export function getRecordsFromNotion(
 export function getRecordsDBFromNotion() {
   return notion.databases.retrieve({
     database_id: process.env.NEXT_NOTION_API_DATABASE_ID,
+  });
+}
+
+export function getPageFromNotion(pageId: string) {
+  return notion.pages.retrieve({
+    page_id: pageId,
   });
 }

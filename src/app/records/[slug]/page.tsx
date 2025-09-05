@@ -1,10 +1,14 @@
 import { NotionPage } from "@/app/components/NotionPage";
 import type { Metadata } from "next";
-import { getPageTitle } from "notion-utils";
+
 import { getPageByPageId } from "@/app/lib/notionAPI";
 import { RecordPageLayout } from "@/app/records/[slug]/_layout";
-import { getRecordsFromNotion } from "@/app/lib/recordAPI";
+import { getPageFromNotion, getRecordsFromNotion } from "@/app/lib/recordAPI";
 import { Comments } from "@/app/components/Comments";
+import { identity } from "@einere/common-utils";
+import { getPageImageUrls, getPageTitle } from "notion-utils";
+import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { getDescriptionFromPageObjectResponse } from "@/app/utils/notionUtils";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -17,9 +21,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   // fetch data
   const recordMap = await getPageByPageId(slug);
+  const page = await getPageFromNotion(slug);
+
+  const title = getPageTitle(recordMap) ?? undefined;
+  const imageUrls = getPageImageUrls(recordMap, { mapImageUrl: identity });
+  const description = getDescriptionFromPageObjectResponse(
+    page as Pick<PageObjectResponse, "properties">,
+  );
 
   return {
-    title: getPageTitle(recordMap),
+    title: title,
+    description: description,
+    openGraph: {
+      type: "website",
+      title: title,
+      description: description,
+      images: [
+        {
+          url: imageUrls[0],
+        },
+      ],
+    },
   };
 }
 
