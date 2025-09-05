@@ -1,7 +1,7 @@
 import { NotionPage } from "@/app/components/NotionPage";
 import type { Metadata } from "next";
 
-import { getPageByPageId } from "@/app/lib/notionAPI";
+import { getPageByPageId } from "@/app/lib/notionCompatAPI";
 import { RecordPageLayout } from "@/app/records/[slug]/_layout";
 import { getPageFromNotion, getRecordsFromNotion } from "@/app/lib/recordAPI";
 import { Comments } from "@/app/components/Comments";
