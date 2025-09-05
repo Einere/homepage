@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 import { getPageByPageId } from "@/app/lib/notionCompatAPI";
 import { RecordPageLayout } from "@/app/records/[slug]/_layout";
-import { getPageFromNotion, getRecordsFromNotion } from "@/app/lib/notionAPI";
+import { retrievePage, queryRecordsDataSource } from "@/app/lib/notionAPI";
 import { Comments } from "@/app/components/Comments";
 import { identity } from "@einere/common-utils";
 import { getPageImageUrls, getPageTitle } from "notion-utils";
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   // fetch data
   const recordMap = await getPageByPageId(slug);
-  const page = await getPageFromNotion(slug);
+  const page = await retrievePage(slug);
 
   const title = getPageTitle(recordMap) ?? undefined;
   const imageUrls = getPageImageUrls(recordMap, { mapImageUrl: identity });
@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export const revalidate = 3600; // NotionRenderer 가 자원 요청 시, 기본 X-Amz-Expires 헤더 값이 3600이라서, 맞춰줌.
 export const dynamicParams = true; // true is default
 export async function generateStaticParams() {
-  const body = await getRecordsFromNotion();
+  const body = await queryRecordsDataSource();
   const { results } = body;
 
   return results.map((record) => ({

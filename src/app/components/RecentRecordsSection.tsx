@@ -2,7 +2,7 @@ import {
   SectionWithRecordCards,
   SectionWithRecordCardsSkeleton,
 } from "@/app/components/SectionWithRecordCards";
-import { getRecordsFromNotion } from "@/app/lib/notionAPI";
+import { queryRecordsDataSource } from "@/app/lib/notionAPI";
 import {
   getDescriptionFromPageObjectResponse,
   getIdFromPageObjectResponse,
@@ -17,7 +17,7 @@ const RECENT_RECORDS_SECTION_TITLE = "새로운 여정의 기록들";
 const MAX_RECORDS = 5;
 
 export async function RecentRecordsSection() {
-  const { results } = await getRecordsFromNotion();
+  const { results } = await queryRecordsDataSource();
 
   const recentRecords = toArray(
     limit(MAX_RECORDS, filter(isPageObjectResponse, results)),

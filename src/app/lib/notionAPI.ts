@@ -5,7 +5,7 @@ const notion = new Client({
   auth: process.env.NEXT_NOTION_API_AUTH_TOKEN,
 });
 
-export function getRecordsFromNotion(
+export function queryRecordsDataSource(
   queryOptions?: Omit<QueryDataSourceParameters, "data_source_id">,
 ) {
   return notion.dataSources.query({
@@ -20,13 +20,13 @@ export function getRecordsFromNotion(
   });
 }
 
-export function retrieveDataSource() {
+export function retrieveRecordsDataSource() {
   return notion.dataSources.retrieve({
     data_source_id: process.env.NEXT_NOTION_API_DATA_SOURCE_ID,
   });
 }
 
-export function getPageFromNotion(pageId: string) {
+export function retrievePage(pageId: string) {
   return notion.pages.retrieve({
     page_id: pageId,
   });

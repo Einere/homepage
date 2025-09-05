@@ -1,10 +1,10 @@
-import { retrieveDataSource } from "@/app/lib/notionAPI";
+import { retrieveRecordsDataSource } from "@/app/lib/notionAPI";
 import { NavLink } from "@/app/components/NavLink";
 import { NOTION_BLOG_RECORDS_PROPERTIES } from "@/app/utils/notionUtils";
 
 export async function Tags() {
-  const db = await retrieveDataSource();
-  const tagProperty = db.properties[NOTION_BLOG_RECORDS_PROPERTIES.TAGS];
+  const { properties } = await retrieveRecordsDataSource();
+  const tagProperty = properties[NOTION_BLOG_RECORDS_PROPERTIES.TAGS];
   const tagOptions =
     tagProperty.type === "multi_select" ? tagProperty.multi_select.options : [];
 

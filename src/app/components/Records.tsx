@@ -1,4 +1,4 @@
-import { getRecordsFromNotion } from "../lib/notionAPI";
+import { queryRecordsDataSource } from "../lib/notionAPI";
 import {
   getDescriptionFromPageObjectResponse,
   getIdFromPageObjectResponse,
@@ -34,7 +34,7 @@ export async function Records(params: RecordsProps) {
     Object.assign(cursorMap, { [tag]: { "0": undefined } });
   }
 
-  const response = await getRecordsFromNotion({
+  const response = await queryRecordsDataSource({
     filter: tag ? getTagFilter(tag) : undefined,
     page_size: PAGE_SIZE,
     start_cursor: cursorMap[tag ?? ALL_TAG][currentPage],
