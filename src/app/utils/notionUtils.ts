@@ -1,7 +1,7 @@
 import {
-  DatabaseObjectResponse,
+  DataSourceObjectResponse,
   PageObjectResponse,
-  PartialDatabaseObjectResponse,
+  PartialDataSourceObjectResponse,
   PartialPageObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
 
@@ -19,6 +19,7 @@ export function getTitleFromQueryPageObjectResponse(page: PageObjectResponse) {
   return property.type === "title" ? property.title[0]?.plain_text : undefined;
 }
 
+// TODO: Retrieve a page property item 으로 교체하기?
 export function getDescriptionFromPageObjectResponse(
   page: Pick<PageObjectResponse, "properties">,
 ) {
@@ -51,8 +52,8 @@ export function isPageObjectResponse(
   response:
     | PageObjectResponse
     | PartialPageObjectResponse
-    | PartialDatabaseObjectResponse
-    | DatabaseObjectResponse,
+    | PartialDataSourceObjectResponse
+    | DataSourceObjectResponse,
 ): response is PageObjectResponse {
   return response.object === "page" && "properties" in response;
 }

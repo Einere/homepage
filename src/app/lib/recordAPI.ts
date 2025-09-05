@@ -5,7 +5,9 @@ const notion = new Client({
   auth: process.env.NEXT_NOTION_API_AUTH_TOKEN,
 });
 
-export function getRecordsFromNotion(queryOptions?: QueryDataSourceParameters) {
+export function getRecordsFromNotion(
+  queryOptions?: Omit<QueryDataSourceParameters, "data_source_id">,
+) {
   return notion.dataSources.query({
     data_source_id: process.env.NEXT_NOTION_API_DATA_SOURCE_ID,
     sorts: [
@@ -18,9 +20,9 @@ export function getRecordsFromNotion(queryOptions?: QueryDataSourceParameters) {
   });
 }
 
-export function getRecordsDBFromNotion() {
-  return notion.databases.retrieve({
-    database_id: process.env.NEXT_NOTION_API_DATABASE_ID,
+export function retrieveDataSource() {
+  return notion.dataSources.retrieve({
+    data_source_id: process.env.NEXT_NOTION_API_DATA_SOURCE_ID,
   });
 }
 
