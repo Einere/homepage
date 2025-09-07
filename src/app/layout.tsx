@@ -5,6 +5,7 @@ import "./styles/prism-dracula.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import QueryProvider from "@/app/providers/query-provider";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.einere.me"),
@@ -48,6 +49,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </QueryProvider>
+        <Analytics />
       </body>
     </html>
   );
