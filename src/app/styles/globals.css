@@ -91,6 +91,10 @@
     .notion-quote {
       border-color: var(--color-main-200) !important;
     }
+
+    .notion-asset-wrapper-image > div {
+      width: unset !important;
+    }
   }
 }
 
