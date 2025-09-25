@@ -24,21 +24,25 @@
   h1 {
     font-size: var(--text-4xl);
     font-weight: bold;
+    @apply mb-6;
   }
 
   h2 {
     font-size: var(--text-3xl);
     font-weight: bold;
+    @apply mb-5;
   }
 
   h3 {
     font-size: var(--text-2xl);
     font-weight: bold;
+    @apply mb-4;
   }
 
   h4 {
     font-size: var(--text-xl);
     font-weight: bold;
+    @apply mb-3;
   }
 
   a {
