@@ -14,7 +14,7 @@ export default function Profile() {
       <div>
         <h2>최형준</h2>
         <blockquote>
-          <p>제품을 만드는, 지속가능한 웹 개발자를 지향합니다.</p>
+          <p>웹 기술로 문제를 해결하는, 지속가능한 엔지니어를 지향합니다.</p>
         </blockquote>
         <p className="pb-2">
           비전을 녹여낸 제품을 동료들과 함께 만들어 나가는 여정에 적극적으로
