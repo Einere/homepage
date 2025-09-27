@@ -17,10 +17,8 @@ export default async function RecordsPage(params: RecordsPageProps) {
       <h1 className="mt-16 mb-6">
         여정의 발자취를 작은 기록들로 남겨봅니다. 🐾
       </h1>
-      <Suspense>
-        <Tags />
-      </Suspense>
       <Suspense fallback={<RecordsPageSkeleton />}>
+        <Tags />
         <Records searchParams={searchParams} />
       </Suspense>
     </RecordsPageLayout>
