@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "./font.css";
 @import "./theme.css" layer(theme);
+@import "./utility.css";
 
 @layer base {
   :root {
@@ -19,6 +20,10 @@
 
   html[data-theme="blue"] {
     --main-color: var(--base-blue);
+  }
+
+  body {
+    background-color: var(--color-main-10);
   }
 
   h1 {
@@ -64,9 +69,9 @@
 
   blockquote {
     border-left: 4px solid var(--color-main-200); /* 왼쪽 회색 세로줄 */
-    background: var(--color-main-100); /* 연한 회색 배경 */
-    padding: 12px 16px; /* 내부 여백 */
-    margin: 16px 0; /* 상하 마진 */
+    background: var(--color-main-50); /* 연한 회색 배경 */
+    padding: 1rem !important; /* 내부 여백 */
+    margin: 1rem 0; /* 상하 마진 */
     color: hsl(0, 0%, 23.9%); /* 글자 색상 */
   }
 
@@ -93,6 +98,7 @@
     }
 
     .notion-quote {
+      font-size: 1rem !important;
       border-color: var(--color-main-200) !important;
     }
 

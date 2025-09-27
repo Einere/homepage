@@ -1,9 +1,11 @@
-@utility text-primary {
-  color: var(--color-primary);
-}
-@utility text-secondary {
-  color: var(--color-secondary);
-}
-@utility text-emphasis {
-  color: var(--color-emphasis);
+@layer utilities {
+  .text-primary {
+    color: var(--color-primary);
+  }
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+  .text-emphasis {
+    color: var(--color-emphasis);
+  }
 }
