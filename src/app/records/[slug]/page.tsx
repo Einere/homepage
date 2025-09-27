@@ -8,7 +8,12 @@ import { Comments } from "@/app/components/Comments";
 import { identity } from "@einere/common-utils";
 import { getPageImageUrls, getPageTitle } from "notion-utils";
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import { getDescriptionFromPageObjectResponse } from "@/app/utils/notionUtils";
+import {
+  getDescriptionFromPageObjectResponse,
+  getPublishedDateFromPageObjectResponse,
+  getTitleFromQueryPageObjectResponse,
+  isPageObjectResponse,
+} from "@/app/utils/notionUtils";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -62,11 +67,24 @@ export default async function RecordPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const page = await retrievePage(slug);
   const recordMap = await getPageByPageId(slug);
+
+  let title = "";
+  let publishedDate = "";
+
+  if (isPageObjectResponse(page)) {
+    title = getTitleFromQueryPageObjectResponse(page) ?? "";
+    publishedDate = getPublishedDateFromPageObjectResponse(page);
+  }
 
   return (
     <RecordPageLayout>
-      <NotionPage recordMap={recordMap} />
+      <NotionPage
+        recordMap={recordMap}
+        title={title}
+        publishedDate={publishedDate}
+      />
       <Comments />
     </RecordPageLayout>
   );

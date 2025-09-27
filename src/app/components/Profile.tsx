@@ -18,7 +18,7 @@ export default function Profile() {
             <p>웹 기술로 문제를 해결하는, 지속가능한 엔지니어를 지향합니다.</p>
           </blockquote>
           <p className="pb-2">다양한 경험을 해보는 것을 좋아합니다.</p>
-          <p className="pb-4">
+          <p className="mb-6">
             생각과 경험을 글로서 정리하고 기록하고 공유하는 것을 좋아합니다.
           </p>
 
