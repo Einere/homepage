@@ -16,6 +16,15 @@ export function queryRecordsDataSource(
         direction: "descending",
       },
     ],
+    filter: {
+      and: [
+        {
+          date: { is_not_empty: true },
+          property: NOTION_BLOG_RECORDS_PROPERTIES.PUBLISHED_DATE,
+          type: "date",
+        },
+      ],
+    },
     ...queryOptions,
   });
 }
