@@ -29,7 +29,7 @@ export function NotionPage({
   const _createDate = dayjs(publishedDate).locale("ko");
 
   return (
-    <>
+    <div className="mb-16">
       <h1>{title}</h1>
       <time dateTime={_createDate.toISOString()} className="mb-4 inline-block">
         {_createDate
@@ -50,6 +50,6 @@ export function NotionPage({
           return url;
         }}
       />
-    </>
+    </div>
   );
 }
