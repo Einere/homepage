@@ -2,18 +2,12 @@ import { NotionPage } from "@/app/components/NotionPage";
 import type { Metadata } from "next";
 
 import { getPageByPageId } from "@/app/lib/notionCompatAPI";
-import { RecordPageLayout } from "@/app/records/[slug]/_layout";
 import { retrievePage, queryRecordsDataSource } from "@/app/lib/notionAPI";
 import { Comments } from "@/app/components/Comments";
 import { identity } from "@einere/common-utils";
 import { getPageImageUrls, getPageTitle } from "notion-utils";
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import {
-  getDescriptionFromPageObjectResponse,
-  getPublishedDateFromPageObjectResponse,
-  getTitleFromQueryPageObjectResponse,
-  isPageObjectResponse,
-} from "@/app/utils/notionUtils";
+import { getDescriptionFromPageObjectResponse } from "@/app/utils/notionUtils";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -67,25 +61,12 @@ export default async function RecordPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const page = await retrievePage(slug);
   const recordMap = await getPageByPageId(slug);
 
-  let title = "";
-  let publishedDate = "";
-
-  if (isPageObjectResponse(page)) {
-    title = getTitleFromQueryPageObjectResponse(page) ?? "";
-    publishedDate = getPublishedDateFromPageObjectResponse(page);
-  }
-
   return (
-    <RecordPageLayout>
-      <NotionPage
-        recordMap={recordMap}
-        title={title}
-        publishedDate={publishedDate}
-      />
+    <>
+      <NotionPage recordMap={recordMap} />
       <Comments />
-    </RecordPageLayout>
+    </>
   );
 }
