@@ -1,8 +1,19 @@
 import { Client, QueryDataSourceParameters } from "@notionhq/client";
 import { NOTION_BLOG_RECORDS_PROPERTIES } from "@/app/utils/notionUtils";
 
+// Custom fetch with cache control for Next.js
+const customFetch: typeof fetch = (url, init) => {
+  return fetch(url, {
+    ...init,
+    next: {
+      revalidate: 1800, // 30분마다 재검증 (page.tsx의 revalidate와 동일)
+    },
+  });
+};
+
 const notion = new Client({
   auth: process.env.NEXT_NOTION_API_AUTH_TOKEN,
+  fetch: customFetch,
 });
 
 export function queryRecordsDataSource(

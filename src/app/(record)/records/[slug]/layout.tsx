@@ -7,6 +7,8 @@ import {
   isPageObjectResponse,
 } from "@/app/utils/notionUtils";
 
+export const revalidate = 1800;
+
 export default async function RecordPageLayout(
   props: PropsWithChildren<{
     params: Promise<{ slug: string }>;
@@ -21,6 +23,13 @@ export default async function RecordPageLayout(
   if (isPageObjectResponse(page)) {
     title = getTitleFromQueryPageObjectResponse(page) ?? "";
     publishedDate = getPublishedDateFromPageObjectResponse(page);
+  }
+
+  // publishedDate 유효성 검사
+  if (!publishedDate) {
+    throw new Error(
+      `Published date is missing for page: ${slug} (title: "${title}")`,
+    );
   }
 
   const _createDate = dayjs(publishedDate).locale("ko");
