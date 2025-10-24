@@ -1,7 +1,7 @@
 /* @NOTICE: https://tailwindcss.com/docs/theme */
 @theme {
   /* Font */
-  --font-sans: "GowunDodum-Regular";
+  --font-sans: var(--font-gowun-dodum);
   --font-mono: D2Coding;
   --font-chiness: FZuanSu;
 

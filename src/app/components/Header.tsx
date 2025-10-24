@@ -1,16 +1,7 @@
-"use client";
-
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
-  function changeColorScheme() {
-    const $html = document.getElementsByTagName("html").item(0);
-
-    if ($html) {
-      $html.dataset.theme = $html.dataset.theme === "pink" ? "blue" : "pink";
-    }
-  }
-
   return (
     <header className="bg-header-bg border-b-main-200 sticky top-0 z-1 border-b py-2">
       <nav className="mx-auto max-w-[768px] px-4 lg:px-0">
@@ -21,11 +12,7 @@ export default function Header() {
             </Link>
           </li>
           <li className="ml-0 min-[375px]:ml-8 md:ml-0">
-            <button
-              title="색 바꾸기"
-              className="bg-main-500 block h-6 w-6 cursor-pointer rounded-full md:h-8 md:w-8"
-              onClick={changeColorScheme}
-            />
+            <ThemeToggle />
           </li>
           <li>
             <Link href="/about" className="text-lg break-keep md:text-2xl">

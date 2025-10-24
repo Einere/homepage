@@ -6,8 +6,12 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 
-const Code = dynamic(() =>
-  import("react-notion-x/build/third-party/code").then((m) => m.Code),
+const Code = dynamic(
+  () => import("react-notion-x/build/third-party/code").then((m) => m.Code),
+  {
+    ssr: false,
+    loading: () => <div className="h-8 animate-pulse rounded bg-gray-200" />,
+  },
 );
 
 export function NotionPage({
