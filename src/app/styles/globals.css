@@ -10,8 +10,23 @@
     --notion-font: var(--font-sans) !important;
   }
 
+  /* Optimized transitions for theme switching and interactive elements */
   * {
-    @apply transition-colors;
+    @apply transition-colors duration-150 ease-in-out;
+  }
+
+  /* Disable transitions for performance-critical elements */
+  .no-transition,
+  .no-transition * {
+    transition: none !important;
+  }
+
+  /* Optimize transitions for specific performance-sensitive elements */
+  img,
+  video,
+  canvas,
+  svg {
+    transition: none;
   }
 
   html[data-theme="pink"] {

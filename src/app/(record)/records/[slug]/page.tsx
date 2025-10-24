@@ -8,19 +8,26 @@ import { identity } from "@einere/common-utils";
 import { getPageImageUrls, getPageTitle } from "notion-utils";
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import { getDescriptionFromPageObjectResponse } from "@/app/utils/notionUtils";
+import { cache } from "react";
 
 type Props = {
   params: Promise<{ slug: string }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
+// Cache the page data to avoid duplicate API calls
+const getCachedPageData = cache(async (slug: string) => {
+  const recordMap = await getPageByPageId(slug);
+  const page = await retrievePage(slug);
+  return { recordMap, page };
+});
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // read route params
   const { slug } = await params;
 
-  // fetch data
-  const recordMap = await getPageByPageId(slug);
-  const page = await retrievePage(slug);
+  // fetch data using cached function
+  const { recordMap, page } = await getCachedPageData(slug);
 
   const title = getPageTitle(recordMap) ?? undefined;
   const imageUrls = getPageImageUrls(recordMap, { mapImageUrl: identity });
@@ -61,7 +68,7 @@ export default async function RecordPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const recordMap = await getPageByPageId(slug);
+  const { recordMap } = await getCachedPageData(slug);
 
   return (
     <>
