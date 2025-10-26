@@ -929,22 +929,25 @@ svg.notion-page-icon {
 .notion-code {
   position: relative;
   width: 100%;
-  padding: 1em;
+  padding: 2em 1em;
   margin: 4px 0;
   border-radius: 3px;
   tab-size: 2;
   display: block;
   box-sizing: border-box;
-  overflow: auto;
   background: var(--bg-color-1);
   font-family:
     SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
+.notion-code pre {
+  overflow: auto;
+}
+
 .notion-code-copy {
   position: absolute;
-  top: 1em;
-  right: 1em;
+  top: 0.2em;
+  right: 0.2em;
   user-select: none;
   z-index: 9;
   transition: opacity 0.2s cubic-bezier(0.3, 0, 0.5, 1);
@@ -952,8 +955,7 @@ svg.notion-page-icon {
 
 .notion-code-copy-button {
   display: inline-block;
-  padding: 0.6em;
-  /* font-size: 1.25em; */
+  padding: 0.2em;
   line-height: 1em;
   cursor: pointer;
 
