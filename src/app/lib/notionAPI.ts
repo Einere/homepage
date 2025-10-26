@@ -51,3 +51,9 @@ export function retrievePage(pageId: string) {
     page_id: pageId,
   });
 }
+
+export function retrieveBlockChildren(blockId: string) {
+  return notion.blocks.children.list({
+    block_id: blockId,
+  });
+}

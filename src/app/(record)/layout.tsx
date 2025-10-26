@@ -1,5 +1,4 @@
-import "react-notion-x/src/styles.css";
-import "../styles/prism-dracula.css";
+import "../components/NotionRenderer/styles.css";
 
 export default function RecordLayout({
   children,
