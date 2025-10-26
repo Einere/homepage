@@ -2,6 +2,7 @@
 @import "./font.css";
 @import "./theme.css" layer(theme);
 @import "./utility.css";
+@import "prismjs/themes/prism-tomorrow.css";
 
 @layer base {
   :root {

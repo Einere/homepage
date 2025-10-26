@@ -929,7 +929,6 @@ svg.notion-page-icon {
 .notion-code {
   position: relative;
   width: 100%;
-  padding: 2em 1em;
   margin: 4px 0;
   border-radius: 3px;
   tab-size: 2;
