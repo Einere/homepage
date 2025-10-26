@@ -112,5 +112,5 @@ export function NotionRenderer({ blocks, customImage }: NotionRendererProps) {
     processedBlocks.push(<List key="list-final" blocks={[...currentList]} />);
   }
 
-  return <div className="notion-renderer">{processedBlocks}</div>;
+  return <div className="notion-renderer mb-16">{processedBlocks}</div>;
 }

@@ -2683,9 +2683,6 @@ svg.notion-page-icon {
 }
 
 .notion-simple-table {
-  border: 1px solid var(--fg-color-5);
-  border-collapse: collapse;
-  border-spacing: 0;
   font-size: 14px;
 }
 

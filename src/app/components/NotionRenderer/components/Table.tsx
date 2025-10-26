@@ -14,7 +14,6 @@ export async function Table({ block, tableRows }: TableProps) {
   if (!actualTableRows && block.id) {
     try {
       const childrenData = await retrieveBlockChildren(block.id);
-      console.log(childrenData);
       actualTableRows = (childrenData.results || []) as TableRowBlock[];
     } catch (error) {
       console.error("Error fetching table children:", error);
@@ -71,7 +70,12 @@ export async function Table({ block, tableRows }: TableProps) {
             return (
               <tr key={row.id || rowIndex}>
                 {cells.map((cell: RichTextItem[], cellIndex: number) => (
-                  <td key={cellIndex}>
+                  <td
+                    key={cellIndex}
+                    className={
+                      cellIndex === 0 ? "notion-simple-table-header-cell" : ""
+                    }
+                  >
                     <RichText value={cell || []} />
                   </td>
                 ))}
