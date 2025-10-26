@@ -1,16 +1,16 @@
 "use client";
 
-import { NotionBlock } from "../types";
+import { CodeBlock } from "../types";
 import { RichText } from "./RichText";
 import { useState } from "react";
 
 interface CodeProps {
-  block: NotionBlock;
+  block: CodeBlock;
 }
 
 export function Code({ block }: CodeProps) {
   const codeData = block.code;
-  const richText = codeData?.rich_text || [];
+  const richText = codeData.rich_text;
 
   const [isCopied, setIsCopied] = useState(false);
 

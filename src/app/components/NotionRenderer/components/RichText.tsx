@@ -22,7 +22,6 @@ export function RichText({ value, className }: RichTextProps) {
 
     // Handle links first
     const linkUrl = href || textContent?.link;
-    const isLink = !!linkUrl;
 
     // Build the element with all decorations
     if (needsCode) {

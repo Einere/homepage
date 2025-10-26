@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import { NotionBlock } from "../types";
+import { ImageBlock as ImageBlockType } from "../types";
 import { RichText } from "./RichText";
 
 interface ImageProps {
-  block: NotionBlock;
+  block: ImageBlockType;
   customImage?: React.ComponentType<{
     src: string;
     alt: string;

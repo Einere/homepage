@@ -1,5 +1,10 @@
 import React from "react";
-import { NotionBlockList } from "./types";
+import {
+  NotionBlockList,
+  NotionBlock,
+  BulletedListItemBlock,
+  NumberedListItemBlock,
+} from "./types";
 import { Paragraph } from "./components/Paragraph";
 import { Heading } from "./components/Heading";
 import { ImageBlock } from "./components/Image";
@@ -23,16 +28,14 @@ export function NotionRenderer({ blocks, customImage }: NotionRendererProps) {
     return <div className="notion-empty">No content available</div>;
   }
 
-  const renderBlock = (block: (typeof blocks.results)[0]) => {
+  const renderBlock = (block: NotionBlock) => {
     switch (block.type) {
-      case "paragraph": {
+      case "paragraph":
         // Skip empty paragraphs
-        const richText = block.paragraph?.rich_text || [];
-        if (richText.length === 0) {
+        if (block.paragraph.rich_text.length === 0) {
           return null;
         }
         return <Paragraph key={block.id} block={block} />;
-      }
 
       case "heading_1":
       case "heading_2":
@@ -60,19 +63,12 @@ export function NotionRenderer({ blocks, customImage }: NotionRendererProps) {
         // Table rows are rendered as part of their parent table
         // Don't render them separately
         return null;
-
-      default:
-        // Fallback for unsupported block types
-        if (process.env.NODE_ENV !== "production") {
-          console.warn(`Unsupported block type: ${block.type}`);
-        }
-        return null;
     }
   };
 
   // Process all blocks and group lists
   const processedBlocks: React.ReactNode[] = [];
-  const currentList: (typeof blocks.results)[0][] = [];
+  const currentList: (BulletedListItemBlock | NumberedListItemBlock)[] = [];
   let currentListType: "bulleted_list_item" | "numbered_list_item" | null =
     null;
 

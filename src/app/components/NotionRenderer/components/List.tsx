@@ -1,15 +1,17 @@
-import { NotionBlock } from "../types";
+import { BulletedListItemBlock, NumberedListItemBlock } from "../types";
 import { RichText } from "./RichText";
 
+type ListItemBlock = BulletedListItemBlock | NumberedListItemBlock;
+
 interface ListProps {
-  blocks: NotionBlock[];
+  blocks: ListItemBlock[];
 }
 
 export function List({ blocks }: ListProps) {
   // Group consecutive list items by type
   const groupedLists: Array<{
     type: "bulleted_list_item" | "numbered_list_item";
-    items: NotionBlock[];
+    items: ListItemBlock[];
   }> = [];
 
   let currentList: (typeof groupedLists)[0] | null = null;
@@ -54,9 +56,9 @@ export function List({ blocks }: ListProps) {
           <ListTag key={listIndex} className={className}>
             {list.items.map((item, itemIndex) => {
               const richText =
-                item[list.type]?.rich_text ||
-                item.bulleted_list_item?.rich_text ||
-                [];
+                item.type === "bulleted_list_item"
+                  ? item.bulleted_list_item.rich_text
+                  : item.numbered_list_item.rich_text;
 
               return (
                 <li key={`${item.id}-${itemIndex}`}>

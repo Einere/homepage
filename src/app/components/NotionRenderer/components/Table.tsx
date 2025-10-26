@@ -1,11 +1,11 @@
 import React from "react";
-import { NotionBlock, RichTextItem } from "../types";
+import { TableBlock, TableRowBlock, RichTextItem } from "../types";
 import { RichText } from "./RichText";
 import { retrieveBlockChildren } from "@/app/lib/notionAPI";
 
 interface TableProps {
-  block: NotionBlock;
-  tableRows?: NotionBlock[];
+  block: TableBlock;
+  tableRows?: TableRowBlock[];
 }
 
 export async function Table({ block, tableRows }: TableProps) {
@@ -15,7 +15,7 @@ export async function Table({ block, tableRows }: TableProps) {
     try {
       const childrenData = await retrieveBlockChildren(block.id);
       console.log(childrenData);
-      actualTableRows = (childrenData.results || []) as NotionBlock[];
+      actualTableRows = (childrenData.results || []) as TableRowBlock[];
     } catch (error) {
       console.error("Error fetching table children:", error);
       actualTableRows = [];
