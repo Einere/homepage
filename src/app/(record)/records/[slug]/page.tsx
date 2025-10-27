@@ -81,10 +81,6 @@ export default async function RecordPage({
     <>
       {/* Custom Notion Renderer */}
       <NotionRenderer blocks={blockChildren as NotionBlockList} />
-
-      {/* Fallback to original NotionPage for compatibility */}
-      {/* <NotionPage recordMap={recordMap} /> */}
-
       <Comments />
     </>
   );
