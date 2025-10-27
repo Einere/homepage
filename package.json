@@ -21,7 +21,6 @@
     "dayjs": "^1.11.13",
     "next": "15.2.3",
     "notion-client": "^7.4.3",
-    "notion-compat": "^7.4.3",
     "notion-types": "^7.4.3",
     "notion-utils": "^7.4.3",
     "prismjs": "^1.30.0",

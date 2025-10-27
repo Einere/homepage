@@ -11,6 +11,7 @@ import { ImageBlock } from "./components/Image";
 import { Code } from "./components/Code";
 import { List } from "./components/List";
 import { Table } from "./components/Table";
+import { ColumnList } from "./components/ColumnList";
 
 interface NotionRendererProps {
   blocks: NotionBlockList;
@@ -23,7 +24,10 @@ interface NotionRendererProps {
   }>;
 }
 
-export function NotionRenderer({ blocks, customImage }: NotionRendererProps) {
+export async function NotionRenderer({
+  blocks,
+  customImage,
+}: NotionRendererProps) {
   if (!blocks || !blocks.results || blocks.results.length === 0) {
     return <div className="notion-empty">No content available</div>;
   }
@@ -63,6 +67,17 @@ export function NotionRenderer({ blocks, customImage }: NotionRendererProps) {
         // Table rows are rendered as part of their parent table
         // Don't render them separately
         return null;
+
+      case "column_list":
+        // ColumnList component will fetch its own children via API
+        return (
+          <ColumnList key={block.id} block={block} customImage={customImage} />
+        );
+
+      case "column":
+        // Columns are rendered as part of their parent column_list
+        // Don't render them separately
+        return null;
     }
   };
 
@@ -72,7 +87,8 @@ export function NotionRenderer({ blocks, customImage }: NotionRendererProps) {
   let currentListType: "bulleted_list_item" | "numbered_list_item" | null =
     null;
 
-  blocks.results.forEach((block, index) => {
+  for (let index = 0; index < blocks.results.length; index++) {
+    const block = blocks.results[index];
     const isListItem =
       block.type === "bulleted_list_item" ||
       block.type === "numbered_list_item";
@@ -105,7 +121,7 @@ export function NotionRenderer({ blocks, customImage }: NotionRendererProps) {
         processedBlocks.push(blockElement);
       }
     }
-  });
+  }
 
   // Close any remaining list
   if (currentList.length > 0) {

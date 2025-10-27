@@ -2,9 +2,9 @@ import { PropsWithChildren } from "react";
 import dayjs from "dayjs";
 import { retrievePage } from "@/app/lib/notionAPI";
 import {
-  getPublishedDateFromPageObjectResponse,
-  getTitleFromQueryPageObjectResponse,
-  isPageObjectResponse,
+  getPublishedDateFromPageObject,
+  getTitleFromPageObject,
+  isPageObject,
 } from "@/app/utils/notionUtils";
 
 export const revalidate = 1800;
@@ -20,9 +20,9 @@ export default async function RecordPageLayout(
   let title = "";
   let publishedDate = "";
 
-  if (isPageObjectResponse(page)) {
-    title = getTitleFromQueryPageObjectResponse(page) ?? "";
-    publishedDate = getPublishedDateFromPageObjectResponse(page);
+  if (isPageObject(page)) {
+    title = getTitleFromPageObject(page) ?? "";
+    publishedDate = getPublishedDateFromPageObject(page);
   }
 
   // publishedDate 유효성 검사

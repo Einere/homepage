@@ -22,7 +22,6 @@ specifiers:
   eslint-plugin-prettier: ^5.2.3
   next: 15.2.3
   notion-client: ^7.4.3
-  notion-compat: ^7.4.3
   notion-types: ^7.4.3
   notion-utils: ^7.4.3
   prettier: 3.5.3
@@ -45,7 +44,6 @@ dependencies:
   dayjs: 1.11.13
   next: 15.2.3_upmzqgzhjrquwzo2dphtigtdgi
   notion-client: 7.4.3
-  notion-compat: 7.4.3_@notionhq+client@5.0.0
   notion-types: 7.4.3
   notion-utils: 7.4.3
   prismjs: 1.30.0
@@ -2575,18 +2573,6 @@ packages:
       notion-types: 7.4.3
       notion-utils: 7.4.3
       p-map: 7.0.3
-    dev: false
-
-  /notion-compat/7.4.3_@notionhq+client@5.0.0:
-    resolution: {integrity: sha512-LdLm5biW2nb3GMJgrr6/n9zWD1PJ2Me4/Vt5U+ydPD59OHDBnL/7E6f7FSCoQvdqpEbHPmrd2S3juBcKjkJKLQ==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      '@notionhq/client': ^2.2.0
-    dependencies:
-      '@notionhq/client': 5.0.0
-      notion-types: 7.4.3
-      notion-utils: 7.4.3
-      p-queue: 8.1.0
     dev: false
 
   /notion-types/7.4.3:

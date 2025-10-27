@@ -4,12 +4,12 @@ import {
 } from "@/app/components/SectionWithRecordCards";
 import { queryRecordsDataSource } from "@/app/lib/notionAPI";
 import {
-  getDescriptionFromPageObjectResponse,
-  getIdFromPageObjectResponse,
-  getPublishedDateFromPageObjectResponse,
-  getTagsFromPageObjectResponse,
-  getTitleFromQueryPageObjectResponse,
-  isPageObjectResponse,
+  getDescriptionFromPageObject,
+  getIdFromPageObject,
+  getPublishedDateFromPageObject,
+  getTagsFromPageObject,
+  getTitleFromPageObject,
+  isPageObject,
 } from "@/app/utils/notionUtils";
 import { filter, limit, toArray } from "@einere/common-utils";
 
@@ -20,7 +20,7 @@ export async function RecentRecordsSection() {
   const { results } = await queryRecordsDataSource();
 
   const recentRecords = toArray(
-    limit(MAX_RECORDS, filter(isPageObjectResponse, results)),
+    limit(MAX_RECORDS, filter(isPageObject, results)),
   );
 
   return (
@@ -28,11 +28,11 @@ export async function RecentRecordsSection() {
       title={RECENT_RECORDS_SECTION_TITLE}
       records={recentRecords.map((record) => {
         return {
-          title: getTitleFromQueryPageObjectResponse(record) ?? "",
-          description: getDescriptionFromPageObjectResponse(record) ?? "",
-          id: getIdFromPageObjectResponse(record),
-          publishedDate: getPublishedDateFromPageObjectResponse(record),
-          tags: getTagsFromPageObjectResponse(record),
+          title: getTitleFromPageObject(record) ?? "",
+          description: getDescriptionFromPageObject(record) ?? "",
+          id: getIdFromPageObject(record),
+          publishedDate: getPublishedDateFromPageObject(record),
+          tags: getTagsFromPageObject(record),
         };
       })}
     />

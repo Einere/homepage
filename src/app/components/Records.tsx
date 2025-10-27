@@ -1,11 +1,11 @@
 import { queryRecordsDataSource } from "../lib/notionAPI";
 import {
-  getDescriptionFromPageObjectResponse,
-  getIdFromPageObjectResponse,
-  getPublishedDateFromPageObjectResponse,
-  getTagsFromPageObjectResponse,
-  getTitleFromQueryPageObjectResponse,
-  isPageObjectResponse,
+  getDescriptionFromPageObject,
+  getIdFromPageObject,
+  getPublishedDateFromPageObject,
+  getTagsFromPageObject,
+  getTitleFromPageObject,
+  isPageObject,
   NOTION_BLOG_RECORDS_PROPERTIES,
 } from "@/app/utils/notionUtils";
 import RecordCard from "@/app/components/RecordCard";
@@ -59,13 +59,12 @@ export async function Records(params: RecordsProps) {
   return (
     <>
       <ul>
-        {results.filter(isPageObjectResponse).map((record) => {
-          const title = getTitleFromQueryPageObjectResponse(record) ?? "";
-          const description =
-            getDescriptionFromPageObjectResponse(record) ?? "";
-          const id = getIdFromPageObjectResponse(record);
-          const publishedDate = getPublishedDateFromPageObjectResponse(record);
-          const tags = getTagsFromPageObjectResponse(record);
+        {results.filter(isPageObject).map((record) => {
+          const title = getTitleFromPageObject(record) ?? "";
+          const description = getDescriptionFromPageObject(record) ?? "";
+          const id = getIdFromPageObject(record);
+          const publishedDate = getPublishedDateFromPageObject(record);
+          const tags = getTagsFromPageObject(record);
 
           return (
             <li key={id} className="pb-4">
