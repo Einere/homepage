@@ -1,17 +1,17 @@
 import { NotionRenderer } from "@/app/components/NotionRenderer";
 import type { Metadata } from "next";
 
-import { getPageByPageId } from "@/app/lib/notionCompatAPI";
 import {
   retrievePage,
   queryRecordsDataSource,
   retrieveBlockChildren,
 } from "@/app/lib/notionAPI";
 import { Comments } from "@/app/components/Comments";
-import { identity } from "@einere/common-utils";
-import { getPageImageUrls, getPageTitle } from "notion-utils";
-import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import { getDescriptionFromPageObjectResponse } from "@/app/utils/notionUtils";
+import {
+  getDescriptionFromPageObject,
+  getFirstImageFromListBlockChildren,
+  getTitleFromPageObject,
+} from "@/app/utils/notionUtils";
 import { cache } from "react";
 import type { NotionBlockList } from "@/app/components/NotionRenderer/types";
 
@@ -22,11 +22,10 @@ type Props = {
 
 // Cache the page data to avoid duplicate API calls
 const getCachedPageData = cache(async (slug: string) => {
-  const recordMap = await getPageByPageId(slug);
   const page = await retrievePage(slug);
   const blockChildren = await retrieveBlockChildren(slug);
 
-  return { recordMap, page, blockChildren };
+  return { page: page, blockChildren };
 });
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -34,13 +33,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
 
   // fetch data using cached function
-  const { recordMap, page } = await getCachedPageData(slug);
+  const { page, blockChildren } = await getCachedPageData(slug);
 
-  const title = getPageTitle(recordMap) ?? undefined;
-  const imageUrls = getPageImageUrls(recordMap, { mapImageUrl: identity });
-  const description = getDescriptionFromPageObjectResponse(
-    page as Pick<PageObjectResponse, "properties">,
-  );
+  const title = getTitleFromPageObject(page) ?? undefined;
+  const imageUrl = getFirstImageFromListBlockChildren(blockChildren);
+  const description = getDescriptionFromPageObject(page);
 
   return {
     title: title,
@@ -51,7 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: description,
       images: [
         {
-          url: imageUrls[0],
+          url: imageUrl ?? "",
         },
       ],
     },

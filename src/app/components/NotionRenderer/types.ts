@@ -50,7 +50,9 @@ export type BlockType =
   | "table"
   | "table_row"
   | "divider"
-  | "bookmark";
+  | "bookmark"
+  | "column_list"
+  | "column";
 
 export interface Parent {
   type: string;
@@ -183,6 +185,18 @@ export interface TableRowBlock extends BaseNotionBlock {
   table_row: TableRowData;
 }
 
+export interface ColumnListBlock extends BaseNotionBlock {
+  type: "column_list";
+  column_list: object;
+}
+
+export interface ColumnBlock extends BaseNotionBlock {
+  type: "column";
+  column: {
+    width_ratio: number;
+  };
+}
+
 export type NotionBlock =
   | ParagraphBlock
   | Heading1Block
@@ -193,7 +207,9 @@ export type NotionBlock =
   | ImageBlock
   | CodeBlock
   | TableBlock
-  | TableRowBlock;
+  | TableRowBlock
+  | ColumnListBlock
+  | ColumnBlock;
 
 export interface NotionBlockList {
   object: "list";

@@ -1,10 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  getTitleFromQueryPageObjectResponse,
-  isPageObjectResponse,
-} from "@/app/utils/notionUtils";
+import { getTitleFromPageObject, isPageObject } from "@/app/utils/notionUtils";
 import { useNotionSearch } from "@/app/hooks/useNotionSearch";
 import Link from "next/link";
 import { useDebounce } from "@/app/hooks/useDebounce";
@@ -52,10 +49,10 @@ export default function SearchPage() {
             return <p>해당 제목으로 기록을 아무것도 찾을 수 없었어요.</p>;
           }
 
-          return data.filter(isPageObjectResponse).map((page) => (
+          return data.filter(isPageObject).map((page) => (
             <li key={page.id}>
               <Link href={`/records/${page.id}`}>
-                {getTitleFromQueryPageObjectResponse(page)}
+                {getTitleFromPageObject(page)}
               </Link>
             </li>
           ));
