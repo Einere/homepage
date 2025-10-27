@@ -9,6 +9,7 @@ specifiers:
   '@tanstack/react-query': ^5.83.0
   '@tanstack/react-query-devtools': ^5.83.0
   '@types/node': ^20
+  '@types/prismjs': ^1.26.5
   '@types/react': ^19
   '@types/react-dom': ^19
   '@vercel/analytics': ^1.5.0
@@ -26,6 +27,7 @@ specifiers:
   notion-utils: ^7.4.3
   prettier: 3.5.3
   prettier-plugin-tailwindcss: ^0.6.11
+  prismjs: ^1.30.0
   react: ^19.0.0
   react-dom: ^19.0.0
   react-notion-x: ^7.4.3
@@ -48,6 +50,7 @@ dependencies:
   notion-compat: 7.4.3_@notionhq+client@5.0.0
   notion-types: 7.4.3
   notion-utils: 7.4.3
+  prismjs: 1.30.0
   react: 19.0.0
   react-dom: 19.0.0_react@19.0.0
   react-notion-x: 7.4.3_ic4am3j6rrl7wwsgwbhuc7znqy
@@ -57,6 +60,7 @@ devDependencies:
   '@eslint/eslintrc': 3.3.0
   '@tailwindcss/postcss': 4.0.13
   '@types/node': 20.17.24
+  '@types/prismjs': 1.26.5
   '@types/react': 19.0.10
   '@types/react-dom': 19.0.4_@types+react@19.0.10
   eslint: 9.22.0
@@ -724,6 +728,10 @@ packages:
     resolution: {integrity: sha512-d7fGCyB96w9BnWQrOsJtpyiSaBcAYYr75bnK6ZRjDbql2cGLj/3GsL5OYmLPNq76l7Gf2q4Rv9J2o6h5CrD9sA==}
     dependencies:
       undici-types: 6.19.8
+    dev: true
+
+  /@types/prismjs/1.26.5:
+    resolution: {integrity: sha512-AUZTa7hQ2KY5L7AmtSiqxlhWxb4ina0yd8hNbl4TWuqnv/pFP0nDMb3YrfSBf4hJVGLh2YEIBfKaBW/9UEl6IQ==}
     dev: true
 
   /@types/react-dom/19.0.4_@types+react@19.0.10:
