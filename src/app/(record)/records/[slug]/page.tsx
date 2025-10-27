@@ -1,14 +1,19 @@
-import { NotionPage } from "@/app/components/NotionPage";
+import { NotionRenderer } from "@/app/components/NotionRenderer";
 import type { Metadata } from "next";
 
 import { getPageByPageId } from "@/app/lib/notionCompatAPI";
-import { retrievePage, queryRecordsDataSource } from "@/app/lib/notionAPI";
+import {
+  retrievePage,
+  queryRecordsDataSource,
+  retrieveBlockChildren,
+} from "@/app/lib/notionAPI";
 import { Comments } from "@/app/components/Comments";
 import { identity } from "@einere/common-utils";
 import { getPageImageUrls, getPageTitle } from "notion-utils";
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import { getDescriptionFromPageObjectResponse } from "@/app/utils/notionUtils";
 import { cache } from "react";
+import type { NotionBlockList } from "@/app/components/NotionRenderer/types";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -19,7 +24,9 @@ type Props = {
 const getCachedPageData = cache(async (slug: string) => {
   const recordMap = await getPageByPageId(slug);
   const page = await retrievePage(slug);
-  return { recordMap, page };
+  const blockChildren = await retrieveBlockChildren(slug);
+
+  return { recordMap, page, blockChildren };
 });
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -68,11 +75,12 @@ export default async function RecordPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const { recordMap } = await getCachedPageData(slug);
+  const { blockChildren } = await getCachedPageData(slug);
 
   return (
     <>
-      <NotionPage recordMap={recordMap} />
+      {/* Custom Notion Renderer */}
+      <NotionRenderer blocks={blockChildren as NotionBlockList} />
       <Comments />
     </>
   );
