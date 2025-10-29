@@ -1,3 +1,4 @@
+import { getLinkFromRichTextItem } from "@/app/utils/notionUtils";
 import { RichTextItem } from "../types";
 
 interface RichTextProps {
@@ -11,7 +12,7 @@ export function RichText({ value, className }: RichTextProps) {
   }
 
   const renderText = (text: RichTextItem, index: number): React.ReactNode => {
-    const { annotations, plain_text, href } = text;
+    const { annotations, plain_text } = text;
 
     let element: React.ReactNode = plain_text;
 
@@ -20,15 +21,8 @@ export function RichText({ value, className }: RichTextProps) {
     const needsColor = annotations.color && annotations.color !== "default";
     const needsBg = needsColor && annotations.color !== "default";
 
-    // TOOD: getLinkFromUrl 함수로 리팩토링하기
     // Handle links first
-    const linkUrl =
-      href ||
-      (text.type === "text"
-        ? typeof text.text?.link === "string"
-          ? text.text.link
-          : text.text?.link?.url
-        : null);
+    const linkUrl = getLinkFromRichTextItem(text);
 
     // Build the element with all decorations
     if (needsCode) {

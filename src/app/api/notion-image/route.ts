@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Client } from "@notionhq/client";
-import { isBlockObject } from "@/app/utils/notionUtils";
+import {
+  getImageUrlFromImageData,
+  isImageBlock,
+} from "@/app/utils/notionUtils";
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -21,19 +24,14 @@ export async function GET(request: NextRequest) {
       block_id: blockId,
     });
 
-    // TOOD: isImageBlock 타입 가드 함수로 리팩토링하기
-    if (!isBlockObject(block) || block.type !== "image" || !block.image) {
+    if (!isImageBlock(block)) {
       return NextResponse.json(
         { error: "Image block not found" },
         { status: 404 },
       );
     }
 
-    // TODO: FileMediaContentWithFileAndCaptionResponse 와 ExternalMediaContentWithFileAndCaptionResponse 를 구분하는 타입 가드 함수 적용하기
-    const imageData = block.image;
-    const fileUrl = imageData.file?.url;
-    const externalUrl = imageData.external?.url;
-    const imageUrl = fileUrl || externalUrl;
+    const imageUrl = getImageUrlFromImageData(block.image);
 
     if (!imageUrl) {
       return NextResponse.json(
