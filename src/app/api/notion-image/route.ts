@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { retrieveBlockChildren } from "@/app/lib/notionAPI";
 import { Client } from "@notionhq/client";
+import { isBlockObject } from "@/app/utils/notionUtils";
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -17,17 +17,19 @@ export async function GET(request: NextRequest) {
     });
 
     // Get the specific block directly
-    const block = (await notion.blocks.retrieve({
+    const block = await notion.blocks.retrieve({
       block_id: blockId,
-    })) as any;
+    });
 
-    if (!block || block.type !== "image" || !block.image) {
+    // TOOD: isImageBlock 타입 가드 함수로 리팩토링하기
+    if (!isBlockObject(block) || block.type !== "image" || !block.image) {
       return NextResponse.json(
         { error: "Image block not found" },
         { status: 404 },
       );
     }
 
+    // TODO: FileMediaContentWithFileAndCaptionResponse 와 ExternalMediaContentWithFileAndCaptionResponse 를 구분하는 타입 가드 함수 적용하기
     const imageData = block.image;
     const fileUrl = imageData.file?.url;
     const externalUrl = imageData.external?.url;

@@ -1,7 +1,6 @@
 import React from "react";
 import {
   NotionBlockList,
-  NotionBlock,
   BulletedListItemBlock,
   NumberedListItemBlock,
 } from "./types";
@@ -12,6 +11,10 @@ import { Code } from "./components/Code";
 import { List } from "./components/List";
 import { Table } from "./components/Table";
 import { ColumnList } from "./components/ColumnList";
+import type {
+  BlockObjectResponse,
+  PartialBlockObjectResponse,
+} from "@notionhq/client";
 
 interface NotionRendererProps {
   blocks: NotionBlockList;
@@ -24,6 +27,14 @@ interface NotionRendererProps {
   }>;
 }
 
+// TODO: notionUtils.ts 로 옮기기
+// Type guard to check if a block is a full BlockObjectResponse
+function isFullBlock(
+  block: BlockObjectResponse | PartialBlockObjectResponse,
+): block is BlockObjectResponse {
+  return "type" in block;
+}
+
 export async function NotionRenderer({
   blocks,
   customImage,
@@ -32,7 +43,7 @@ export async function NotionRenderer({
     return <div className="notion-empty">No content available</div>;
   }
 
-  const renderBlock = (block: NotionBlock) => {
+  const renderBlock = (block: BlockObjectResponse) => {
     switch (block.type) {
       case "paragraph":
         // Skip empty paragraphs
@@ -78,6 +89,10 @@ export async function NotionRenderer({
         // Columns are rendered as part of their parent column_list
         // Don't render them separately
         return null;
+
+      default:
+        // Handle any other block types that might exist in the official API
+        return null;
     }
   };
 
@@ -89,6 +104,13 @@ export async function NotionRenderer({
 
   for (let index = 0; index < blocks.results.length; index++) {
     const block = blocks.results[index];
+
+    // Skip partial blocks that don't have full type information
+    if (!isFullBlock(block)) {
+      continue;
+    }
+
+    // TODO: isListItemBlock 타입 가드 함수로 리팩토링하기
     const isListItem =
       block.type === "bulleted_list_item" ||
       block.type === "numbered_list_item";
@@ -103,9 +125,7 @@ export async function NotionRenderer({
       }
 
       currentList.push(block);
-      currentListType = block.type as
-        | "bulleted_list_item"
-        | "numbered_list_item";
+      currentListType = block.type;
     } else {
       // Close any open list before rendering non-list block
       if (currentList.length > 0) {

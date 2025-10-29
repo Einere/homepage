@@ -20,14 +20,15 @@ export function ImageBlock({ block, customImage }: ImageProps) {
     return null;
   }
 
-  // Handle file URLs
-  const fileUrl = imageData.file?.url;
-  const externalUrl = imageData.external?.url;
+  // Handle different image types based on the official API structure
+  let imageUrl: string | null = null;
 
-  // Use proxy for Notion-hosted images (file URLs), keep external URLs as-is
-  const imageUrl = fileUrl
-    ? `/api/notion-image?blockId=${block.id}`
-    : externalUrl;
+  // TODO: getImageUrlFromImageData 함수로 리팩토링하기
+  if (imageData.type === "file") {
+    imageUrl = `/api/notion-image?blockId=${block.id}`;
+  } else if (imageData.type === "external") {
+    imageUrl = imageData.external.url;
+  }
 
   if (!imageUrl) {
     return null;

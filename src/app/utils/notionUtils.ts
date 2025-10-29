@@ -88,5 +88,9 @@ export function getFirstImageFromListBlockChildren(
   const blockChildren = listBlockChildrenResponse.results;
   const imageBlock = blockChildren.filter(isImageBlock)[0];
 
-  return imageBlock?.image?.file?.url;
+  if (imageBlock && imageBlock.image.type === "file") {
+    return imageBlock.image.file.url;
+  }
+
+  return undefined;
 }
