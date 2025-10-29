@@ -40,7 +40,7 @@ export async function ColumnList({ block, customImage }: ColumnListProps) {
     const columnBlock = columnBlocks[i];
 
     // Calculate width as percentage
-    const width = `${(columnBlock.column.width_ratio ?? 1) * 100}%`;
+    const width = `${columnBlock.column.width_ratio * 100}%`;
 
     // Fetch children of this column
     let columnChildren: NotionBlock[] = [];
