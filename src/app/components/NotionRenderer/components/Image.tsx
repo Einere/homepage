@@ -23,7 +23,11 @@ export function ImageBlock({ block, customImage }: ImageProps) {
   // Handle file URLs
   const fileUrl = imageData.file?.url;
   const externalUrl = imageData.external?.url;
-  const imageUrl = fileUrl || externalUrl;
+
+  // Use proxy for Notion-hosted images (file URLs), keep external URLs as-is
+  const imageUrl = fileUrl
+    ? `/api/notion-image?blockId=${block.id}`
+    : externalUrl;
 
   if (!imageUrl) {
     return null;
@@ -38,7 +42,7 @@ export function ImageBlock({ block, customImage }: ImageProps) {
         {customImage ? (
           React.createElement(customImage, {
             src: imageUrl,
-            alt: "",
+            alt: caption.map((c) => c.plain_text).join(""),
             style: { objectFit: "contain" },
           })
         ) : (

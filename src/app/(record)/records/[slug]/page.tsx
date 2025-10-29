@@ -14,6 +14,7 @@ import {
 } from "@/app/utils/notionUtils";
 import { cache } from "react";
 import type { NotionBlockList } from "@/app/components/NotionRenderer/types";
+import { NotionImage } from "@/app/components/NotionImage";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -77,7 +78,10 @@ export default async function RecordPage({
   return (
     <>
       {/* Custom Notion Renderer */}
-      <NotionRenderer blocks={blockChildren as NotionBlockList} />
+      <NotionRenderer
+        blocks={blockChildren as NotionBlockList}
+        customImage={NotionImage}
+      />
       <Comments />
     </>
   );
