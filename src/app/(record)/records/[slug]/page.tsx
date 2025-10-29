@@ -13,7 +13,7 @@ import {
   getTitleFromPageObject,
 } from "@/app/utils/notionUtils";
 import { cache } from "react";
-import { NotionImage } from "@/app/components/NotionImage";
+import type { NotionBlockList } from "@/app/components/NotionRenderer/types";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -77,7 +77,7 @@ export default async function RecordPage({
   return (
     <>
       {/* Custom Notion Renderer */}
-      <NotionRenderer blocks={blockChildren} customImage={NotionImage} />
+      <NotionRenderer blocks={blockChildren as NotionBlockList} />
       <Comments />
     </>
   );

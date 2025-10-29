@@ -3,7 +3,6 @@
 import React from "react";
 import { ImageBlock as ImageBlockType } from "../types";
 import { RichText } from "./RichText";
-import { getImageUrlFromImageData } from "@/app/utils/notionUtils";
 
 interface ImageProps {
   block: ImageBlockType;
@@ -16,7 +15,15 @@ interface ImageProps {
 
 export function ImageBlock({ block, customImage }: ImageProps) {
   const imageData = block.image;
-  const imageUrl = getImageUrlFromImageData(imageData);
+
+  if (!imageData) {
+    return null;
+  }
+
+  // Handle file URLs
+  const fileUrl = imageData.file?.url;
+  const externalUrl = imageData.external?.url;
+  const imageUrl = fileUrl || externalUrl;
 
   if (!imageUrl) {
     return null;
@@ -24,7 +31,6 @@ export function ImageBlock({ block, customImage }: ImageProps) {
 
   // Get caption
   const caption = imageData.caption || [];
-  const captionStr = caption.map((c) => c.plain_text).join("");
 
   return (
     <figure className="notion-asset-wrapper notion-asset-wrapper-image">
@@ -32,14 +38,14 @@ export function ImageBlock({ block, customImage }: ImageProps) {
         {customImage ? (
           React.createElement(customImage, {
             src: imageUrl,
-            alt: captionStr,
+            alt: "",
             style: { objectFit: "contain" },
           })
         ) : (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={imageUrl}
-            alt={captionStr}
+            alt=""
             style={{ width: "100%", height: "auto", objectFit: "contain" }}
           />
         )}
