@@ -16,11 +16,27 @@ interface ImageProps {
 
 export function ImageBlock({ block, customImage }: ImageProps) {
   const imageData = block.image;
-  const imageUrl = getImageUrlFromImageData(imageData);
+  const rawUrl = getImageUrlFromImageData(imageData);
 
-  if (!imageUrl) {
+  if (!rawUrl) {
     return null;
   }
+
+  // Use proxy for Notion-hosted images
+  // - Notion file URLs
+  // - External URLs that point to Notion's S3 host (signed URLs)
+  const NOTION_S3_HOST = "prod-files-secure.s3.us-west-2.amazonaws.com";
+  const urlForRender = (() => {
+    try {
+      const u = new URL(rawUrl);
+      if (u.hostname === NOTION_S3_HOST) {
+        return `/api/notion-image?blockId=${block.id}`;
+      }
+    } catch {
+      /* noop */
+    }
+    return rawUrl;
+  })();
 
   // Get caption
   const caption = imageData.caption || [];
@@ -31,14 +47,14 @@ export function ImageBlock({ block, customImage }: ImageProps) {
       <div className="notion-image">
         {customImage ? (
           React.createElement(customImage, {
-            src: imageUrl,
+            src: urlForRender,
             alt: captionStr,
             style: { objectFit: "contain" },
           })
         ) : (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={imageUrl}
+            src={urlForRender}
             alt={captionStr}
             style={{ width: "100%", height: "auto", objectFit: "contain" }}
           />
