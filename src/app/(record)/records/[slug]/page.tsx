@@ -10,6 +10,7 @@ import { Comments } from "@/app/components/Comments";
 import {
   getDescriptionFromPageObject,
   getFirstImageFromListBlockChildren,
+  getFirstImageBlockIdFromListBlockChildren,
   getTitleFromPageObject,
 } from "@/app/utils/notionUtils";
 import { cache } from "react";
@@ -37,7 +38,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = getTitleFromPageObject(page) ?? undefined;
   const imageUrl = getFirstImageFromListBlockChildren(blockChildren);
+  const firstImageBlockId =
+    getFirstImageBlockIdFromListBlockChildren(blockChildren);
   const description = getDescriptionFromPageObject(page);
+
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "http://localhost:3000");
+  const proxiedOgImage = firstImageBlockId
+    ? `${baseUrl}/api/notion-image?blockId=${firstImageBlockId}`
+    : undefined;
 
   return {
     title: title,
@@ -46,11 +58,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       title: title,
       description: description,
-      images: [
-        {
-          url: imageUrl ?? "",
-        },
-      ],
+      images: proxiedOgImage
+        ? [
+            {
+              url: proxiedOgImage,
+            },
+          ]
+        : imageUrl
+          ? [
+              {
+                url: imageUrl,
+              },
+            ]
+          : [],
     },
   };
 }

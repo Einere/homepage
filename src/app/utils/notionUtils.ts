@@ -111,6 +111,14 @@ export function getFirstImageFromListBlockChildren(
   return undefined;
 }
 
+export function getFirstImageBlockIdFromListBlockChildren(
+  listBlockChildrenResponse: ListBlockChildrenResponse,
+): string | undefined {
+  const blockChildren = listBlockChildrenResponse.results;
+  const imageBlock = blockChildren.filter(isImageBlock)[0];
+  return imageBlock?.id;
+}
+
 export function getImageUrlFromImageData(
   imageData: ImageBlock["image"],
 ): string | null {
