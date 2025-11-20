@@ -5,6 +5,9 @@ import {
   isImageBlock,
 } from "@/app/utils/notionUtils";
 
+// Route Segment Config: ISR 캐싱 설정
+export const revalidate = 1800; // 30분마다 재검증
+
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const blockId = searchParams.get("blockId");
@@ -50,18 +53,18 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // Get the image data
-    const imageBuffer = await imageResponse.arrayBuffer();
+    // 스트리밍 최적화: 버퍼로 모두 받지 않고 바로 스트리밍
     const contentType =
       imageResponse.headers.get("content-type") || "image/jpeg";
 
-    // Return the image with appropriate headers
-    return new NextResponse(imageBuffer, {
+    // Return the image with streaming and enhanced caching
+    return new NextResponse(imageResponse.body, {
       status: 200,
       headers: {
         "Content-Type": contentType,
-        "Cache-Control": "public, max-age=1800, s-maxage=1800", // 30분 캐시
-        "Content-Length": imageBuffer.byteLength.toString(),
+        // Edge 캐싱 강화: stale-while-revalidate로 백그라운드 갱신
+        "Cache-Control":
+          "public, max-age=1800, s-maxage=1800, stale-while-revalidate=3600",
       },
     });
   } catch (error) {
