@@ -3,7 +3,7 @@
 import React from "react";
 import { ImageBlock as ImageBlockType } from "../types";
 import { RichText } from "./RichText";
-import { getImageUrlFromImageData } from "@/app/utils/notionUtils";
+import { getImageUrlFromImageData } from "../utils/notionUtils";
 
 interface ImageProps {
   block: ImageBlockType;

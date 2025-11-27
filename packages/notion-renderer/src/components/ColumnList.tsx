@@ -5,11 +5,11 @@ import {
   NotionBlock,
   NotionBlockList,
 } from "../types";
-import { retrieveBlockChildren } from "@/app/lib/notionAPI";
 import { NotionRenderer } from "../NotionRenderer";
 
 interface ColumnListProps {
   block: ColumnListBlock;
+  retrieveBlockChildren?: (blockId: string) => Promise<NotionBlockList>;
   customImage?: React.ComponentType<{
     src: string;
     alt: string;
@@ -17,10 +17,14 @@ interface ColumnListProps {
   }>;
 }
 
-export async function ColumnList({ block, customImage }: ColumnListProps) {
+export async function ColumnList({
+  block,
+  retrieveBlockChildren,
+  customImage,
+}: ColumnListProps) {
   // Fetch children of the column_list (these are ColumnBlock objects)
   let columnBlocks: ColumnBlock[] = [];
-  if (block.has_children && block.id) {
+  if (block.has_children && block.id && retrieveBlockChildren) {
     try {
       const childrenData = await retrieveBlockChildren(block.id);
       columnBlocks = (childrenData.results || []) as ColumnBlock[];
@@ -44,7 +48,7 @@ export async function ColumnList({ block, customImage }: ColumnListProps) {
 
     // Fetch children of this column
     let columnChildren: NotionBlock[] = [];
-    if (columnBlock.has_children && columnBlock.id) {
+    if (columnBlock.has_children && columnBlock.id && retrieveBlockChildren) {
       try {
         const childrenData = await retrieveBlockChildren(columnBlock.id);
         columnChildren = (childrenData.results || []) as NotionBlock[];
@@ -64,6 +68,7 @@ export async function ColumnList({ block, customImage }: ColumnListProps) {
               has_more: false,
             } as NotionBlockList
           }
+          retrieveBlockChildren={retrieveBlockChildren}
           customImage={customImage}
         />
       </div>,
