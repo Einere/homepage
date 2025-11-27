@@ -1,17 +1,26 @@
 import React from "react";
-import { TableBlock, TableRowBlock, RichTextItem } from "../types";
+import {
+  TableBlock,
+  TableRowBlock,
+  RichTextItem,
+  NotionBlockList,
+} from "../types";
 import { RichText } from "./RichText";
-import { retrieveBlockChildren } from "@/app/lib/notionAPI";
 
 interface TableProps {
   block: TableBlock;
   tableRows?: TableRowBlock[];
+  retrieveBlockChildren?: (blockId: string) => Promise<NotionBlockList>;
 }
 
-export async function Table({ block, tableRows }: TableProps) {
+export async function Table({
+  block,
+  tableRows,
+  retrieveBlockChildren,
+}: TableProps) {
   // If tableRows not provided, fetch them using retrieveBlockChildren
   let actualTableRows = tableRows;
-  if (!actualTableRows && block.id) {
+  if (!actualTableRows && block.id && retrieveBlockChildren) {
     try {
       const childrenData = await retrieveBlockChildren(block.id);
       actualTableRows = (childrenData.results || []) as TableRowBlock[];

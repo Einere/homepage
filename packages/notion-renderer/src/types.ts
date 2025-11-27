@@ -71,9 +71,12 @@ export type ColumnBlock = ColumnBlockObjectResponse;
 
 export interface NotionRendererProps {
   blocks: NotionBlockList;
+  retrieveBlockChildren?: (blockId: string) => Promise<NotionBlockList>;
   customImage?: React.ComponentType<{
     src: string;
     alt: string;
+    fill?: boolean;
+    sizes?: string;
     style?: React.CSSProperties;
   }>;
 }

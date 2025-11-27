@@ -1,4 +1,4 @@
-import { NotionRenderer } from "@/app/components/NotionRenderer";
+import { NotionRenderer } from "@homepage/notion-renderer";
 import type { Metadata } from "next";
 
 import {
@@ -97,7 +97,11 @@ export default async function RecordPage({
   return (
     <>
       {/* Custom Notion Renderer */}
-      <NotionRenderer blocks={blockChildren} customImage={NotionImage} />
+      <NotionRenderer
+        blocks={blockChildren}
+        retrieveBlockChildren={retrieveBlockChildren}
+        customImage={NotionImage}
+      />
       <Comments />
     </>
   );

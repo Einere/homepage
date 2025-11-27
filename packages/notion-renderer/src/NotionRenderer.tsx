@@ -3,6 +3,7 @@ import {
   NotionBlockList,
   BulletedListItemBlock,
   NumberedListItemBlock,
+  NotionRendererProps,
 } from "./types";
 import { Paragraph } from "./components/Paragraph";
 import { Heading } from "./components/Heading";
@@ -12,18 +13,7 @@ import { List } from "./components/List";
 import { Table } from "./components/Table";
 import { ColumnList } from "./components/ColumnList";
 import type { BlockObjectResponse } from "@notionhq/client";
-import { isFullBlock, isListItemBlock } from "@/app/utils/notionUtils";
-
-interface NotionRendererProps {
-  blocks: NotionBlockList;
-  customImage?: React.ComponentType<{
-    src: string;
-    alt: string;
-    fill?: boolean;
-    sizes?: string;
-    style?: React.CSSProperties;
-  }>;
-}
+import { isFullBlock, isListItemBlock } from "./utils/notionUtils";
 
 const renderBlock = (
   block: BlockObjectResponse,
@@ -34,6 +24,7 @@ const renderBlock = (
     sizes?: string;
     style?: React.CSSProperties;
   }>,
+  retrieveBlockChildren?: (blockId: string) => Promise<NotionBlockList>,
 ) => {
   switch (block.type) {
     case "paragraph":
@@ -63,7 +54,13 @@ const renderBlock = (
 
     case "table":
       // Table component will fetch its own children via API
-      return <Table key={block.id} block={block} />;
+      return (
+        <Table
+          key={block.id}
+          block={block}
+          retrieveBlockChildren={retrieveBlockChildren}
+        />
+      );
 
     case "table_row":
       // Table rows are rendered as part of their parent table
@@ -73,7 +70,12 @@ const renderBlock = (
     case "column_list":
       // ColumnList component will fetch its own children via API
       return (
-        <ColumnList key={block.id} block={block} customImage={customImage} />
+        <ColumnList
+          key={block.id}
+          block={block}
+          retrieveBlockChildren={retrieveBlockChildren}
+          customImage={customImage}
+        />
       );
 
     case "column":
@@ -90,6 +92,7 @@ const renderBlock = (
 export async function NotionRenderer({
   blocks,
   customImage,
+  retrieveBlockChildren,
 }: NotionRendererProps) {
   if (!blocks || !blocks.results || blocks.results.length === 0) {
     return <div className="notion-empty">No content available</div>;
@@ -130,7 +133,11 @@ export async function NotionRenderer({
         currentListType = null;
       }
 
-      const blockElement = renderBlock(block, customImage);
+      const blockElement = renderBlock(
+        block,
+        customImage,
+        retrieveBlockChildren,
+      );
       if (blockElement) {
         processedBlocks.push(blockElement);
       }

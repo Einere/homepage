@@ -1,4 +1,4 @@
-import { getLinkFromRichTextItem } from "@/app/utils/notionUtils";
+import { getLinkFromRichTextItem } from "../utils/notionUtils";
 import { RichTextItem } from "../types";
 
 interface RichTextProps {

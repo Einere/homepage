@@ -9,7 +9,7 @@ import "prismjs/components/prism-json.min.js";
 import "prismjs/components/prism-jsx.min.js";
 import "prismjs/components/prism-tsx.min.js";
 import "prismjs/components/prism-typescript.min.js";
-import { CopyButton } from "@/app/components/NotionRenderer/components/CopyButton";
+import { CopyButton } from "./CopyButton";
 
 interface CodeProps {
   block: CodeBlock;

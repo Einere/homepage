@@ -1,4 +1,4 @@
-import "../components/NotionRenderer/styles.css";
+import "@homepage/notion-renderer/styles/styles.css";
 
 export default function RecordLayout({
   children,
