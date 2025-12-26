@@ -6,6 +6,7 @@ import {
   getTitleFromPageObject,
   isPageObject,
 } from "@/app/utils/notionUtils";
+import "prismjs/themes/prism-tomorrow.css";
 
 export const revalidate = 1800;
 

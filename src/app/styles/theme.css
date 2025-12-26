@@ -2,8 +2,8 @@
 @theme {
   /* Font */
   --font-sans: var(--font-gowun-dodum);
-  --font-mono: D2Coding;
-  --font-chiness: FZuanSu;
+  --font-mono: var(--font-d2coding);
+  --font-chiness: var(--font-fzuansu);
 
   /* Color */
   --color-background: var(--background);
