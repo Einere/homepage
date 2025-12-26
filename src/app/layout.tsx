@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Gowun_Dodum } from "next/font/google";
+import localFont from "next/font/local";
 import "./styles/globals.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
-import QueryProvider from "@/app/providers/query-provider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -12,6 +12,28 @@ const gowunDodum = Gowun_Dodum({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-gowun-dodum",
+  preload: true,
+});
+
+const d2Coding = localFont({
+  src: [
+    {
+      path: "../../public/fonts/D2Coding/D2Coding-subset.woff2",
+      weight: "400",
+    },
+    {
+      path: "../../public/fonts/D2Coding/D2Coding-full.woff2",
+      weight: "400",
+    },
+  ],
+  variable: "--font-d2coding",
+  display: "swap",
+});
+
+const fZuanSu = localFont({
+  src: "../../public/fonts/FZuanSu/FZuanSu-subset.woff2",
+  variable: "--font-fzuansu",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -49,13 +71,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" data-theme="pink" className={gowunDodum.variable}>
+    <html
+      lang="ko"
+      data-theme="pink"
+      className={`${gowunDodum.variable} ${d2Coding.variable} ${fZuanSu.variable}`}
+    >
       <body className="antialiased">
-        <QueryProvider>
-          <Header />
-          {children}
-          <Footer />
-        </QueryProvider>
+        <Header />
+        {children}
+        <Footer />
         <Analytics />
         <SpeedInsights />
       </body>

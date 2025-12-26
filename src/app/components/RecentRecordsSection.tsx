@@ -11,17 +11,16 @@ import {
   getTitleFromPageObject,
   isPageObject,
 } from "@/app/utils/notionUtils";
-import { filter, limit, toArray } from "@einere/common-utils";
 
 const RECENT_RECORDS_SECTION_TITLE = "새로운 여정의 기록들";
 const MAX_RECORDS = 5;
 
 export async function RecentRecordsSection() {
-  const { results } = await queryRecordsDataSource();
+  const { results } = await queryRecordsDataSource({
+    page_size: MAX_RECORDS,
+  });
 
-  const recentRecords = toArray(
-    limit(MAX_RECORDS, filter(isPageObject, results)),
-  );
+  const recentRecords = results.filter(isPageObject);
 
   return (
     <SectionWithRecordCards

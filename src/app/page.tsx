@@ -1,8 +1,4 @@
-import {
-  RecentRecordsSection,
-  RecentRecordsSectionSkeleton,
-} from "@/app/components/RecentRecordsSection";
-import { Suspense } from "react";
+import { RecentRecordsSection } from "@/app/components/RecentRecordsSection";
 
 export default function HomePage() {
   return (
@@ -11,9 +7,7 @@ export default function HomePage() {
         이 공간을 찾아주신 당신을 환영합니다.
       </h1>
       <div className="mx-auto max-w-[768px] px-4 pb-24 lg:px-0">
-        <Suspense fallback={<RecentRecordsSectionSkeleton />}>
-          <RecentRecordsSection />
-        </Suspense>
+        <RecentRecordsSection />
       </div>
     </main>
   );
