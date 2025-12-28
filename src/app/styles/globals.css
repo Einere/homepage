@@ -9,25 +9,6 @@
     --notion-font: var(--font-sans) !important;
   }
 
-  /* Optimized transitions for theme switching and interactive elements */
-  * {
-    @apply transition-colors duration-150 ease-in-out;
-  }
-
-  /* Disable transitions for performance-critical elements */
-  .no-transition,
-  .no-transition * {
-    transition: none !important;
-  }
-
-  /* Optimize transitions for specific performance-sensitive elements */
-  img,
-  video,
-  canvas,
-  svg {
-    transition: none;
-  }
-
   html[data-theme="pink"] {
     --main-color: var(--base-pink);
   }
@@ -87,38 +68,6 @@
     padding: 1rem !important; /* 내부 여백 */
     margin: 1rem 0; /* 상하 마진 */
     color: hsl(0, 0%, 23.9%); /* 글자 색상 */
-  }
-
-  .notion {
-    header.notion-header {
-      display: none !important;
-    }
-
-    .notion-hash-link {
-      padding-top: 0.5rem !important;
-    }
-
-    .notion-link {
-      color: var(--color-main-700) !important;
-      text-decoration: underline !important;
-      border-bottom: unset !important;
-      border-color: unset !important;
-      opacity: unset !important;
-      transition: unset !important;
-    }
-
-    .notion-code {
-      @apply font-mono;
-    }
-
-    .notion-quote {
-      font-size: 1rem !important;
-      border-color: var(--color-main-200) !important;
-    }
-
-    .notion-asset-wrapper-image > div {
-      width: unset !important;
-    }
   }
 }
 

@@ -1,0 +1,33 @@
+/* 레코드 상세 페이지 전용 스타일 - NotionRenderer 스타일 */
+
+/* :global()을 사용하여 전역 스타일로 적용 (NotionRenderer가 .notion 클래스를 사용) */
+:global(.notion) header.notion-header {
+  display: none !important;
+}
+
+:global(.notion) .notion-hash-link {
+  padding-top: 0.5rem !important;
+}
+
+:global(.notion) .notion-link {
+  color: var(--color-main-700) !important;
+  text-decoration: underline !important;
+  border-bottom: unset !important;
+  border-color: unset !important;
+  opacity: unset !important;
+  transition: unset !important;
+}
+
+:global(.notion) .notion-code {
+  font-family: var(--font-mono);
+}
+
+:global(.notion) .notion-quote {
+  font-size: 1rem !important;
+  border-color: var(--color-main-200) !important;
+}
+
+:global(.notion) .notion-asset-wrapper-image > div {
+  width: unset !important;
+}
+

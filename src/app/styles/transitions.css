@@ -1,0 +1,21 @@
+/* Optimized transitions for theme switching and interactive elements */
+* {
+  transition:
+    color 150ms ease-in-out,
+    background-color 150ms ease-in-out,
+    border-color 150ms ease-in-out;
+}
+
+/* Disable transitions for performance-critical elements */
+.no-transition,
+.no-transition * {
+  transition: none !important;
+}
+
+/* Optimize transitions for specific performance-sensitive elements */
+img,
+video,
+canvas,
+svg {
+  transition: none;
+}
