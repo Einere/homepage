@@ -25,6 +25,10 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  // CSS 최적화를 위한 설정
+  experimental: {
+    optimizeCss: true,
+  },
 };
 
 export default nextConfig;

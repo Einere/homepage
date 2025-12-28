@@ -1,41 +1,11 @@
 import type { Metadata } from "next";
-import { Gowun_Dodum } from "next/font/google";
-import localFont from "next/font/local";
 import "./styles/globals.css";
+import "./styles/transitions.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import "./styles/transitions.css";
-
-const gowunDodum = Gowun_Dodum({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-gowun-dodum",
-  preload: true,
-});
-
-const d2Coding = localFont({
-  src: [
-    {
-      path: "../../public/fonts/D2Coding/D2Coding-subset.woff2",
-      weight: "400",
-    },
-    {
-      path: "../../public/fonts/D2Coding/D2Coding-full.woff2",
-      weight: "400",
-    },
-  ],
-  variable: "--font-d2coding",
-  display: "swap",
-});
-
-const fZuanSu = localFont({
-  src: "../../public/fonts/FZuanSu/FZuanSu-subset.woff2",
-  variable: "--font-fzuansu",
-  display: "swap",
-});
+import { gowunDodum, d2Coding, fZuanSu } from "@/app/fonts";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.einere.me"),
