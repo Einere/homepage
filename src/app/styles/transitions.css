@@ -6,10 +6,10 @@
     border-color 150ms ease-in-out;
 }
 
-/* Disable transitions for performance-critical elements */
-.no-transition,
-.no-transition * {
-  transition: none !important;
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 }
 
 /* Optimize transitions for specific performance-sensitive elements */
