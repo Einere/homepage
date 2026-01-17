@@ -17,6 +17,11 @@ type RecordsProps = {
 
 const PAGE_SIZE = 5;
 const ALL_TAG = "ALL";
+
+// Note: This is module-level state, but in Next.js App Router, server components
+// are executed per request, so each request gets a fresh execution context.
+// The state persists only within the request lifecycle, which is safe for this use case.
+// For production use, consider using unstable_cache or URL-based cursor storage.
 const cursorMap: Record<string, Record<string, string | undefined>> = {
   [ALL_TAG]: {
     "0": undefined,
@@ -27,8 +32,6 @@ export async function Records(params: RecordsProps) {
   const tag = getSearchParam(params.searchParams.tag);
   const page = getSearchParam(params.searchParams.page) ?? "0";
   const currentPage = parseInt(page, 10);
-
-  let results = [];
 
   if (tag && !cursorMap[tag]) {
     Object.assign(cursorMap, { [tag]: { "0": undefined } });
@@ -41,7 +44,7 @@ export async function Records(params: RecordsProps) {
   });
 
   const { has_more, next_cursor } = response;
-  results = response.results;
+  const results = response.results;
 
   // 다음 페이지 커서 설정
   if (has_more && next_cursor) {

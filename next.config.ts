@@ -11,6 +11,20 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
+    localPatterns: [
+      {
+        pathname: "/api/notion-image",
+      },
+      {
+        pathname: "/profile_picture.webp",
+      },
+      {
+        pathname: "/pink_blue_flowers.webp",
+      },
+      {
+        pathname: "/opengraph-image.png",
+      },
+    ],
   },
   async headers() {
     return [

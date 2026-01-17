@@ -69,6 +69,17 @@
     margin: 1rem 0; /* 상하 마진 */
     color: hsl(0, 0%, 23.9%); /* 글자 색상 */
   }
+
+  /* Focus-visible styles for keyboard navigation accessibility */
+  *:focus-visible {
+    outline: 2px solid var(--color-main-700);
+    outline-offset: 2px;
+  }
+
+  /* Remove default focus styles for mouse users */
+  *:focus:not(:focus-visible) {
+    outline: none;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
