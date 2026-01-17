@@ -8,93 +8,89 @@ import {
   isPageObject,
   NOTION_BLOG_RECORDS_PROPERTIES,
 } from "@/app/utils/notionUtils";
-import RecordCard from "@/app/components/RecordCard";
-import Link from "next/link";
+import RecordsClient from "@/app/components/RecordsClient";
 
 type RecordsProps = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
 const PAGE_SIZE = 5;
-const ALL_TAG = "ALL";
 
-// Note: This is module-level state, but in Next.js App Router, server components
-// are executed per request, so each request gets a fresh execution context.
-// The state persists only within the request lifecycle, which is safe for this use case.
-// For production use, consider using unstable_cache or URL-based cursor storage.
-const cursorMap: Record<string, Record<string, string | undefined>> = {
-  [ALL_TAG]: {
-    "0": undefined,
-  },
+// Best Practice: server-serialization - 클라이언트에 필요한 최소한의 데이터만 전달
+export type RecordItem = {
+  id: string;
+  title: string;
+  description: string;
+  publishedDate: string;
+  tags: Array<{
+    id: string;
+    name: string;
+    color: string;
+  }>;
 };
 
 export async function Records(params: RecordsProps) {
   const tag = getSearchParam(params.searchParams.tag);
-  const page = getSearchParam(params.searchParams.page) ?? "0";
-  const currentPage = parseInt(page, 10);
 
-  if (tag && !cursorMap[tag]) {
-    Object.assign(cursorMap, { [tag]: { "0": undefined } });
-  }
-
+  // 초기 데이터만 로드 (첫 페이지, start_cursor: undefined)
   const response = await queryRecordsDataSource({
-    filter: tag ? getTagFilter(tag) : undefined,
+    filter: tag
+      ? {
+          and: [
+            {
+              date: { is_not_empty: true },
+              property: NOTION_BLOG_RECORDS_PROPERTIES.PUBLISHED_DATE,
+              type: "date",
+            },
+            getTagFilter(tag),
+          ],
+        }
+      : {
+          and: [
+            {
+              date: { is_not_empty: true },
+              property: NOTION_BLOG_RECORDS_PROPERTIES.PUBLISHED_DATE,
+              type: "date",
+            },
+          ],
+        },
     page_size: PAGE_SIZE,
-    start_cursor: cursorMap[tag ?? ALL_TAG][currentPage],
+    start_cursor: undefined,
   });
 
   const { has_more, next_cursor } = response;
   const results = response.results;
 
-  // 다음 페이지 커서 설정
-  if (has_more && next_cursor) {
-    const nextPage = currentPage + 1;
+  // Best Practice: server-serialization - 필요한 필드만 추출
+  const initialRecords: RecordItem[] = results
+    .filter(isPageObject)
+    .map((record) => {
+      const title = getTitleFromPageObject(record) ?? "";
+      const description = getDescriptionFromPageObject(record) ?? "";
+      const id = getIdFromPageObject(record);
+      const publishedDate = getPublishedDateFromPageObject(record);
+      const tags = getTagsFromPageObject(record);
 
-    Object.assign(cursorMap[tag ?? ALL_TAG], {
-      [nextPage.toString()]: next_cursor,
+      return {
+        id,
+        title,
+        description,
+        publishedDate,
+        tags: tags.map((tag) => ({
+          id: tag.id,
+          name: tag.name,
+          color: tag.color,
+        })),
+      };
     });
-  }
-
-  if (results.length === 0) {
-    return <p>보여드릴 기록이 없어요. 🫥</p>;
-  }
 
   return (
-    <>
-      <ul>
-        {results.filter(isPageObject).map((record) => {
-          const title = getTitleFromPageObject(record) ?? "";
-          const description = getDescriptionFromPageObject(record) ?? "";
-          const id = getIdFromPageObject(record);
-          const publishedDate = getPublishedDateFromPageObject(record);
-          const tags = getTagsFromPageObject(record);
-
-          return (
-            <li key={id} className="pb-4">
-              <RecordCard
-                id={id}
-                title={title}
-                description={description}
-                publishedDate={publishedDate}
-                tags={tags}
-              />
-            </li>
-          );
-        })}
-      </ul>
-      <ol className="flex justify-center gap-2 pb-16">
-        {Object.keys(cursorMap[tag ?? ALL_TAG]).map((page) => (
-          <Link
-            key={page}
-            href={{
-              query: { tag: tag ? tag : undefined, page: page },
-            }}
-          >
-            {page}
-          </Link>
-        ))}
-      </ol>
-    </>
+    <RecordsClient
+      initialRecords={initialRecords}
+      initialHasMore={has_more}
+      initialNextCursor={next_cursor || null}
+      tag={tag}
+    />
   );
 }
 

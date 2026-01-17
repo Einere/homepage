@@ -13,7 +13,7 @@ export default function ThemeToggle() {
     <button
       aria-label="색 바꾸기"
       title="색 바꾸기"
-      className="bg-main-500 block h-6 w-6 cursor-pointer rounded-full md:h-8 md:w-8 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-main-700"
+      className="bg-main-500 focus-visible:outline-main-700 block h-6 w-6 cursor-pointer rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 md:h-8 md:w-8"
       onClick={changeColorScheme}
     />
   );

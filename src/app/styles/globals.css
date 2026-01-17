@@ -80,6 +80,12 @@
   *:focus:not(:focus-visible) {
     outline: none;
   }
+
+  /* Best Practice: rendering-content-visibility - 긴 리스트 렌더링 최적화 */
+  .record-list-item {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 120px; /* 카드 예상 높이 */
+  }
 }
 
 @media (prefers-color-scheme: dark) {

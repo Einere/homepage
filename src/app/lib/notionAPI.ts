@@ -16,9 +16,7 @@ const notion = new Client({
   fetch: customFetch,
 });
 
-export function queryRecordsDataSource(
-  queryOptions?: Omit<QueryDataSourceParameters, "data_source_id">,
-) {
+export function queryRecordsDataSource(queryOptions?: Omit<QueryDataSourceParameters, "data_source_id">) {
   return notion.dataSources.query({
     data_source_id: process.env.NEXT_NOTION_API_DATA_SOURCE_ID,
     sorts: [

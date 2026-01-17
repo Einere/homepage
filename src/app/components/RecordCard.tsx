@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Link from "next/link";
 import "dayjs/locale/ko";
 
@@ -26,7 +27,8 @@ export interface RecordCardProps {
   tags: Array<PartialSelectResponse>;
 }
 
-export default function RecordCard(props: RecordCardProps) {
+// Best Practice: rerender-memo - 불필요한 리렌더링 방지
+export default memo(function RecordCard(props: RecordCardProps) {
   const { id, title, description } = props;
 
   return (
@@ -37,4 +39,4 @@ export default function RecordCard(props: RecordCardProps) {
       </Link>
     </article>
   );
-}
+});
