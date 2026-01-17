@@ -9,7 +9,6 @@ import {
 import { Comments } from "@/app/components/Comments";
 import {
   getDescriptionFromPageObject,
-  getFirstImageFromListBlockChildren,
   getFirstImageBlockIdFromListBlockChildren,
   getTitleFromPageObject,
 } from "@/app/utils/notionUtils";
@@ -38,18 +37,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { page, blockChildren } = await getCachedPageData(slug);
 
   const title = getTitleFromPageObject(page) ?? undefined;
-  const imageUrl = getFirstImageFromListBlockChildren(blockChildren);
   const firstImageBlockId =
     getFirstImageBlockIdFromListBlockChildren(blockChildren);
   const description = getDescriptionFromPageObject(page);
 
-  const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ??
-    (process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : "http://localhost:3000");
-  const proxiedOgImage = firstImageBlockId
-    ? `${baseUrl}/api/notion-image?blockId=${firstImageBlockId}`
+  // firstImageBlockId가 있으면 항상 프록시 URL 사용 (모든 이미지 타입 지원)
+  // 상대 경로를 사용하면 Next.js가 root layout의 metadataBase를 자동으로 활용하여 절대 URL 생성
+  const ogImageUrl = firstImageBlockId
+    ? `/api/notion-image?blockId=${firstImageBlockId}`
     : undefined;
 
   return {
@@ -59,19 +54,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       title: title,
       description: description,
-      images: proxiedOgImage
+      images: ogImageUrl
         ? [
             {
-              url: proxiedOgImage,
+              url: ogImageUrl,
             },
           ]
-        : imageUrl
-          ? [
-              {
-                url: imageUrl,
-              },
-            ]
-          : [],
+        : [],
     },
   };
 }
