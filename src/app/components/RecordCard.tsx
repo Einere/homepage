@@ -2,7 +2,7 @@ import { memo } from "react";
 import Link from "next/link";
 import "dayjs/locale/ko";
 
-type SelectColor =
+export type SelectColor =
   | "default"
   | "gray"
   | "brown"
@@ -13,7 +13,7 @@ type SelectColor =
   | "purple"
   | "pink"
   | "red";
-type PartialSelectResponse = {
+export type PartialSelectResponse = {
   id: string;
   name: string;
   color: SelectColor;

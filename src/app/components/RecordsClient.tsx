@@ -46,17 +46,15 @@ export default function RecordsClient({
 }: RecordsClientProps) {
   // Best Practice: client-swr-dedup - useInfiniteQuery로 자동 요청 중복 제거 및 캐싱
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage, status } =
-    useInfiniteQuery<
-      RecordsResponse,
-      Error,
-      RecordsResponse,
-      [string, string | null],
-      string | undefined
-    >({
+    useInfiniteQuery({
       queryKey: ["records", tag],
-      queryFn: ({ pageParam = undefined }) => fetchRecords(tag, pageParam),
-      initialPageParam: undefined,
-      getNextPageParam: (lastPage) =>
+      queryFn: ({
+        pageParam = undefined,
+      }: {
+        pageParam?: string | undefined;
+      }) => fetchRecords(tag, pageParam),
+      initialPageParam: undefined as string | undefined,
+      getNextPageParam: (lastPage: RecordsResponse) =>
         lastPage.has_more && lastPage.next_cursor
           ? lastPage.next_cursor
           : undefined,
@@ -106,7 +104,8 @@ export default function RecordsClient({
   }, [handleIntersection]);
 
   // 모든 페이지의 결과를 평탄화
-  const allRecords = data?.pages.flatMap((page) => page.results) ?? [];
+  const allRecords =
+    data?.pages.flatMap((page: RecordsResponse) => page.results) ?? [];
 
   if (status === "error") {
     return <p>데이터를 불러오는 중 오류가 발생했습니다.</p>;
@@ -119,7 +118,7 @@ export default function RecordsClient({
   return (
     <>
       <ul>
-        {allRecords.map((record) => (
+        {allRecords.map((record: RecordItem) => (
           <li key={record.id} className="record-list-item pb-4">
             <RecordCard
               id={record.id}

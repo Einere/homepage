@@ -16,17 +16,15 @@ type RecordsProps = {
 
 const PAGE_SIZE = 5;
 
+import type { PartialSelectResponse } from "@/app/components/RecordCard";
+
 // Best Practice: server-serialization - 클라이언트에 필요한 최소한의 데이터만 전달
 export type RecordItem = {
   id: string;
   title: string;
   description: string;
   publishedDate: string;
-  tags: Array<{
-    id: string;
-    name: string;
-    color: string;
-  }>;
+  tags: Array<PartialSelectResponse>;
 };
 
 export async function Records(params: RecordsProps) {
@@ -79,7 +77,7 @@ export async function Records(params: RecordsProps) {
         tags: tags.map((tag) => ({
           id: tag.id,
           name: tag.name,
-          color: tag.color,
+          color: tag.color as PartialSelectResponse["color"],
         })),
       };
     });

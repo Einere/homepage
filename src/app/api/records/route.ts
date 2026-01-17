@@ -9,8 +9,10 @@ import {
   isPageObject,
   NOTION_BLOG_RECORDS_PROPERTIES,
 } from "@/app/utils/notionUtils";
+import type { PartialSelectResponse } from "@/app/components/RecordCard";
 
-// Route Segment Config: ISR 캐싱 설정
+// Route Segment Config: 동적 라우트 설정 (searchParams 사용)
+export const dynamic = "force-dynamic";
 export const revalidate = 1800; // 30분마다 재검증
 
 const PAGE_SIZE = 5;
@@ -20,11 +22,7 @@ type RecordItem = {
   title: string;
   description: string;
   publishedDate: string;
-  tags: Array<{
-    id: string;
-    name: string;
-    color: string;
-  }>;
+  tags: Array<PartialSelectResponse>;
 };
 
 function getTagFilter(tag: string) {
@@ -88,7 +86,7 @@ export async function GET(req: NextRequest) {
         tags: tags.map((tag) => ({
           id: tag.id,
           name: tag.name,
-          color: tag.color,
+          color: tag.color as PartialSelectResponse["color"],
         })),
       };
     });
