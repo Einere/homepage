@@ -2,7 +2,16 @@
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactNode, useState } from "react";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import dynamic from "next/dynamic";
+
+// Best Practice: bundle-dynamic-imports - 개발 도구는 동적 임포트로 번들 크기 최적화
+const ReactQueryDevtools = dynamic(
+  () =>
+    import("@tanstack/react-query-devtools").then(
+      (mod) => mod.ReactQueryDevtools,
+    ),
+  { ssr: false },
+);
 
 export default function QueryProvider({ children }: { children: ReactNode }) {
   const [client] = useState(
@@ -16,7 +25,7 @@ export default function QueryProvider({ children }: { children: ReactNode }) {
             retry: 1,
           },
         },
-      })
+      }),
   );
 
   return (

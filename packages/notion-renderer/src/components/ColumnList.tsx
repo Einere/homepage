@@ -37,25 +37,35 @@ export async function ColumnList({
     return null;
   }
 
+  // Best Practice: async-parallel - 모든 column children을 병렬로 fetch
+  const columnChildrenPromises = columnBlocks.map(async (columnBlock) => {
+    if (
+      !columnBlock.has_children ||
+      !columnBlock.id ||
+      !retrieveBlockChildren
+    ) {
+      return [];
+    }
+    try {
+      const childrenData = await retrieveBlockChildren(columnBlock.id);
+      return (childrenData.results || []) as NotionBlock[];
+    } catch (error) {
+      console.error("Error fetching column children:", error);
+      return [];
+    }
+  });
+
+  const allColumnChildren = await Promise.all(columnChildrenPromises);
+
   // Render each column with its own children
   const columnElements: React.ReactNode[] = [];
 
   for (let i = 0; i < columnBlocks.length; i++) {
     const columnBlock = columnBlocks[i];
+    const columnChildren = allColumnChildren[i];
 
     // Calculate width as percentage
     const width = `${(columnBlock.column.width_ratio ?? 1) * 100}%`;
-
-    // Fetch children of this column
-    let columnChildren: NotionBlock[] = [];
-    if (columnBlock.has_children && columnBlock.id && retrieveBlockChildren) {
-      try {
-        const childrenData = await retrieveBlockChildren(columnBlock.id);
-        columnChildren = (childrenData.results || []) as NotionBlock[];
-      } catch (error) {
-        console.error("Error fetching column children:", error);
-      }
-    }
 
     columnElements.push(
       <div key={columnBlock.id} className="notion-column" style={{ width }}>

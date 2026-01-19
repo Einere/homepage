@@ -11,14 +11,20 @@ import {
   getTitleFromPageObject,
   isPageObject,
 } from "@/app/utils/notionUtils";
+import { cache } from "react";
 
 const RECENT_RECORDS_SECTION_TITLE = "새로운 여정의 기록들";
 const MAX_RECORDS = 5;
 
-export async function RecentRecordsSection() {
-  const { results } = await queryRecordsDataSource({
+// Best Practice: server-cache-react - 동일 요청 내 중복 호출 방지
+const getCachedRecentRecords = cache(() =>
+  queryRecordsDataSource({
     page_size: MAX_RECORDS,
-  });
+  }),
+);
+
+export async function RecentRecordsSection() {
+  const { results } = await getCachedRecentRecords();
 
   const recentRecords = results.filter(isPageObject);
 

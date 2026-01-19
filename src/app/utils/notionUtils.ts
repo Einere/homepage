@@ -12,30 +12,25 @@ export enum NOTION_BLOG_RECORDS_PROPERTIES {
   "TAGS" = "Tags",
 }
 
+// Best Practice: js-early-exit - 조기 반환으로 가독성 향상
 /* 노션 글 작성 시, 제목을 비워두면 nullable 이 될 수 있다. */
 export function getTitleFromPageObject(page: GetPageResponse) {
-  if (isPageObject(page)) {
-    return page.properties[NOTION_BLOG_RECORDS_PROPERTIES.TITLE].type ===
-      "title"
-      ? page.properties[NOTION_BLOG_RECORDS_PROPERTIES.TITLE].title[0]
-          ?.plain_text
-      : undefined;
-  }
+  if (!isPageObject(page)) return undefined;
 
-  return undefined;
+  const property = page.properties[NOTION_BLOG_RECORDS_PROPERTIES.TITLE];
+  if (property.type !== "title") return undefined;
+
+  return property.title[0]?.plain_text;
 }
 
 export function getDescriptionFromPageObject(page: GetPageResponse) {
-  if (isPageObject(page)) {
-    const property =
-      page.properties[NOTION_BLOG_RECORDS_PROPERTIES.DESCRIPTION];
-    return property.type === "rich_text"
-      ? // 노션 글 작성 시, 요약을 비워두면 nullable 이 될 수 있다.
-        property.rich_text[0]?.plain_text
-      : undefined;
-  }
+  if (!isPageObject(page)) return undefined;
 
-  return undefined;
+  const property = page.properties[NOTION_BLOG_RECORDS_PROPERTIES.DESCRIPTION];
+  if (property.type !== "rich_text") return undefined;
+
+  // 노션 글 작성 시, 요약을 비워두면 nullable 이 될 수 있다.
+  return property.rich_text[0]?.plain_text;
 }
 
 export function getIdFromPageObject(page: GetPageResponse) {
