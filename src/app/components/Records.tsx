@@ -9,6 +9,7 @@ import {
   NOTION_BLOG_RECORDS_PROPERTIES,
 } from "@/app/utils/notionUtils";
 import RecordsClient from "@/app/components/RecordsClient";
+import { cache } from "react";
 
 type RecordsProps = {
   searchParams: { [key: string]: string | string[] | undefined };
@@ -27,11 +28,9 @@ export type RecordItem = {
   tags: Array<PartialSelectResponse>;
 };
 
-export async function Records(params: RecordsProps) {
-  const tag = getSearchParam(params.searchParams.tag);
-
-  // 초기 데이터만 로드 (첫 페이지, start_cursor: undefined)
-  const response = await queryRecordsDataSource({
+// Best Practice: server-cache-react - 동일 요청 내 중복 호출 방지
+const getCachedRecords = cache((tag: string | null) =>
+  queryRecordsDataSource({
     filter: tag
       ? {
           and: [
@@ -54,7 +53,14 @@ export async function Records(params: RecordsProps) {
         },
     page_size: PAGE_SIZE,
     start_cursor: undefined,
-  });
+  }),
+);
+
+export async function Records(params: RecordsProps) {
+  const tag = getSearchParam(params.searchParams.tag);
+
+  // 초기 데이터만 로드 (첫 페이지, start_cursor: undefined)
+  const response = await getCachedRecords(tag);
 
   const { has_more, next_cursor } = response;
   const results = response.results;

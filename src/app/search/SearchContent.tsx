@@ -34,29 +34,22 @@ export default function SearchContent() {
         />
       </form>
 
-      <ul>
-        {(() => {
-          if (isFetching) {
-            return <p>기록들을 찾아보는중...</p>;
-          }
-
-          if (!isExist(data)) {
-            return null;
-          }
-
-          if (isEmptyArray(data)) {
-            return <p>해당 제목으로 기록을 아무것도 찾을 수 없었어요.</p>;
-          }
-
-          return data.filter(isPageObject).map((page) => (
+      {/* Best Practice: rendering-conditional-render - 삼항 연산자로 조건부 렌더링 */}
+      {isFetching ? (
+        <p>기록들을 찾아보는중...</p>
+      ) : !isExist(data) ? null : isEmptyArray(data) ? (
+        <p>해당 제목으로 기록을 아무것도 찾을 수 없었어요.</p>
+      ) : (
+        <ul>
+          {data.filter(isPageObject).map((page) => (
             <li key={page.id}>
               <Link href={`/records/${page.id}`}>
                 {getTitleFromPageObject(page)}
               </Link>
             </li>
-          ));
-        })()}
-      </ul>
+          ))}
+        </ul>
+      )}
     </>
   );
 }
