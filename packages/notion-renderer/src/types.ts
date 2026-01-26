@@ -15,6 +15,7 @@ import type {
   TableRowBlockObjectResponse,
   ColumnListBlockObjectResponse,
   ColumnBlockObjectResponse,
+  CalloutBlockObjectResponse,
 } from "@notionhq/client";
 
 // Define color type based on official API (ApiColor is not exported)
@@ -68,6 +69,7 @@ export type TableBlock = TableBlockObjectResponse;
 export type TableRowBlock = TableRowBlockObjectResponse;
 export type ColumnListBlock = ColumnListBlockObjectResponse;
 export type ColumnBlock = ColumnBlockObjectResponse;
+export type CalloutBlock = CalloutBlockObjectResponse;
 
 export interface NotionRendererProps {
   blocks: NotionBlockList;
