@@ -13,6 +13,7 @@ import { List } from "./components/List";
 import { Table } from "./components/Table";
 import { ColumnList } from "./components/ColumnList";
 import { Callout } from "./components/Callout";
+import { Quote } from "./components/Quote";
 import type { BlockObjectResponse } from "@notionhq/client";
 import { isFullBlock, isListItemBlock } from "./utils/notionUtils";
 
@@ -50,6 +51,9 @@ const renderBlock = (
 
     case "callout":
       return <Callout key={block.id} block={block} />;
+
+    case "quote":
+      return <Quote key={block.id} block={block} />;
 
     case "bulleted_list_item":
     case "numbered_list_item":
