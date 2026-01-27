@@ -1,8 +1,4 @@
 :root {
-  --notion-font:
-    ui-sans-serif, system-ui, apple-system, BlinkMacSystemFont, "Segoe UI",
-    Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji",
-    "Segoe UI Symbol";
   --fg-color: rgb(55, 53, 47);
   --fg-color-0: rgba(55, 53, 47, 0.09);
   --fg-color-1: rgba(55, 53, 47, 0.16);
@@ -144,7 +140,6 @@
   line-height: 1.5;
   color: var(--fg-color);
   caret-color: var(--fg-color);
-  font-family: var(--notion-font);
 }
 
 .notion > * {
@@ -217,7 +212,8 @@
   min-width: 222px;
   overflow: auto;
   background: var(--bg-color);
-  border-radius: 4px;
+  border-radius: 6px;
+  corner-shape: squircle;
 }
 
 .notion-aside-table-of-contents-header {
@@ -515,9 +511,6 @@
 .notion-h1:first-child {
   margin-top: 0;
 }
-/* .notion-h1:first-of-type {
-  margin-top: 2px;
-} */
 .notion-h2 {
   font-size: 1.5em;
   margin-top: 1.1em;
@@ -673,7 +666,8 @@ details.notion-toggle .notion-h {
 
 .notion-page-icon-hero.notion-page-icon-image .notion-page-icon {
   display: block;
-  border-radius: 3px;
+  border-radius: 6px;
+  corner-shape: squircle;
   width: 100%;
   height: 100%;
   max-width: 100%;
@@ -685,9 +679,6 @@ details.notion-toggle .notion-h {
 }
 
 .notion-page-icon {
-  font-family:
-    "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji",
-    "Segoe UI Symbol", "Android Emoji", EmojiSymbols;
   font-size: 1.1em;
   fill: var(--fg-color-6);
   color: var(--fg-color-icon);
@@ -702,7 +693,8 @@ img.notion-page-icon,
 svg.notion-page-icon {
   display: block;
   object-fit: fill;
-  border-radius: 3px;
+  border-radius: 6px;
+  corner-shape: squircle;
   max-width: 100%;
   max-height: 100%;
 }
@@ -740,17 +732,6 @@ svg.notion-page-icon {
 
 .notion-small-text {
   font-size: 14px;
-}
-
-.notion-quote {
-  display: block;
-  width: 100%;
-  white-space: pre-wrap;
-  word-break: break-word;
-  border-left: 3px solid currentcolor;
-  padding: 0.2em 0.9em;
-  margin: 6px 0;
-  font-size: 1.2em;
 }
 
 .notion-hr {
@@ -834,10 +815,9 @@ svg.notion-page-icon {
   color: #eb5757;
   padding: 0.2em 0.4em;
   background: var(--bg-color-2);
-  border-radius: 3px;
+  border-radius: 6px;
+  corner-shape: squircle;
   font-size: 85%;
-  font-family:
-    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
 .notion-inline-underscore {
@@ -931,17 +911,12 @@ svg.notion-page-icon {
   position: relative;
   width: 100%;
   margin: 4px 0;
-  border-radius: 3px;
+  border-radius: 6px;
+  corner-shape: squircle;
   tab-size: 2;
   display: block;
   box-sizing: border-box;
   background: var(--bg-color-1);
-  font-family:
-    SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
-}
-
-.notion-code pre {
-  overflow: auto;
 }
 
 .notion-code-copy {
@@ -971,6 +946,7 @@ svg.notion-page-icon {
   color: #24292f;
   border: 1px solid rgba(27, 31, 36, 0.15);
   border-radius: 6px;
+  corner-shape: squircle;
 }
 
 .notion-code-copy-button:hover {
@@ -1015,6 +991,7 @@ svg.notion-page-icon {
   background: #222;
   color: #fff;
   border-radius: 6px;
+  corner-shape: squircle;
 }
 
 .notion-column {
@@ -1063,7 +1040,8 @@ svg.notion-page-icon {
   box-sizing: border-box;
   text-decoration: none;
   border: 1px solid var(--fg-color-1);
-  border-radius: 3px;
+  border-radius: 6px;
+  corner-shape: squircle;
   display: flex;
   overflow: hidden;
   user-select: none;
@@ -1162,13 +1140,15 @@ svg.notion-page-icon {
   bottom: 0;
   width: 100%;
   height: 100%;
-  border-radius: 1px;
+  border-radius: 6px;
+  corner-shape: squircle;
 }
 
 .notion-image {
   position: relative;
   display: block;
-  border-radius: 1px;
+  border-radius: 6px;
+  corner-shape: squircle;
 }
 
 .notion-asset-caption {
@@ -1186,6 +1166,7 @@ svg.notion-page-icon {
   display: inline-flex;
   width: 100%;
   border-radius: 6px;
+  corner-shape: squircle;
   align-items: center;
   box-sizing: border-box;
   margin: 4px 0;
@@ -1258,7 +1239,8 @@ svg.notion-page-icon {
   cursor: pointer;
   padding: 6px 8px;
   border: 0 none;
-  border-radius: 3px;
+  border-radius: 6px;
+  corner-shape: squircle;
   transition: background 120ms ease-in 0s;
   background: transparent;
 }
@@ -1450,7 +1432,8 @@ svg.notion-page-icon {
   display: flex;
   align-items: center;
   padding: 0 6px;
-  border-radius: 3px;
+  border-radius: 6px;
+  corner-shape: squircle;
   height: 20px;
   white-space: nowrap;
   overflow: hidden;
@@ -1460,6 +1443,7 @@ svg.notion-page-icon {
 
 .notion-property-status-item {
   border-radius: 20px;
+  corner-shape: squircle;
 }
 
 .notion-property-file {
@@ -1563,7 +1547,8 @@ svg.notion-page-icon {
   box-shadow:
     rgba(15, 15, 15, 0.1) 0 0 0 1px,
     rgba(15, 15, 15, 0.1) 0 2px 4px;
-  border-radius: 3px;
+  border-radius: 6px;
+  corner-shape: squircle;
   background: var(--bg-color);
   color: var(--fg-color);
   transition: background 100ms ease-out 0s;
@@ -1588,7 +1573,7 @@ svg.notion-page-icon {
   width: 100%;
   height: 100%;
   border-radius: 1px 1px 0 0;
-  /* object-fit: cover; */
+  corner-shape: squircle;
 }
 
 .notion-collection-card-cover .notion-collection-card-cover-empty {
@@ -1832,10 +1817,8 @@ svg.notion-page-icon {
   transition:
     background 100ms ease-in,
     opacity 100ms ease-in;
-
   text-decoration: none;
   user-select: none;
-  transition: background 20ms ease-in 0s;
   cursor: pointer;
   width: 100%;
 
@@ -1906,8 +1889,8 @@ svg.notion-page-icon {
   text-decoration: none;
   width: 100%;
   border: 1px solid var(--fg-color-1);
-  border-radius: 3px;
-
+  border-radius: 6px;
+  corner-shape: squircle;
   user-select: none;
   transition: background 20ms ease-in 0s;
   cursor: pointer;
@@ -1992,7 +1975,8 @@ svg.notion-page-icon {
   display: flex;
   align-items: center;
   padding: 3px 2px;
-  border-radius: 3px;
+  border-radius: 6px;
+  corner-shape: squircle;
   transition: background 20ms ease-in 0s;
   color: inherit;
   text-decoration: none;
@@ -2049,7 +2033,8 @@ svg.notion-page-icon {
   color: inherit;
   fill: inherit;
   user-select: none;
-  border-radius: 3px;
+  border-radius: 6px;
+  corner-shape: squircle;
   transition: background 20ms ease-in 0s;
 }
 
@@ -2101,7 +2086,8 @@ svg.notion-page-icon {
   justify-content: center;
   height: 22px;
   width: 22px;
-  border-radius: 3px;
+  border-radius: 6px;
+  corner-shape: squircle;
   flex-shrink: 0;
 }
 
@@ -2352,7 +2338,6 @@ svg.notion-page-icon {
 .notion-lite .notion-page {
   width: 100%;
   padding: 0;
-  /* padding: calc(max(2vmin, 8px)); */
 }
 
 .notion-lite .notion-collection-header,
@@ -2395,7 +2380,6 @@ svg.notion-page-icon {
   padding: 0 12px;
   text-size-adjust: 100%;
   line-height: 1.5;
-  line-height: 1.2;
   font-size: 14px;
   gap: 12px;
 }
@@ -2421,7 +2405,8 @@ svg.notion-page-icon {
   text-decoration: none;
   margin: 1px 0px;
   padding: 4px 6px;
-  border-radius: 3px;
+  border-radius: 6px;
+  corner-shape: squircle;
   transition: background 120ms ease-in 0s;
   user-select: none;
   background: transparent;
@@ -2490,7 +2475,8 @@ svg.notion-page-icon {
     rgba(15, 15, 15, 0.05) 0px 0px 0px 1px,
     rgba(15, 15, 15, 0.1) 0px 5px 10px,
     rgba(15, 15, 15, 0.2) 0px 15px 40px;
-  border-radius: 3px;
+  border-radius: 6px;
+  corner-shape: squircle;
   background: var(--bg-color);
 
   position: relative;
@@ -2506,7 +2492,6 @@ svg.notion-page-icon {
   line-height: 1.5;
   color: rgb(55, 53, 47);
   caret-color: rgb(55, 53, 47);
-  font-family: var(--notion-font);
 }
 
 .notion-search input {
@@ -2702,7 +2687,8 @@ svg.notion-page-icon {
 }
 
 .notion-external {
-  border-radius: 3px;
+  border-radius: 6px;
+  corner-shape: squircle;
   transition: background 120ms ease-in 0s;
   text-decoration: none;
 }
@@ -2920,10 +2906,10 @@ svg.notion-page-icon {
 }
 
 .notion-collection-view-dropdown-content {
-  font-family: var(--notion-font);
-  min-width: 220;
+  min-width: 220px;
   background: #fff;
-  border-radius: 6;
+  border-radius: 6px;
+  corner-shape: squircle;
   padding: 0;
   box-shadow:
     0px 10px 38px -10px rgba(22, 23, 24, 0.35),
@@ -2957,7 +2943,8 @@ svg.notion-page-icon {
 
 .notion-collection-view-tabs-content-item:hover {
   background-color: var(--fg-color-1);
-  border-radius: 3px;
+  border-radius: 6px;
+  corner-shape: squircle;
 }
 
 .notion-collection-view-tabs-content-item-active {
@@ -3012,7 +2999,8 @@ svg.notion-page-icon {
 .notion-link-mention-icon {
   width: 1.5rem;
   height: 1.5rem;
-  border-radius: 0.375rem;
+  border-radius: 6px;
+  corner-shape: squircle;
 }
 
 .notion-link-mention-provider {
@@ -3044,7 +3032,8 @@ svg.notion-page-icon {
   width: 18rem;
   height: 15rem;
   background: var(--bg-color);
-  border-radius: 0.75rem;
+  border-radius: 6px;
+  corner-shape: squircle;
   border: 1px solid rgba(27, 31, 36, 0.15);
   overflow: hidden;
   box-shadow:
