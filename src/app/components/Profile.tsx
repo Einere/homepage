@@ -15,11 +15,17 @@ export default function Profile() {
         <div>
           <h2>최형준</h2>
           <blockquote>
-            <p>웹 기술로 문제를 해결하는, 지속가능한 엔지니어를 지향합니다.</p>
+            <p>
+              웹 기술로 문제를 해결하는, 지속가능한 프로덕트 엔지니어를
+              지향합니다.
+            </p>
           </blockquote>
           <p className="pb-2">다양한 경험을 해보는 것을 좋아합니다.</p>
-          <p className="mb-6">
+          <p className="pb-2">
             생각과 경험을 글로서 정리하고 기록하고 공유하는 것을 좋아합니다.
+          </p>
+          <p className="mb-6">
+            제품 성장에 기여하는 엔지니어링에 집중하고 있습니다.
           </p>
 
           <ul className="flex flex-col gap-2">
@@ -59,6 +65,14 @@ export default function Profile() {
         </ul>
         <h3>오픈 소스 활동</h3>
         <ul>
+          <li>
+            <Link
+              href="https://www.einere.me/records/2f4f6d89-7315-8063-9937-e45681d280ea"
+              target="_blank"
+            >
+              오픈소스 기여모임 10기 참여
+            </Link>
+          </li>
           <li>
             <Link
               href="https://www.einere.me/records/210f6d89-7315-8094-899c-f835525db576"
