@@ -6,11 +6,13 @@ export default function Profile() {
     <>
       <section className="mb-6 grid grid-rows-none gap-6 sm:grid-cols-[auto_1fr]">
         <Image
-          src="/profile_picture.webp"
+          src="/profile_picture-512w.webp"
           alt="최형준의 프로필 사진"
           width={256}
           height={384}
+          sizes="256px"
           className="rounded-lg"
+          priority // LCP 요소임을 명시 (Next.js 내부적으로 fetchpriority="high" 부여)
         />
         <div>
           <h2>최형준</h2>
