@@ -2,7 +2,7 @@
 @theme {
   /* Font */
   --font-sans: var(--font-gowun-dodum);
-  --font-mono: var(--font-d2coding);
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", "Courier New", monospace;
   --font-chiness: var(--font-fzuansu);
 
   /* Color */

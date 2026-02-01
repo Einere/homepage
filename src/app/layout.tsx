@@ -5,7 +5,7 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { gowunDodum, d2Coding, fZuanSu } from "@/app/fonts";
+import { gowunDodum, fZuanSu } from "@/app/fonts";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.einere.me"),
@@ -45,7 +45,7 @@ export default function RootLayout({
     <html
       lang="ko"
       data-theme="pink"
-      className={`${gowunDodum.variable} ${d2Coding.variable} ${fZuanSu.variable}`}
+      className={`${gowunDodum.variable} ${fZuanSu.variable}`}
     >
       <body className="antialiased">
         <Header />
