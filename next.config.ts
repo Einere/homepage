@@ -19,9 +19,6 @@ const nextConfig: NextConfig = {
         pathname: "/profile_picture.webp",
       },
       {
-        pathname: "/pink_blue_flowers.webp",
-      },
-      {
         pathname: "/opengraph-image.png",
       },
     ],
