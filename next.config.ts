@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
         pathname: "/api/notion-image",
       },
       {
-        pathname: "/profile_picture.webp",
+        pathname: "/profile_picture*.webp",
       },
       {
         pathname: "/opengraph-image.png",
