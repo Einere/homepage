@@ -36,7 +36,7 @@ export default async function RecordPageLayout(
   const _createDate = dayjs(publishedDate).locale("ko");
 
   return (
-    <div className="mx-auto min-h-screen max-w-[768px] px-4 lg:px-0">
+    <div className="mx-auto min-h-screen max-w-3xl px-4 lg:px-0">
       <div className="my-16">
         <ViewTransition name={`record-title-${slug}`}>
           <h1>{title}</h1>
