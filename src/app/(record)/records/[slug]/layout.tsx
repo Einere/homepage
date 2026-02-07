@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ViewTransition } from "react";
 import dayjs from "dayjs";
 import { retrievePage } from "@/app/lib/notionAPI";
 import {
@@ -38,7 +38,9 @@ export default async function RecordPageLayout(
   return (
     <div className="mx-auto min-h-screen max-w-[768px] px-4 lg:px-0">
       <div className="my-16">
-        <h1>{title}</h1>
+        <ViewTransition name={`record-title-${slug}`}>
+          <h1>{title}</h1>
+        </ViewTransition>
         <time
           dateTime={_createDate.toISOString()}
           className="mb-4 inline-block"
