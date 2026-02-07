@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, ViewTransition } from "react";
 import Link from "next/link";
 import "dayjs/locale/ko";
 
@@ -34,7 +34,9 @@ export default memo(function RecordCard(props: RecordCardProps) {
   return (
     <article className="rounded-lg py-4">
       <Link href={`/records/${id}`} className="">
-        <h3 className="text-main-800">{title}</h3>
+        <ViewTransition name={`record-title-${id}`}>
+          <h3 className="text-main-800">{title}</h3>
+        </ViewTransition>
         <p className="mb-2">{description}</p>
       </Link>
     </article>
