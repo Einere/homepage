@@ -1,13 +1,13 @@
 import React from "react";
 import {
   NotionBlockList,
-  BulletedListItemBlock,
-  NumberedListItemBlock,
+  ListItemBlock,
+  CustomImageComponent,
   NotionRendererProps,
 } from "./types";
 import { Paragraph } from "./components/Paragraph";
 import { Heading } from "./components/Heading";
-import { ImageBlock } from "./components/Image";
+import { NotionImage } from "./components/Image";
 import { Code } from "./components/Code";
 import { List } from "./components/List";
 import { Table } from "./components/Table";
@@ -17,20 +17,11 @@ import { Quote } from "./components/Quote";
 import type { BlockObjectResponse } from "@notionhq/client";
 import { isFullBlock, isListItemBlock } from "./utils/notionUtils";
 
-type ListItemBlock = BulletedListItemBlock | NumberedListItemBlock;
-
-type CustomImage = React.ComponentType<{
-  src: string;
-  alt: string;
-  fill?: boolean;
-  sizes?: string;
-  style?: React.CSSProperties;
-}>;
-
 const renderBlock = (
   block: BlockObjectResponse,
-  customImage?: CustomImage,
+  customImage?: CustomImageComponent,
   retrieveBlockChildren?: (blockId: string) => Promise<NotionBlockList>,
+  resolveImageUrl?: (rawUrl: string, blockId: string) => string,
 ): React.ReactNode => {
   switch (block.type) {
     case "paragraph":
@@ -46,7 +37,12 @@ const renderBlock = (
 
     case "image":
       return (
-        <ImageBlock key={block.id} block={block} customImage={customImage} />
+        <NotionImage
+          key={block.id}
+          block={block}
+          customImage={customImage}
+          resolveImageUrl={resolveImageUrl}
+        />
       );
 
     case "code":
@@ -77,7 +73,9 @@ const renderBlock = (
           key={block.id}
           block={block}
           retrieveBlockChildren={retrieveBlockChildren}
-          customImage={customImage}
+          renderBlocks={(b) =>
+            renderBlocks(b, customImage, retrieveBlockChildren, resolveImageUrl)
+          }
         />
       );
 
@@ -88,8 +86,9 @@ const renderBlock = (
 
 export function renderBlocks(
   blocks: BlockObjectResponse[],
-  customImage?: CustomImage,
+  customImage?: CustomImageComponent,
   retrieveBlockChildren?: (blockId: string) => Promise<NotionBlockList>,
+  resolveImageUrl?: (rawUrl: string, blockId: string) => string,
 ): React.ReactNode[] {
   const result: React.ReactNode[] = [];
   let listItems: ListItemBlock[] = [];
@@ -101,7 +100,9 @@ export function renderBlocks(
         key={`list-${listItems[0].id}`}
         blocks={listItems}
         retrieveBlockChildren={retrieveBlockChildren}
-        renderBlocks={(b) => renderBlocks(b, customImage, retrieveBlockChildren)}
+        renderBlocks={(b) =>
+          renderBlocks(b, customImage, retrieveBlockChildren, resolveImageUrl)
+        }
       />,
     );
     listItems = [];
@@ -116,7 +117,12 @@ export function renderBlocks(
       listItems = [...listItems, block];
     } else {
       flushList();
-      const element = renderBlock(block, customImage, retrieveBlockChildren);
+      const element = renderBlock(
+        block,
+        customImage,
+        retrieveBlockChildren,
+        resolveImageUrl,
+      );
       if (element) {
         result.push(element);
       }
@@ -131,13 +137,19 @@ export async function NotionRenderer({
   blocks,
   customImage,
   retrieveBlockChildren,
+  resolveImageUrl,
 }: NotionRendererProps) {
   if (!blocks || !blocks.results || blocks.results.length === 0) {
     return <div className="notion-empty">No content available</div>;
   }
 
   const fullBlocks = blocks.results.filter(isFullBlock);
-  const rendered = renderBlocks(fullBlocks, customImage, retrieveBlockChildren);
+  const rendered = renderBlocks(
+    fullBlocks,
+    customImage,
+    retrieveBlockChildren,
+    resolveImageUrl,
+  );
 
   return <div className="notion-renderer mb-16">{rendered}</div>;
 }

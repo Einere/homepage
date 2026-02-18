@@ -1,20 +1,19 @@
-"use client";
-
 import React from "react";
-import { ImageBlock as ImageBlockType } from "../types";
+import { ImageBlock as ImageBlockType, CustomImageComponent } from "../types";
 import { RichText } from "./RichText";
 import { getImageUrlFromImageData } from "../utils/notionUtils";
 
 interface ImageProps {
   block: ImageBlockType;
-  customImage?: React.ComponentType<{
-    src: string;
-    alt: string;
-    style?: React.CSSProperties;
-  }>;
+  customImage?: CustomImageComponent;
+  resolveImageUrl?: (rawUrl: string, blockId: string) => string;
 }
 
-export function ImageBlock({ block, customImage }: ImageProps) {
+export function NotionImage({
+  block,
+  customImage,
+  resolveImageUrl,
+}: ImageProps) {
   const imageData = block.image;
   const rawUrl = getImageUrlFromImageData(imageData);
 
@@ -22,23 +21,10 @@ export function ImageBlock({ block, customImage }: ImageProps) {
     return null;
   }
 
-  // Use proxy for Notion-hosted images
-  // - Notion file URLs
-  // - External URLs that point to Notion's S3 host (signed URLs)
-  const NOTION_S3_HOST = "prod-files-secure.s3.us-west-2.amazonaws.com";
-  const urlForRender = (() => {
-    try {
-      const u = new URL(rawUrl);
-      if (u.hostname === NOTION_S3_HOST) {
-        return `/api/notion-image?blockId=${block.id}`;
-      }
-    } catch {
-      /* noop */
-    }
-    return rawUrl;
-  })();
+  const urlForRender = resolveImageUrl
+    ? resolveImageUrl(rawUrl, block.id)
+    : rawUrl;
 
-  // Get caption
   const caption = imageData.caption || [];
   const captionStr = caption.map((c) => c.plain_text).join("");
 

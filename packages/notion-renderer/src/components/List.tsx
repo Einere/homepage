@@ -1,14 +1,8 @@
 import React from "react";
 import type { BlockObjectResponse } from "@notionhq/client";
-import {
-  BulletedListItemBlock,
-  NumberedListItemBlock,
-  NotionBlockList,
-} from "../types";
+import { ListItemBlock, NotionBlockList } from "../types";
 import { RichText } from "./RichText";
 import { isFullBlock } from "../utils/notionUtils";
-
-type ListItemBlock = BulletedListItemBlock | NumberedListItemBlock;
 
 interface ListProps {
   blocks: ListItemBlock[];

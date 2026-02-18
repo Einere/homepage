@@ -5,6 +5,8 @@ export type {
   NotionRendererProps,
   ImageBlock,
   RichTextItem,
+  ListItemBlock,
+  CustomImageComponent,
 } from "./types";
 export { RichText } from "./components/RichText";
 export {

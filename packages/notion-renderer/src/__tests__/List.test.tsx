@@ -129,10 +129,7 @@ function makeNumberedBlock(
   } as NumberedListItemBlock;
 }
 
-function makeParagraphBlock(
-  id: string,
-  text: string,
-): BlockObjectResponse {
+function makeParagraphBlock(id: string, text: string): BlockObjectResponse {
   return {
     object: "block",
     id,
@@ -167,9 +164,7 @@ function makeParagraphBlock(
   } as unknown as BlockObjectResponse;
 }
 
-function makeBlockList(
-  results: BlockObjectResponse[],
-): NotionBlockList {
+function makeBlockList(results: BlockObjectResponse[]): NotionBlockList {
   return {
     object: "list",
     results,

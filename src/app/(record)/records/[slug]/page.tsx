@@ -76,6 +76,20 @@ export async function generateStaticParams() {
   }));
 }
 
+const NOTION_S3_HOST = "prod-files-secure.s3.us-west-2.amazonaws.com";
+
+function resolveNotionImageUrl(rawUrl: string, blockId: string): string {
+  try {
+    const u = new URL(rawUrl);
+    if (u.hostname === NOTION_S3_HOST) {
+      return `/api/notion-image?blockId=${blockId}`;
+    }
+  } catch {
+    // invalid URL, use as-is
+  }
+  return rawUrl;
+}
+
 export default async function RecordPage({
   params,
 }: {
@@ -91,6 +105,7 @@ export default async function RecordPage({
         blocks={blockChildren}
         retrieveBlockChildren={retrieveBlockChildren}
         customImage={NotionImage}
+        resolveImageUrl={resolveNotionImageUrl}
       />
       <Comments />
     </div>

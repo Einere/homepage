@@ -65,9 +65,9 @@ export async function Table({
             <tr className="notion-simple-table-header-row">
               {headerRow.table_row?.cells?.map(
                 (cell: RichTextItem[], index: number) => (
-                  <td key={index} className="notion-simple-table-header-cell">
+                  <th key={index} className="notion-simple-table-header-cell" scope="col">
                     <RichText value={cell || []} />
-                  </td>
+                  </th>
                 ),
               )}
             </tr>
