@@ -17,20 +17,23 @@ import { Quote } from "./components/Quote";
 import type { BlockObjectResponse } from "@notionhq/client";
 import { isFullBlock, isListItemBlock } from "./utils/notionUtils";
 
+type ListItemBlock = BulletedListItemBlock | NumberedListItemBlock;
+
+type CustomImage = React.ComponentType<{
+  src: string;
+  alt: string;
+  fill?: boolean;
+  sizes?: string;
+  style?: React.CSSProperties;
+}>;
+
 const renderBlock = (
   block: BlockObjectResponse,
-  customImage?: React.ComponentType<{
-    src: string;
-    alt: string;
-    fill?: boolean;
-    sizes?: string;
-    style?: React.CSSProperties;
-  }>,
+  customImage?: CustomImage,
   retrieveBlockChildren?: (blockId: string) => Promise<NotionBlockList>,
-) => {
+): React.ReactNode => {
   switch (block.type) {
     case "paragraph":
-      // Skip empty paragraphs
       if (block.paragraph.rich_text.length === 0) {
         return null;
       }
@@ -55,13 +58,7 @@ const renderBlock = (
     case "quote":
       return <Quote key={block.id} block={block} />;
 
-    case "bulleted_list_item":
-    case "numbered_list_item":
-      // These will be handled separately by grouping logic
-      return null;
-
     case "table":
-      // Table component will fetch its own children via API
       return (
         <Table
           key={block.id}
@@ -71,12 +68,10 @@ const renderBlock = (
       );
 
     case "table_row":
-      // Table rows are rendered as part of their parent table
-      // Don't render them separately
+    case "column":
       return null;
 
     case "column_list":
-      // ColumnList component will fetch its own children via API
       return (
         <ColumnList
           key={block.id}
@@ -86,16 +81,51 @@ const renderBlock = (
         />
       );
 
-    case "column":
-      // Columns are rendered as part of their parent column_list
-      // Don't render them separately
-      return null;
-
     default:
-      // Handle any other block types that might exist in the official API
       return null;
   }
 };
+
+export function renderBlocks(
+  blocks: BlockObjectResponse[],
+  customImage?: CustomImage,
+  retrieveBlockChildren?: (blockId: string) => Promise<NotionBlockList>,
+): React.ReactNode[] {
+  const result: React.ReactNode[] = [];
+  let listItems: ListItemBlock[] = [];
+
+  const flushList = () => {
+    if (listItems.length === 0) return;
+    result.push(
+      <List
+        key={`list-${listItems[0].id}`}
+        blocks={listItems}
+        retrieveBlockChildren={retrieveBlockChildren}
+        renderBlocks={(b) => renderBlocks(b, customImage, retrieveBlockChildren)}
+      />,
+    );
+    listItems = [];
+  };
+
+  for (const block of blocks) {
+    if (isListItemBlock(block)) {
+      const currentType = listItems.length > 0 ? listItems[0].type : null;
+      if (currentType && block.type !== currentType) {
+        flushList();
+      }
+      listItems = [...listItems, block];
+    } else {
+      flushList();
+      const element = renderBlock(block, customImage, retrieveBlockChildren);
+      if (element) {
+        result.push(element);
+      }
+    }
+  }
+
+  flushList();
+  return result;
+}
 
 export async function NotionRenderer({
   blocks,
@@ -106,56 +136,8 @@ export async function NotionRenderer({
     return <div className="notion-empty">No content available</div>;
   }
 
-  // Process all blocks and group lists
-  const processedBlocks: React.ReactNode[] = [];
-  const currentList: (BulletedListItemBlock | NumberedListItemBlock)[] = [];
-  let currentListType: "bulleted_list_item" | "numbered_list_item" | null =
-    null;
+  const fullBlocks = blocks.results.filter(isFullBlock);
+  const rendered = renderBlocks(fullBlocks, customImage, retrieveBlockChildren);
 
-  for (let index = 0; index < blocks.results.length; index++) {
-    const block = blocks.results[index];
-
-    // Skip partial blocks that don't have full type information
-    if (!isFullBlock(block)) {
-      continue;
-    }
-
-    if (isListItemBlock(block)) {
-      // If we have a different list type, close the previous list
-      if (currentListType && block.type !== currentListType) {
-        processedBlocks.push(
-          <List key={`list-${index}`} blocks={[...currentList]} />,
-        );
-        currentList.length = 0;
-      }
-
-      currentList.push(block);
-      currentListType = block.type;
-    } else {
-      // Close any open list before rendering non-list block
-      if (currentList.length > 0) {
-        processedBlocks.push(
-          <List key={`list-${index}`} blocks={[...currentList]} />,
-        );
-        currentList.length = 0;
-        currentListType = null;
-      }
-
-      const blockElement = renderBlock(
-        block,
-        customImage,
-        retrieveBlockChildren,
-      );
-      if (blockElement) {
-        processedBlocks.push(blockElement);
-      }
-    }
-  }
-
-  // Close any remaining list
-  if (currentList.length > 0) {
-    processedBlocks.push(<List key="list-final" blocks={[...currentList]} />);
-  }
-
-  return <div className="notion-renderer mb-16">{processedBlocks}</div>;
+  return <div className="notion-renderer mb-16">{rendered}</div>;
 }

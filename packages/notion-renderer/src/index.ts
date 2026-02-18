@@ -1,4 +1,4 @@
-export { NotionRenderer } from "./NotionRenderer";
+export { NotionRenderer, renderBlocks } from "./NotionRenderer";
 export type {
   NotionBlock,
   NotionBlockList,
