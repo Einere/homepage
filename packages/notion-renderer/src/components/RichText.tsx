@@ -16,15 +16,15 @@ export function RichText({ value, className }: RichTextProps) {
 
     let element: React.ReactNode = plain_text;
 
-    // Apply formatting based on annotations (order matters)
     const needsCode = annotations.code;
-    const needsColor = annotations.color && annotations.color !== "default";
-    const needsBg = needsColor && annotations.color !== "default";
+    const isBackgroundColor =
+      annotations.color?.endsWith("_background") ?? false;
+    const needsBg =
+      isBackgroundColor && annotations.color !== "default_background";
+    const needsColor = !isBackgroundColor && annotations.color !== "default";
 
-    // Handle links first
     const linkUrl = getLinkFromRichTextItem(text);
 
-    // Build the element with all decorations
     if (needsCode) {
       element = (
         <code key={index} className="notion-inline-code">
@@ -49,7 +49,6 @@ export function RichText({ value, className }: RichTextProps) {
       );
     }
 
-    // Apply link wrapper
     if (linkUrl) {
       element = (
         <a key={index} href={linkUrl} className="notion-link">
@@ -58,19 +57,14 @@ export function RichText({ value, className }: RichTextProps) {
       );
     }
 
-    // Apply background color if specified
     if (needsBg && annotations.color) {
       element = (
-        <span
-          key={index}
-          className={`notion-${annotations.color}_background_co`}
-        >
+        <span key={index} className={`notion-${annotations.color}_co`}>
           {element}
         </span>
       );
     }
 
-    // Apply text color
     if (needsColor && annotations.color) {
       element = (
         <span key={index} className={`notion-${annotations.color}_co`}>

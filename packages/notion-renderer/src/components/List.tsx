@@ -1,74 +1,59 @@
-import { BulletedListItemBlock, NumberedListItemBlock } from "../types";
+import React from "react";
+import type { BlockObjectResponse } from "@notionhq/client";
+import { ListItemBlock, NotionBlockList } from "../types";
 import { RichText } from "./RichText";
-
-type ListItemBlock = BulletedListItemBlock | NumberedListItemBlock;
+import { isFullBlock } from "../utils/notionUtils";
 
 interface ListProps {
   blocks: ListItemBlock[];
+  retrieveBlockChildren?: (blockId: string) => Promise<NotionBlockList>;
+  renderBlocks?: (blocks: BlockObjectResponse[]) => React.ReactNode[];
 }
 
-export function List({ blocks }: ListProps) {
-  // Group consecutive list items by type
-  const groupedLists: Array<{
-    type: "bulleted_list_item" | "numbered_list_item";
-    items: ListItemBlock[];
-  }> = [];
+function getRichText(item: ListItemBlock) {
+  return item.type === "bulleted_list_item"
+    ? item.bulleted_list_item.rich_text
+    : item.numbered_list_item.rich_text;
+}
 
-  let currentList: (typeof groupedLists)[0] | null = null;
+export async function List({
+  blocks,
+  retrieveBlockChildren,
+  renderBlocks,
+}: ListProps) {
+  if (blocks.length === 0) return null;
 
-  blocks.forEach((block) => {
-    if (
-      block.type === "bulleted_list_item" ||
-      block.type === "numbered_list_item"
-    ) {
-      const type = block.type;
+  const listType = blocks[0].type;
+  const ListTag = listType === "bulleted_list_item" ? "ul" : "ol";
+  const className =
+    listType === "bulleted_list_item"
+      ? "notion-list notion-list-disc"
+      : "notion-list notion-list-numbered";
 
-      if (!currentList || currentList.type !== type) {
-        if (currentList) {
-          groupedLists.push(currentList);
-        }
-        currentList = { type, items: [block] };
-      } else {
-        currentList.items.push(block);
+  const childrenResults = await Promise.all(
+    blocks.map(async (item) => {
+      if (!item.has_children || !retrieveBlockChildren || !renderBlocks) {
+        return null;
       }
-    } else {
-      if (currentList) {
-        groupedLists.push(currentList);
-        currentList = null;
+      try {
+        const childData = await retrieveBlockChildren(item.id);
+        const fullBlocks = (childData.results ?? []).filter(isFullBlock);
+        if (fullBlocks.length === 0) return null;
+        return renderBlocks(fullBlocks);
+      } catch {
+        return null;
       }
-    }
-  });
-
-  if (currentList) {
-    groupedLists.push(currentList);
-  }
+    }),
+  );
 
   return (
-    <>
-      {groupedLists.map((list, listIndex) => {
-        const ListTag = list.type === "bulleted_list_item" ? "ul" : "ol";
-        const className =
-          list.type === "bulleted_list_item"
-            ? "notion-list notion-list-disc"
-            : "notion-list notion-list-numbered";
-
-        return (
-          <ListTag key={listIndex} className={className}>
-            {list.items.map((item, itemIndex) => {
-              const richText =
-                item.type === "bulleted_list_item"
-                  ? item.bulleted_list_item.rich_text
-                  : item.numbered_list_item.rich_text;
-
-              return (
-                <li key={`${item.id}-${itemIndex}`}>
-                  <RichText value={richText} />
-                </li>
-              );
-            })}
-          </ListTag>
-        );
-      })}
-    </>
+    <ListTag className={className}>
+      {blocks.map((item, index) => (
+        <li key={item.id}>
+          <RichText value={getRichText(item)} />
+          {childrenResults[index]}
+        </li>
+      ))}
+    </ListTag>
   );
 }

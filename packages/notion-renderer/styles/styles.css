@@ -673,7 +673,7 @@ details.notion-toggle .notion-h {
   font-size: 14px;
 }
 
-.notion-simple-table-header-row td {
+.notion-simple-table-header-row th {
   background: var(--bg-color-0);
 }
 
@@ -681,7 +681,8 @@ details.notion-toggle .notion-h {
   background: var(--bg-color-0);
 }
 
-.notion-simple-table td {
+.notion-simple-table td,
+.notion-simple-table th {
   border: 1px solid var(--fg-color-5);
   padding: 8px 8px;
   white-space: pre-wrap;
